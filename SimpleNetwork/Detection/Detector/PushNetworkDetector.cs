@@ -8,7 +8,12 @@ using System.Text;
 
 namespace SimpleNetwork.Detection.Detector
 {
-
+    /// <summary>
+    /// Ermöglicht das auffinden von Servern im lokalen Netzwerk.
+    /// Dieser NetworkDetctor muss die Suche manuell starten.
+    /// Hiefür muss die <see cref="Refresh"/> Methode aufgerufen werden. Ohne diesen Aufruf wird die Liste NICHT automatisch aktualisert.
+    /// Beim Aufruf von <see cref="StartDetection"/> wird automatisch erstmalig <see cref="Refresh"/> aufgerufen.
+    /// </summary>
     public class PushNetworkDetector : NetworkDetectorBase
     {
 
@@ -18,13 +23,23 @@ namespace SimpleNetwork.Detection.Detector
         private IPEndPoint _allpoint;
         private IPEndPoint _broadcast;
 
+        /// <summary>
+        /// Der Port, auf dem die eingehenden Serverinformationen empfangen werden sollen.
+        /// </summary>
         public int ReceivePort { get; set; }
 
+        /// <summary>
+        /// Initialisiert eine neue Instanz der PushNetworkDetector-Klasse.
+        /// </summary>
         public PushNetworkDetector()
         {
             ReceivePort = 16000;
         }
 
+        /// <summary>
+        /// Beginnt mit der Erfassung von Servern.
+        /// Sollte keinen Server gefunden werden rufen sie manuell <see cref="Refresh"/> auf.
+        /// </summary>
         public override void StartDetection()
         {
             if (!isDetecting)
@@ -57,6 +72,10 @@ namespace SimpleNetwork.Detection.Detector
                 }), null);
         }
 
+        /// <summary>
+        /// Aktualisiert die Serverinformationen.
+        /// Sollte <see cref="NetworkDetectorBase.Hosts"/> den von ihnen gesuchten Host nicht enthalten, so kann eine erneute Suche durch den Aufruf dieser Funktion erreicht werden.
+        /// </summary>
         public override void Refresh()
         {
             if (!isDetecting)
@@ -67,6 +86,9 @@ namespace SimpleNetwork.Detection.Detector
             _sendClient.Send(data, data.Length, _broadcast);
         }
 
+        /// <summary>
+        /// Beendet die Erfassung von Servern.
+        /// </summary>
         public override void StopDetection()
         {
             if (isDetecting)
