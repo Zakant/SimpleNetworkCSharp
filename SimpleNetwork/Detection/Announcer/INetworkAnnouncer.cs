@@ -18,32 +18,32 @@ namespace SimpleNetwork.Detection.Announcer
         IServer Server { get; }
 
         /// <summary>
-        /// Der Interval, in dem die Mitteilung wiederholt werden soll. ReadOnly.
+        /// Der Interval, in dem die Serverinformationen versendet werden soll. ReadOnly.
         /// </summary>
         int Interval { get; }
 
         /// <summary>
-        /// Der Port, auf dem anderen die Mitteilung versendet werden soll.
+        /// Der Port, auf dem  die Serverinformationen versendet werden sollen.
         /// </summary>
         int AnnouncingPort { get; set; }
 
         /// <summary>
-        /// Gibt an, ob aktuell Mitteilungen versendet werden. True falls ja, False falls nein. ReadOnly.
+        /// Gibt an, ob aktuell Serverinformationen versendet werden. True falls ja, False falls nein. ReadOnly.
         /// </summary>
         bool Announcing { get; }
 
         /// <summary>
-        /// Die Daten aus der die Mitteilung besteht.
+        /// Die Daten aus der die Serverinformationen besteht.
         /// </summary>
         HostData Data { get; set; }
 
         /// <summary>
-        /// Beginnt Mitteilungen zu versenden.
+        /// Beginnt die Serverinformationen zu versenden.
         /// </summary>
         void StartAnnouncing();
 
         /// <summary>
-        /// Stopt Mitteilungen zu versenden.
+        /// Stopt die Serverinformationen zu versenden.
         /// </summary>
         void StopAnnouncing();
 
