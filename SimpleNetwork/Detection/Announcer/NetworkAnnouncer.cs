@@ -11,6 +11,9 @@ using System.Timers;
 
 namespace SimpleNetwork.Detection.Announcer
 {
+    /// <summary>
+    /// Ermöglicht das aufspüren eines Servers im Lokalen Netzwerk.
+    /// </summary>
     public class NetworkAnnouncer : NetworkAnnouncerBase
     {
 
@@ -19,11 +22,18 @@ namespace SimpleNetwork.Detection.Announcer
         private byte[] _data;
         private IPEndPoint _endpoint;
 
+        /// <summary>
+        /// Erstellt ein neues NetworkAnnouncer-Objekt auf Grundlage eines IServer-Objektes.
+        /// </summary>
+        /// <param name="server"></param>
         public NetworkAnnouncer(IServer server)
             : base(server)
         {
         }
 
+        /// <summary>
+        /// Starte das Versenden der Serverinformationen.
+        /// </summary>
         public override void StartAnnouncing()
         {
             if (!Announcing)
@@ -42,6 +52,9 @@ namespace SimpleNetwork.Detection.Announcer
             }
         }
 
+        /// <summary>
+        /// Stopt das Versenden der Serverinformationen.
+        /// </summary>
         public override void StopAnnouncing()
         {
             if (Announcing)
