@@ -7,7 +7,7 @@ using System.Text;
 namespace SimpleNetwork.Events
 {
     /// <summary>
-    /// Stellt Daten für das <see cref="SimpleNetwork.Server.IServer.HostFound"/> Ereigniss bereit.
+    /// Stellt Daten für das <see cref="SimpleNetwork.Server.IServer.ClientConnected"/> Ereigniss bereit.
     /// </summary>
     public class ClientConnectedEventArgs : SimpleNetworkEventArgs
     {
