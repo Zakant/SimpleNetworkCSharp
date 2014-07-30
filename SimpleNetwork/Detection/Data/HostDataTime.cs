@@ -15,6 +15,7 @@ namespace SimpleNetwork.Detection.Data
         /// Der TimeStamp.
         /// </summary>
         public DateTime stamp;
+
         /// <summary>
         /// Das HostData-Objekt.
         /// </summary>
