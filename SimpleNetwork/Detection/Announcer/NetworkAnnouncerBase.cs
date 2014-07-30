@@ -9,18 +9,40 @@ using System.Text;
 
 namespace SimpleNetwork.Detection.Announcer
 {
+    /// <summary>
+    /// Basisklasse, die ermöglicht, Server im lokalen Netzwerk aufzuspüren
+    /// </summary>
     public abstract class NetworkAnnouncerBase : INetworkAnnouncer
     {
+        /// <summary>
+        /// Der Server, dessen Verbindungsinformationen mitgeteilt werden sollen. ReadOnly.
+        /// </summary>
         public IServer Server { get; protected set; }
 
+        /// <summary>
+        /// Der Interval, in dem die Serverinformationen versendet werden soll. ReadOnly.
+        /// </summary>
         public int Interval { get; protected set; }
 
+        /// <summary>
+        /// Der Port, auf dem  die Serverinformationen versendet werden sollen.
+        /// </summary>
         public int AnnouncingPort { get; set; }
 
+        /// <summary>
+        /// Gibt an, ob aktuell Serverinformationen versendet werden. True falls ja, False falls nein. ReadOnly.
+        /// </summary>
         public bool Announcing { get; protected set; }
 
+        /// <summary>
+        /// Die Daten aus der die Serverinformationen besteht.
+        /// </summary>
         public HostData Data { get; set; }
 
+        /// <summary>
+        /// Initialisiert eine neue NetworkAnnouncerBase-Klasse unter verwendung eines IServer-Objektes
+        /// </summary>
+        /// <param name="server">Das zu verwendene ISever-Objekt</param>
         public NetworkAnnouncerBase(IServer server)
         {
             Server = server;
