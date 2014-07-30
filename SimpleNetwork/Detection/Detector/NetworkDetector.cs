@@ -9,13 +9,18 @@ using System.Timers;
 
 namespace SimpleNetwork.Detection.Detector
 {
+    /// <summary>
+    /// Ermöglicht das auffinden von Servern im lokalen Netzwerk.
+    /// </summary>
     public class NetworkDetector : NetworkDetectorBase
     {
 
         private IPEndPoint _endpoint;
         private UdpClient _client;
-        
 
+        /// <summary>
+        /// Beginnt mit der Erfassung von Servern.
+        /// </summary>
         public override void StartDetection()
         {
             if (!isDetecting)
@@ -46,6 +51,9 @@ namespace SimpleNetwork.Detection.Detector
                 }), null);
         }
 
+        /// <summary>
+        /// Aktualisert die vorhandenen Serverinformationen.
+        /// </summary>
         public override void Refresh()
         {
             Clear();
@@ -53,6 +61,9 @@ namespace SimpleNetwork.Detection.Detector
                 StartDetection();
         }
 
+        /// <summary>
+        /// Beendet die Erfassung von Servern.
+        /// </summary>
         public override void StopDetection()
         {
             if (isDetecting)
