@@ -1,0 +1,384 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<HelpTOC>
+
+  <HelpTOCNode Id="fb013bb9-f515-4e87-93e9-c7da38c5d15d" Title="SimpleNetwork.Client" Url="html/b5e5a938-99ef-8e13-576a-2a7d229859f7.htm">
+    <HelpTOCNode Id="2b2520f8-747e-47ab-9a81-25b7ef1975b0" Title="Client Klasse" Url="html/3aa3c4f5-aef6-708c-8c7a-763eedc07ef7.htm">
+      <HelpTOCNode Id="33c8ccf4-02fa-4373-a4c5-d38b480bbf10" Title="Client Konstruktor " Url="html/c2a7bda4-7d53-0849-62d4-2358e25b2264.htm">
+        <HelpTOCNode Title="Client Konstruktor " Url="html/a39a1c42-0ca7-2198-7fd0-bec193b72393.htm" />
+        <HelpTOCNode Title="Client Konstruktor (TcpClient)" Url="html/0d70b7e5-09a2-ecfc-37c7-b0b94b0616c8.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="77e23de3-0d9b-46ee-89e6-f184dc5e5493" Title="Client Methoden" Url="html/745e4971-ffc3-bbfc-5173-9685578cd969.htm">
+        <HelpTOCNode Id="11e80f7a-8ca8-443a-930f-7ea1c208fae3" Title="Connect Methode " Url="html/441cf56d-8621-6479-8886-f065bb748d2d.htm">
+          <HelpTOCNode Title="Connect Methode (HostData)" Url="html/01cf007e-e651-8894-f682-b4a58fc5838f.htm" />
+          <HelpTOCNode Title="Connect Methode (IPAddress, Int32)" Url="html/6870eb19-b720-cdf1-4498-3f325ab30544.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="e09cac90-912e-46ca-89a7-be1e02ec677c" Title="Disconnect Methode " Url="html/4dc27fda-6b2d-9bf6-1ac1-3ade650ab1d8.htm">
+          <HelpTOCNode Title="Disconnect Methode " Url="html/0492afeb-2bb0-24e0-637e-5ab9ffcab01f.htm" />
+          <HelpTOCNode Title="Disconnect Methode (DisconnectReason)" Url="html/9885b4c5-8850-3b46-b516-80a6749f3f22.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="RaiseDisconnected Methode " Url="html/b0ef62f3-7b4f-7843-3f5a-6b1e5f5520ff.htm" />
+        <HelpTOCNode Title="SendPackage Methode " Url="html/8956f27c-29d9-29cb-2588-91233c62a170.htm" />
+        <HelpTOCNode Title="StartListening Methode " Url="html/a449a7ea-e6ef-d815-9c84-ee0704fa39cf.htm" />
+        <HelpTOCNode Title="StopListening Methode " Url="html/bb5ae0ca-d3a2-1fd5-1bd4-0c4310cb172c.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="0bd19b37-b86b-4b43-b2e8-68ab8e05fa7a" Title="Client Eigenschaften" Url="html/092be149-778a-c1cd-3da4-69597f97e8f8.htm">
+        <HelpTOCNode Title="isConnected Eigenschaft " Url="html/bcf81235-b9f1-7bce-01ca-32e3a4c25f73.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="789ee090-4f91-457b-b53b-0eefccc3b111" Title="Client Ereignisse" Url="html/0fdf3f5e-7517-7089-0c00-75d4809a3db0.htm">
+        <HelpTOCNode Title="Disconnected Ereignis" Url="html/c8d8bf50-16f9-84cd-7d1c-68016b71b9d7.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="d81be9a9-232f-424a-9d19-6fef843b5f76" Title="ClientFactory Klasse" Url="html/3f7758e2-e6bc-dcdc-c6cf-7bc70c1cdbd1.htm">
+      <HelpTOCNode Title="ClientFactory Konstruktor " Url="html/fc605858-aedc-390e-e441-f1ee69370c31.htm" />
+      <HelpTOCNode Id="eb17ea1e-50b3-4a30-b1ca-91d714981a10" Title="ClientFactory Methoden" Url="html/40b7bd33-a1de-bc14-e5b1-6014d3cb96fe.htm">
+        <HelpTOCNode Title="createDefault Methode " Url="html/0ddbbef0-9284-7869-27e6-e4761ffe84d2.htm" />
+        <HelpTOCNode Title="createFromTcpClient Methode " Url="html/f1c14902-43f0-a9ee-8fb2-13bd83788415.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="0ca740b7-30a1-45a4-8b03-9549997d6a65" Title="IClient Schnittstelle" Url="html/67623fab-36be-c993-254a-d067c06f6990.htm">
+      <HelpTOCNode Id="84f814de-c705-40c9-b1d9-531ce1ec9830" Title="IClient Methoden" Url="html/377bbf4b-6757-dbf6-a26f-f11c4fbe3e9b.htm">
+        <HelpTOCNode Id="30cb4271-025e-42bf-b90e-80641a7de5aa" Title="Connect Methode " Url="html/7e30ff15-ce9f-0125-482d-6472446af9d0.htm">
+          <HelpTOCNode Title="Connect Methode (HostData)" Url="html/7fef3336-dcaf-dec8-efac-11e119bd8657.htm" />
+          <HelpTOCNode Title="Connect Methode (IPAddress, Int32)" Url="html/48e287d6-b117-e7d7-9971-6300e5f6331d.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="Disconnect Methode " Url="html/37b1860f-1cf7-4f66-cd49-71f6189d4926.htm" />
+        <HelpTOCNode Title="SendPackage Methode " Url="html/f1d8d1ac-e82e-474f-da02-42adcbda9c59.htm" />
+        <HelpTOCNode Title="StartListening Methode " Url="html/e2c45289-63d7-a678-7734-b34ef35c819a.htm" />
+        <HelpTOCNode Title="StopListening Methode " Url="html/e0bfaf8c-7b3f-99ab-e007-65b4305c548d.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="9a017599-bd03-4d3d-a90e-82a0fd06de9a" Title="IClient Eigenschaften" Url="html/a8eaf0ca-99a5-f820-a875-9a983099e927.htm">
+        <HelpTOCNode Title="isConnected Eigenschaft " Url="html/c536eab0-984b-7eee-c777-4ab1474d118e.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="bee9e891-9a68-420d-ae9a-d125a4e3dac3" Title="IClient Ereignisse" Url="html/475f500a-5050-ed4d-8126-9c802b88135e.htm">
+        <HelpTOCNode Title="Disconnected Ereignis" Url="html/ec2f62b4-95a5-1716-8860-0cc1d7385ec9.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="0d93ac97-4843-4fcf-b57b-a30702ffaa54" Title="IClientFactory Schnittstelle" Url="html/c8687017-a9b1-823f-6890-701593c8f09b.htm">
+      <HelpTOCNode Id="ef2a08d2-2fe4-436e-8cef-bb23f69a4769" Title="IClientFactory Methoden" Url="html/a26e1334-331f-4bba-9204-6772374c6d12.htm">
+        <HelpTOCNode Title="createDefault Methode " Url="html/ee4365f0-cb69-7298-8b5a-655d31d5f5a7.htm" />
+        <HelpTOCNode Title="createFromTcpClient Methode " Url="html/59b1c217-8ece-046f-1be7-4c4d1b9ea44e.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+  </HelpTOCNode>
+  <HelpTOCNode Id="e8857a2d-416f-4bea-87cf-22f7e7c11d5d" Title="SimpleNetwork.Detection Namensr&#228;ume" Url="html/ed1b2236-d6d5-9e76-bbed-d5e93f058cc0.htm">
+    <HelpTOCNode Id="1ce577e3-64e8-4e20-b0e7-2202cac96c84" Title="SimpleNetwork.Detection.Announcer" Url="html/f8fc6ac9-e227-4ff8-5963-5b9af437d5b4.htm">
+      <HelpTOCNode Id="b3bb77ba-4638-4788-b19c-e4c14bfed6e7" Title="INetworkAnnouncer Schnittstelle" Url="html/1991e096-9a2b-47a2-9176-13f65dc7c357.htm">
+        <HelpTOCNode Id="f0b90d46-0d31-4cb7-88b1-46f6da27dd08" Title="INetworkAnnouncer Methoden" Url="html/caa77829-9e9f-2158-98ed-655c720e30fe.htm">
+          <HelpTOCNode Title="StartAnnouncing Methode " Url="html/35a4c5ad-d342-3ddd-3e09-dbdcbca7d0da.htm" />
+          <HelpTOCNode Title="StopAnnouncing Methode " Url="html/9a0cbb1b-b5a4-afa7-da99-36c879555fc7.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="feee03f7-5e08-440e-80e5-ea1ae48303f5" Title="INetworkAnnouncer Eigenschaften" Url="html/2c2a8a3c-7c64-cbcc-9660-a08c9ba6e932.htm">
+          <HelpTOCNode Title="Announcing Eigenschaft " Url="html/aa59bc3e-9f38-6d04-30b4-28e2ea0df7d3.htm" />
+          <HelpTOCNode Title="AnnouncingPort Eigenschaft " Url="html/b4ca80de-14b1-a4fb-0e9b-ddc3e347b689.htm" />
+          <HelpTOCNode Title="Data Eigenschaft " Url="html/6f836b1e-7b96-08e9-5dcf-49d8e2012be5.htm" />
+          <HelpTOCNode Title="Interval Eigenschaft " Url="html/9bd473fa-7797-f615-e354-93691c0ffec4.htm" />
+          <HelpTOCNode Title="Server Eigenschaft " Url="html/f1c3f3bf-6217-d950-2d53-bbef884e06c6.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="e3254c5d-6902-425d-89a6-0baf59c73cdb" Title="NetworkAnnouncer Klasse" Url="html/e31cbd12-859a-202d-fc5c-2c6d5666b268.htm">
+        <HelpTOCNode Title="NetworkAnnouncer Konstruktor " Url="html/ccadf54d-68b9-a56f-4148-33934cb32b40.htm" />
+        <HelpTOCNode Id="f4aaf7a9-c021-49ea-9c6e-38ea09b6477e" Title="NetworkAnnouncer Methoden" Url="html/af4ec181-3eda-b079-7c21-0463b2d6647e.htm">
+          <HelpTOCNode Title="StartAnnouncing Methode " Url="html/a805b9ca-5966-01ee-d7d9-ef9591178fc8.htm" />
+          <HelpTOCNode Title="StopAnnouncing Methode " Url="html/c6841787-90f3-be04-81a8-23e1556a81bc.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="NetworkAnnouncer Eigenschaften" Url="html/51afcd20-85f5-19c4-6124-fc5502134403.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="daa83437-ad75-44ed-93f8-b9cb55932cbc" Title="NetworkAnnouncerBase Klasse" Url="html/507dd536-b4b7-9b07-868e-0cbd1f497ec5.htm">
+        <HelpTOCNode Title="NetworkAnnouncerBase Konstruktor " Url="html/341a6ee7-6227-710f-9841-400aada20acd.htm" />
+        <HelpTOCNode Id="7567411d-d738-4b4f-a7eb-a25ab2ff3d78" Title="NetworkAnnouncerBase Methoden" Url="html/b8d8e02e-219a-8106-3a06-381c263b472b.htm">
+          <HelpTOCNode Title="GetIPAddress Methode " Url="html/130bba1d-2aea-a083-3968-4c2eeea95a64.htm" />
+          <HelpTOCNode Title="StartAnnouncing Methode " Url="html/75069087-54d7-5cbd-6a10-c954af9d3bba.htm" />
+          <HelpTOCNode Title="StopAnnouncing Methode " Url="html/49a520c1-1f55-2758-18a1-4b6dc7208bde.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="bd3e370c-3def-48d1-b28a-2c9f786cfebc" Title="NetworkAnnouncerBase Eigenschaften" Url="html/e60581ea-cf0a-729d-3ab8-66fec1ccdb9a.htm">
+          <HelpTOCNode Title="Announcing Eigenschaft " Url="html/ab652ab7-ebff-29d0-4697-3feb84a6c4b8.htm" />
+          <HelpTOCNode Title="AnnouncingPort Eigenschaft " Url="html/a9b2e2e6-6c00-24a3-09e6-b9b470924218.htm" />
+          <HelpTOCNode Title="Data Eigenschaft " Url="html/d53c7fd6-52cb-e504-d6b1-b3fdeffa4402.htm" />
+          <HelpTOCNode Title="Interval Eigenschaft " Url="html/1225ab60-a026-c8f2-2b84-40e615dcb472.htm" />
+          <HelpTOCNode Title="Server Eigenschaft " Url="html/16f6813d-5dc0-5ae8-2624-a2d80f6b68b4.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="f95d97ff-7146-4ff2-bbe0-1657ecbc9a39" Title="PushNetworkAnnouncer Klasse" Url="html/7791d5dd-adc3-0776-3e8d-4761dc726449.htm">
+        <HelpTOCNode Title="PushNetworkAnnouncer Konstruktor " Url="html/23c06794-1503-20c7-b934-1133a1bce606.htm" />
+        <HelpTOCNode Id="ec9a6a0c-4a10-4ddc-b805-fcff6e568395" Title="PushNetworkAnnouncer Methoden" Url="html/bf96dd7e-c6c6-b6cc-2fb3-52ab666af37e.htm">
+          <HelpTOCNode Title="StartAnnouncing Methode " Url="html/55ea0c2d-2779-b3b0-bd83-f38ebd2a8349.htm" />
+          <HelpTOCNode Title="StopAnnouncing Methode " Url="html/2207eb8f-841d-925d-c17d-048c44998357.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="PushNetworkAnnouncer Eigenschaften" Url="html/a9726565-9244-9604-5878-99c6a3ed1af8.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="ea16e7b7-280c-495d-be71-c068ac879ac1" Title="SimpleNetwork.Detection.Data" Url="html/dddbfd5c-b48c-0547-3d28-54e5099d0d7c.htm">
+      <HelpTOCNode Id="02f11f46-e062-498f-8de9-9966d9f53a83" Title="HostData Klasse" Url="html/ef0e0715-cfad-508d-02c2-6ec14713253f.htm">
+        <HelpTOCNode Title="HostData Konstruktor " Url="html/ba2c49af-d1e8-5647-54be-0b0d7ade32fe.htm" />
+        <HelpTOCNode Id="a5268ac2-be12-428b-acaa-e7b7b48eb920" Title="HostData Methoden" Url="html/2b319be6-20d7-ac20-7f65-e407545137fd.htm">
+          <HelpTOCNode Title="fromByteArray Methode " Url="html/33602287-8796-8ecf-ba5b-143f4bd1028c.htm" />
+          <HelpTOCNode Title="toByteArray Methode " Url="html/55e6dc76-ffaf-8050-b9a4-ecd5b7ebb03d.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="8e9223e6-30f1-4c87-8431-90b73a67b1e6" Title="HostData Eigenschaften" Url="html/404ddcf6-f21e-6409-6fda-8d918f788517.htm">
+          <HelpTOCNode Title="Addresses Eigenschaft " Url="html/5273c81f-d0ab-44e9-ef61-5924c6c8f7de.htm" />
+          <HelpTOCNode Title="ID Eigenschaft " Url="html/72210e17-2699-7e8b-02bd-6be3c3c35116.htm" />
+          <HelpTOCNode Title="Name Eigenschaft " Url="html/bc74739c-6b56-d5b8-c579-25eb6fe3d603.htm" />
+          <HelpTOCNode Title="Port Eigenschaft " Url="html/4d499905-804a-9bfb-64f7-293c01e18a86.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="6030b90d-bace-4776-b4f9-00693e268580" Title="HostDataTime Klasse" Url="html/58a4ce6e-a22f-3b24-d18a-76aa5b65ebdc.htm">
+        <HelpTOCNode Title="HostDataTime Konstruktor " Url="html/7e64da79-bd47-7ac6-dfa9-3a5257f080f2.htm" />
+        <HelpTOCNode Id="0fcf184e-c64d-4911-9f86-0f4bfc12389a" Title="HostDataTime Felder" Url="html/86e20c5c-b8a0-bf6d-6aa1-6796b2acc6b3.htm">
+          <HelpTOCNode Title="data Feld" Url="html/caaafbf7-84f2-127b-e38d-7ed3ee25a94a.htm" />
+          <HelpTOCNode Title="stamp Feld" Url="html/bab48969-b600-df1d-702a-15ac2a92e2a1.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="HostDataTime Methoden" Url="html/c0a14a0f-ee8f-32d0-f763-996265a11601.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="d0ce9e23-853a-4457-a002-dc8f3e6c6410" Title="SimpleNetwork.Detection.Detector" Url="html/dbfb1fc8-126a-6a06-aee4-79c9b49f95fd.htm">
+      <HelpTOCNode Id="40f63b79-4cdc-45ca-958d-aab4581dfbf2" Title="INetworkDetector Schnittstelle" Url="html/ff3fde70-f872-431d-2cf4-45c44305b559.htm">
+        <HelpTOCNode Id="49aab170-5cdd-4ac1-9fdc-9debe7499fce" Title="INetworkDetector Methoden" Url="html/a826dd40-345a-e520-5c65-6b768ec93693.htm">
+          <HelpTOCNode Title="Refresh Methode " Url="html/095b26f3-c64e-108a-4d5b-a9ed55d153e9.htm" />
+          <HelpTOCNode Title="StartDetection Methode " Url="html/5175e5aa-a19e-1417-b6a4-b8d2f50d3547.htm" />
+          <HelpTOCNode Title="StopDetection Methode " Url="html/c269e3c8-05e6-bff5-9c76-2b23ee866a8b.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="a0e63309-de92-48ee-ab28-34cd15549f9d" Title="INetworkDetector Eigenschaften" Url="html/f1b7796a-c5f7-8a15-ec5f-d513a6bc71de.htm">
+          <HelpTOCNode Title="DetectionPort Eigenschaft " Url="html/edaa94bf-6739-f214-5581-b9262c105d5e.htm" />
+          <HelpTOCNode Title="Hosts Eigenschaft " Url="html/d1f0957b-a52a-bcf2-43c9-22f47b04f4dd.htm" />
+          <HelpTOCNode Title="isDetecting Eigenschaft " Url="html/9afc4176-84bc-2f6f-be0c-8b12f6aa7057.htm" />
+          <HelpTOCNode Title="LiveTime Eigenschaft " Url="html/7ee60f60-47b7-90d6-80c2-d8f037ed2565.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="f82cda62-cdca-4deb-9556-c626c0f4fa15" Title="INetworkDetector Ereignisse" Url="html/ecb1da0b-6457-5e1a-a0ed-5fd6cc6fb559.htm">
+          <HelpTOCNode Title="HostFound Ereignis" Url="html/a4f5ba0f-0d41-f144-96f7-18c652367018.htm" />
+          <HelpTOCNode Title="HostLost Ereignis" Url="html/37eb41d2-0643-56d9-e156-cf830762d6ac.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="d82fcc7c-d9b3-4a21-9e01-8a3cc2ff414a" Title="NetworkDetector Klasse" Url="html/9d5e9cbb-1f4d-2d3a-6cae-52681c4bde5a.htm">
+        <HelpTOCNode Title="NetworkDetector Konstruktor " Url="html/9a1d2de3-421f-8c65-a908-6f54ba1c3221.htm" />
+        <HelpTOCNode Title="NetworkDetector Felder" Url="html/73e0fb24-784e-7fac-7df5-6863318e0a61.htm" />
+        <HelpTOCNode Id="bd106ad8-f37a-4b74-a99e-b4cea17d84d9" Title="NetworkDetector Methoden" Url="html/2434bae4-46b9-0422-61cf-0ffd40342a3a.htm">
+          <HelpTOCNode Title="Refresh Methode " Url="html/dd0434fa-c959-501c-f5f4-5b2632f4a292.htm" />
+          <HelpTOCNode Title="StartDetection Methode " Url="html/d4a95897-99e1-2722-b901-0577812f618c.htm" />
+          <HelpTOCNode Title="StopDetection Methode " Url="html/b42cb798-18b7-afb8-8e79-7263b38bb2e7.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="NetworkDetector Eigenschaften" Url="html/c2b5fe41-1803-10da-4c0e-3cb144640702.htm" />
+        <HelpTOCNode Title="NetworkDetector Ereignisse" Url="html/c8a9ffb7-845b-2845-6572-eab754e4c8b5.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="2d6c1097-8db5-49fa-9fed-9f4d6e7c095c" Title="NetworkDetectorBase Klasse" Url="html/04e71290-2797-7358-b117-7a83d6ca6a34.htm">
+        <HelpTOCNode Title="NetworkDetectorBase Konstruktor " Url="html/8215c5fe-1f37-2580-4f80-6e6fff668ba9.htm" />
+        <HelpTOCNode Id="46081d3a-71a0-49bb-845e-c24e5193b1d6" Title="NetworkDetectorBase Felder" Url="html/a26a4dba-c0c1-2d35-5b39-aa9658fefdad.htm">
+          <HelpTOCNode Title="_hosts Feld" Url="html/55557b91-57c0-d3c1-0af2-dea4015df936.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="20fc1112-59ee-4ab2-b46b-12b78fa5af71" Title="NetworkDetectorBase Methoden" Url="html/b4f8382c-6cd7-0f4c-13f9-964a9fa96d4b.htm">
+          <HelpTOCNode Title="Clear Methode " Url="html/5d13f10f-c423-e28e-31c3-208ad90da179.htm" />
+          <HelpTOCNode Title="GetIPAddress Methode " Url="html/4db83e06-1178-e270-5706-434c865a6f14.htm" />
+          <HelpTOCNode Title="RaiseHostFound Methode " Url="html/f06f2f75-8046-fe61-d322-516ea6b39ab5.htm" />
+          <HelpTOCNode Title="RaiseHostLost Methode " Url="html/c4816f0a-7eb7-490a-5f0d-baab5adb8ba1.htm" />
+          <HelpTOCNode Title="Refresh Methode " Url="html/2eff9bc7-aa1a-13a5-a4c0-c026f8cff711.htm" />
+          <HelpTOCNode Title="StartCleanUp Methode " Url="html/32ce780b-8c13-d761-0fc9-2ac7e44cbc91.htm" />
+          <HelpTOCNode Title="StartDetection Methode " Url="html/d68d49f1-8315-242c-98e7-3cfba202eff4.htm" />
+          <HelpTOCNode Title="StopCleanUp Methode " Url="html/7da36ecf-a67c-a4e9-cc33-92e1c0452c5e.htm" />
+          <HelpTOCNode Title="StopDetection Methode " Url="html/c93d58b0-8e71-0ec2-22c2-426b0598ab14.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="ef7cd635-03a9-4c6f-a322-c98984925784" Title="NetworkDetectorBase Eigenschaften" Url="html/e1128a99-7b2e-1848-170e-e9fdf6980cfa.htm">
+          <HelpTOCNode Title="DetectionPort Eigenschaft " Url="html/44becbe2-e4af-b21c-91c0-173f104c6f4c.htm" />
+          <HelpTOCNode Title="Hosts Eigenschaft " Url="html/320c2a53-a268-c472-91b9-689d20780950.htm" />
+          <HelpTOCNode Title="isDetecting Eigenschaft " Url="html/a79b1d26-53c6-1c07-d4f9-89f0937c1be0.htm" />
+          <HelpTOCNode Title="LiveTime Eigenschaft " Url="html/2e7e6a24-c477-aeb5-a5e7-c4ab7fdb7126.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="077d8605-fe02-48ed-b25a-f7997a098207" Title="NetworkDetectorBase Ereignisse" Url="html/72ee135f-f44b-ee44-cfb3-47efaa63f9f2.htm">
+          <HelpTOCNode Title="HostFound Ereignis" Url="html/eb0e7252-1d28-7dd8-57f6-f0d7cdc89537.htm" />
+          <HelpTOCNode Title="HostLost Ereignis" Url="html/b753ae4a-33a6-9bc8-9406-c4a723c5f1ba.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="f7f18d79-c052-48eb-beae-6623c34cbe43" Title="PushNetworkDetector Klasse" Url="html/8cea8d79-87a2-4074-44bc-77a97f81e270.htm">
+        <HelpTOCNode Title="PushNetworkDetector Konstruktor " Url="html/09d827d1-ebb9-6d4e-bfaa-863c8f4c324e.htm" />
+        <HelpTOCNode Title="PushNetworkDetector Felder" Url="html/d1949e56-8fa2-3ae1-1845-4516701f7642.htm" />
+        <HelpTOCNode Id="d65595db-e499-4d4b-90b7-c4b63f3684b0" Title="PushNetworkDetector Methoden" Url="html/dde3acf5-9343-fe8d-9fcf-139d7a015736.htm">
+          <HelpTOCNode Title="Refresh Methode " Url="html/30e516fd-7454-b313-98e9-3c836526471b.htm" />
+          <HelpTOCNode Title="StartDetection Methode " Url="html/e46287e5-bf28-193e-a3e6-85b52465273e.htm" />
+          <HelpTOCNode Title="StopDetection Methode " Url="html/f47e26ee-1bdd-ca3a-68cf-5cdbcc957e98.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="e86289e3-ae96-4f0d-8047-bbd839cd51cb" Title="PushNetworkDetector Eigenschaften" Url="html/ef196cb4-f760-e463-46c1-85dc46672785.htm">
+          <HelpTOCNode Title="ReceivePort Eigenschaft " Url="html/a9458545-2c3b-c2ad-5115-f32d66b782ac.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="PushNetworkDetector Ereignisse" Url="html/980213ea-e3fb-1476-42ab-0cb7890e8d03.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="273bbc45-6d8c-4182-83f3-76e9ac65dd55" Title="SimpleNetwork.Detection.Events" Url="html/0cffe019-26b4-b284-116a-d068427ff796.htm">
+      <HelpTOCNode Id="1476c830-f48b-4482-9fba-d4541a76fd42" Title="HostFoundEventArgs Klasse" Url="html/7577fcd3-f650-979b-d38c-45b1c376fc89.htm">
+        <HelpTOCNode Title="HostFoundEventArgs Konstruktor " Url="html/d7c85a23-cbd8-ac8f-4248-c669d8293ba6.htm" />
+        <HelpTOCNode Title="HostFoundEventArgs Methoden" Url="html/e23a663b-8e5f-bc91-0428-aa10d0c41f97.htm" />
+        <HelpTOCNode Id="f8903916-9c3d-4fc5-b4fe-1a3eb5efe260" Title="HostFoundEventArgs Eigenschaften" Url="html/b6a76b0d-78ff-ae96-1444-7fe8e1e41296.htm">
+          <HelpTOCNode Title="NewData Eigenschaft " Url="html/8a59031a-b544-e018-643a-d223b72a305a.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="dc9721d0-eb56-4ab3-9eaf-5a84bda021f7" Title="HostLostEventArgs Klasse" Url="html/b2680b9a-5356-48f6-33e8-a127819c04e4.htm">
+        <HelpTOCNode Title="HostLostEventArgs Konstruktor " Url="html/4b7e5731-e3ac-8dff-89cd-58467a002bc5.htm" />
+        <HelpTOCNode Title="HostLostEventArgs Methoden" Url="html/e865dba1-28f3-218a-b886-ba27ef1bcf49.htm" />
+        <HelpTOCNode Id="0d610abc-714e-48db-9524-4d9d2d891ff4" Title="HostLostEventArgs Eigenschaften" Url="html/bc02d431-07f9-035f-4dd2-7cb7f08c3ea2.htm">
+          <HelpTOCNode Title="OldData Eigenschaft " Url="html/bf934a6a-af1a-d98f-3e6b-72d2121be5d0.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+    </HelpTOCNode>
+  </HelpTOCNode>
+  <HelpTOCNode Id="b4d60caa-2426-4061-aadd-cc8075e02d5f" Title="SimpleNetwork.Events" Url="html/ba7330b3-ff27-ce32-b041-f04e9e5d30d5.htm">
+    <HelpTOCNode Id="6215b495-309c-4ec0-ad9e-92848ae69576" Title="ClientConnectedEventArgs Klasse" Url="html/3327cb81-b53c-3c30-925b-66c67fa02b39.htm">
+      <HelpTOCNode Title="ClientConnectedEventArgs Konstruktor " Url="html/2753f47c-2e3e-f237-bebd-2b35996e5820.htm" />
+      <HelpTOCNode Title="ClientConnectedEventArgs Methoden" Url="html/ad230fe9-80cc-37e5-b132-31e5099c5d26.htm" />
+      <HelpTOCNode Id="724c0fd0-0d39-43e6-86e1-5a9d764423f7" Title="ClientConnectedEventArgs Eigenschaften" Url="html/72c85ca5-a16f-b7ec-96c0-c8a3e745414c.htm">
+        <HelpTOCNode Title="Client Eigenschaft " Url="html/b8af2236-76ec-1e23-7f4e-9aa5c35b8e91.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="a6c4514a-f245-4f27-9578-089fb24600e4" Title="ClientDisconnectedEventArgs Klasse" Url="html/2dacfb26-c22e-7cf9-d643-87ebbf645bb1.htm">
+      <HelpTOCNode Title="ClientDisconnectedEventArgs Konstruktor " Url="html/c51d9624-07b0-8210-3d83-09a4fa3e536b.htm" />
+      <HelpTOCNode Title="ClientDisconnectedEventArgs Methoden" Url="html/fd176147-a7da-b26b-cb4d-491e6cb2add1.htm" />
+      <HelpTOCNode Id="6b2e8756-584c-4776-a986-78e47ba3f4d9" Title="ClientDisconnectedEventArgs Eigenschaften" Url="html/620e8c91-7a57-f6f8-ec86-0752b361d6ab.htm">
+        <HelpTOCNode Title="Client Eigenschaft " Url="html/2bf58e40-38ae-56c7-e013-457e9aece6fb.htm" />
+        <HelpTOCNode Title="Reason Eigenschaft " Url="html/b0f22b84-76e8-b3df-b845-1e155b647bf3.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="81f86590-ac85-4ded-80b0-693b12b42675" Title="DisconnectedEventArgs Klasse" Url="html/026a00a5-2664-ce5b-7d16-8bd8fc2b6f06.htm">
+      <HelpTOCNode Title="DisconnectedEventArgs Konstruktor " Url="html/76114d18-4891-0af0-f4f7-070fe89fccd4.htm" />
+      <HelpTOCNode Title="DisconnectedEventArgs Methoden" Url="html/95f75e49-a013-5a24-ffab-add45e3b55c2.htm" />
+      <HelpTOCNode Id="4e3d6c28-7bf2-478f-84fe-51fde76e914b" Title="DisconnectedEventArgs Eigenschaften" Url="html/1a1ffe80-a866-5b81-f94e-198797b77feb.htm">
+        <HelpTOCNode Title="Reason Eigenschaft " Url="html/bc014209-7c1b-6173-e0b1-726b772df1c4.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Title="DisconnectReason Enumeration" Url="html/3329319d-6252-95b6-1cad-06b9f7012b9c.htm" />
+    <HelpTOCNode Id="6d72458d-ac7a-4d3c-ac7c-ab1ee75ad463" Title="NewMessageEventArgs Klasse" Url="html/fb0b9146-ac6d-6659-7cab-b20cd5aedba2.htm">
+      <HelpTOCNode Title="NewMessageEventArgs Konstruktor " Url="html/61020536-6bb4-73f3-1957-0dfe4cd423c6.htm" />
+      <HelpTOCNode Title="NewMessageEventArgs Methoden" Url="html/eb3a0ab9-04aa-146f-9dc6-d1af29c7447e.htm" />
+      <HelpTOCNode Id="6d31e962-80b4-495a-8206-9265bb02f0db" Title="NewMessageEventArgs Eigenschaften" Url="html/8318ecb7-5fc0-1973-c7db-063d9cac609f.htm">
+        <HelpTOCNode Title="Client Eigenschaft " Url="html/de7b9faf-b4a8-9b69-83f3-d575afdfd791.htm" />
+        <HelpTOCNode Title="MessageType Eigenschaft " Url="html/324b8e34-bb78-b0ce-63e3-b7d649ea97d2.htm" />
+        <HelpTOCNode Title="Package Eigenschaft " Url="html/505903b5-ccc3-71e1-0f68-26455d0c4ada.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="1fa97c9f-7e04-4283-b4b0-18430db1b32d" Title="SimpleNetworkEventArgs Klasse" Url="html/1c9e9077-b294-f008-5976-fb4e62dc5472.htm">
+      <HelpTOCNode Title="SimpleNetworkEventArgs Konstruktor " Url="html/21dae521-b09a-b295-98b5-f8276a16f2cc.htm" />
+      <HelpTOCNode Title="SimpleNetworkEventArgs Methoden" Url="html/493a2cca-a7d9-93d9-c667-4a72987daebd.htm" />
+    </HelpTOCNode>
+  </HelpTOCNode>
+  <HelpTOCNode Id="c5752f9a-a665-4c33-a7db-59cacf285eed" Title="SimpleNetwork.Package Namensr&#228;ume" Url="html/5e5d69ad-0f51-68c5-e263-fa4838df76ce.htm">
+    <HelpTOCNode Id="27b2252f-f813-4b66-9792-6db9c61c2ab6" Title="SimpleNetwork.Package.Listener" Url="html/d294dfe7-c7c1-f00a-fea4-5c989429914d.htm">
+      <HelpTOCNode Id="06ecbaad-4aa3-4c28-8133-80a569a07dde" Title="EventPackageListener(T) Klasse" Url="html/5266ddc2-5ba0-2fb5-91d3-f3df857b13c5.htm">
+        <HelpTOCNode Title="EventPackageListener(T) Konstruktor " Url="html/d697f551-2fdf-63f8-74a9-773509a02539.htm" />
+        <HelpTOCNode Id="78dee051-df06-4a31-956c-7fdc7d547b93" Title="EventPackageListener(T) Methoden" Url="html/bf98b2b4-d7fe-67a6-7045-104f63dfe947.htm">
+          <HelpTOCNode Title="ProcessIncommingPackage Methode " Url="html/743dc377-3c89-40e7-afe2-e9c86393235c.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="0092e647-1312-4a7c-b1e5-a5647ee1b10f" Title="EventPackageListener(T) Ereignisse" Url="html/c320d7ce-e099-3b33-ce70-a9a17a8f8e79.htm">
+          <HelpTOCNode Title="PackageReceived Ereignis" Url="html/f9697677-7fdd-2673-eb7f-60f300448a5a.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="2fee7111-5672-405a-a313-aa3f170b6690" Title="EventPackageListenerEventArgs(T) Klasse" Url="html/3d4a6ecd-f06f-014a-6d1d-4d89260f2fde.htm">
+        <HelpTOCNode Title="EventPackageListenerEventArgs(T) Konstruktor " Url="html/ce04accf-4a07-3a6a-911f-346f6bb9fe0d.htm" />
+        <HelpTOCNode Title="EventPackageListenerEventArgs(T) Methoden" Url="html/3bbe93e5-27c0-5a0b-9bb8-78ba88fa1f16.htm" />
+        <HelpTOCNode Id="98f38a77-4176-4436-b298-a86bc200c89e" Title="EventPackageListenerEventArgs(T) Eigenschaften" Url="html/b400bf16-17f5-49a9-8242-465b3b36d177.htm">
+          <HelpTOCNode Title="Client Eigenschaft " Url="html/e60d1649-4fcd-b32f-52e4-67174ef7dd0d.htm" />
+          <HelpTOCNode Title="Package Eigenschaft " Url="html/0ee38e82-bdd8-f71f-c4d3-5e70c303e771.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="490efc71-c0de-46c3-9f19-a0f753380d65" Title="IPackageListener(T) Schnittstelle" Url="html/7dadd100-12d5-1890-a1ba-7e2dd46b98db.htm">
+        <HelpTOCNode Id="1f9d95a2-2102-4a7d-ac33-d0a61ad97001" Title="IPackageListener(T) Methoden" Url="html/0e480071-c45b-f6f8-9111-4457df6e7dbb.htm">
+          <HelpTOCNode Title="ProcessIncommingPackage Methode " Url="html/26789354-4c3b-1257-1d2d-87c8aff6809f.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="a04f59b8-8dac-4846-bf51-7a71c14fa93e" Title="LambdaPackageListener(T) Klasse" Url="html/5ebf6b5d-10d9-2fa0-57f1-aa115d4cb676.htm">
+        <HelpTOCNode Title="LambdaPackageListener(T) Konstruktor " Url="html/a9edf97e-ce48-ef2f-91be-7283797ade05.htm" />
+        <HelpTOCNode Id="bd25de28-55a4-47ce-b647-0602c0dd4275" Title="LambdaPackageListener(T) Methoden" Url="html/c9285e47-5c18-a17c-1f98-d91882feb28f.htm">
+          <HelpTOCNode Title="ProcessIncommingPackage Methode " Url="html/accdc881-10a4-5f04-c88e-3da757c19971.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="3e9893b5-0d48-4e0d-86a0-a6fa57bd22b1" Title="SimpleNetwork.Package.Packages" Url="html/17db5891-82df-b73f-1b6a-668ce08fda41.htm">
+      <HelpTOCNode Id="4d10edf2-42f7-4d02-b42e-b52650c70d64" Title="FilePackage Klasse" Url="html/79f87cae-2889-0bfb-a45a-177b3ce9adf7.htm">
+        <HelpTOCNode Title="FilePackage Konstruktor " Url="html/29c590fe-877d-4440-5e84-a94399418d2c.htm" />
+        <HelpTOCNode Title="FilePackage Methoden" Url="html/f53b66d9-6337-88b4-8e53-69e7e913d9c2.htm" />
+        <HelpTOCNode Id="79f2be68-da3e-427d-8b5d-182335cc5639" Title="FilePackage Eigenschaften" Url="html/54b8f28e-0ea4-f560-30b9-289a5f984ecb.htm">
+          <HelpTOCNode Title="Data Eigenschaft " Url="html/f6a42d94-0c09-3851-f768-61a92e6043e3.htm" />
+          <HelpTOCNode Title="Info Eigenschaft " Url="html/9df7c352-693c-b284-bc6e-c1d73c660f70.htm" />
+          <HelpTOCNode Title="Name Eigenschaft " Url="html/1c9ba37d-0b8e-2088-5d63-f35e5556b4e5.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Title="IPackage Schnittstelle" Url="html/980f3c8e-104f-9101-17fb-27bccb742a7d.htm" />
+      <HelpTOCNode Id="3651c9e1-74d9-48ea-8776-8e42ca9adfeb" Title="TextPackage Klasse" Url="html/5a28dc47-62af-6c3f-38b7-08a9d501aa8c.htm">
+        <HelpTOCNode Id="1ac8c0e8-599e-407d-8648-955ec9576e5e" Title="TextPackage Konstruktor " Url="html/9e8fa51e-647c-328f-ae0a-4c32ca9f7f11.htm">
+          <HelpTOCNode Title="TextPackage Konstruktor " Url="html/24ce6075-87d6-cb1d-2057-2587f5885ae3.htm" />
+          <HelpTOCNode Title="TextPackage Konstruktor (String)" Url="html/72075287-e683-f26a-b5d9-761e4685c4db.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="TextPackage Methoden" Url="html/28bddef8-a26f-2488-539c-3091fc75e37d.htm" />
+        <HelpTOCNode Id="c4cf57f5-c2d2-410a-b3a0-1a25750a4d1d" Title="TextPackage Eigenschaften" Url="html/09ab6ff8-9c84-f0ba-08b2-c5f1443f73cb.htm">
+          <HelpTOCNode Title="Value Eigenschaft " Url="html/75d2bcc1-2303-845f-9961-1d5e183f0927.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="533bed7c-7ccb-4993-bc4c-19ec53fc1593" Title="SimpleNetwork.Package.Provider" Url="html/1c7f3784-4f5d-e253-6ec4-54fe53986281.htm">
+      <HelpTOCNode Id="a946b3a1-fe5b-45ce-bce8-af6fd17ef0dc" Title="IPackageProvider Schnittstelle" Url="html/7877078e-2171-5434-b324-afc16ef4d441.htm">
+        <HelpTOCNode Id="43768966-27d9-4eec-aa15-6ba1add706e0" Title="IPackageProvider Methoden" Url="html/9159df55-5734-957c-a069-41e1381ade9d.htm">
+          <HelpTOCNode Id="1abd8312-f25d-4fcf-b95f-cf34253d61eb" Title="RegisterPackageListener Methode " Url="html/e8a085ad-77c6-f250-a37b-c3f41141218a.htm">
+            <HelpTOCNode Title="RegisterPackageListener(T) Methode (Action(T, IClient))" Url="html/411058b7-c7be-a424-a43e-c71076e9b81d.htm" />
+            <HelpTOCNode Title="RegisterPackageListener(T) Methode (IPackageListener(T))" Url="html/5371769c-ad10-5631-b0cc-2bee471ad56f.htm" />
+          </HelpTOCNode>
+          <HelpTOCNode Title="RemovePackageListener(T) Methode " Url="html/d3248a90-ab81-8748-bccb-cc5fe7e578c3.htm" />
+          <HelpTOCNode Title="RemoveTypeListener(T) Methode " Url="html/099b216d-584f-e817-9da2-a79177874247.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="f808fe27-ecef-453d-9766-ce3e4733ff1c" Title="IPackageProvider Ereignisse" Url="html/bb09aee7-71df-25f6-af29-e7891c516e09.htm">
+          <HelpTOCNode Title="NewMessage Ereignis" Url="html/3324ef1a-13a7-2373-4e4d-11be3a660ada.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="5447d82e-98e5-40cb-98cb-a8e2b297865b" Title="PackageProvider Klasse" Url="html/ade10579-8dbd-c9c1-7da0-1eda7259e0a3.htm">
+        <HelpTOCNode Title="PackageProvider Konstruktor " Url="html/dad01015-c98e-1d87-f74e-e534848e92ed.htm" />
+        <HelpTOCNode Id="dc713742-0e44-4ceb-b63c-32dda40469c5" Title="PackageProvider Methoden" Url="html/c33eea7b-8e49-6fda-1fa6-fa1afa292e93.htm">
+          <HelpTOCNode Title="informListener Methode " Url="html/7cd6d1c6-c31f-4ac7-2531-d1481827a03c.htm" />
+          <HelpTOCNode Title="RaiseNewMessage Methode " Url="html/b78ff79d-2674-d617-232b-7f380ed52f9f.htm" />
+          <HelpTOCNode Id="3b18dde1-10d0-4740-9e9f-978b2093cb31" Title="RegisterPackageListener Methode " Url="html/53745a4c-02b4-8479-4e89-3d5b93c1b645.htm">
+            <HelpTOCNode Title="RegisterPackageListener(T) Methode (Action(T, IClient))" Url="html/59c3c9a4-e649-3cab-58b9-8c8497c8f02c.htm" />
+            <HelpTOCNode Title="RegisterPackageListener(T) Methode (IPackageListener(T))" Url="html/90b3cc46-376a-4c58-9a3d-8c5ee1adea68.htm" />
+          </HelpTOCNode>
+          <HelpTOCNode Title="RemovePackageListener(T) Methode " Url="html/e914f5cc-cdec-1bdc-800a-eb6af22b2a71.htm" />
+          <HelpTOCNode Title="RemoveTypeListener(T) Methode " Url="html/255c0188-edb0-a80f-4b9b-04c15ca5f0f2.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="49306fc7-1b15-4663-93f4-449da4b4599f" Title="PackageProvider Ereignisse" Url="html/0280e8bb-49b2-4c05-75db-65caf661d95e.htm">
+          <HelpTOCNode Title="NewMessage Ereignis" Url="html/cf038496-6f95-c4e4-f836-bcbf92b47e66.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+    </HelpTOCNode>
+  </HelpTOCNode>
+  <HelpTOCNode Id="c68548dd-330c-479d-bad5-cf6a559c1417" Title="SimpleNetwork.Server" Url="html/b09ed73a-6c13-b876-968a-7170e1c0fc02.htm">
+    <HelpTOCNode Id="da05e064-a4d7-46a1-90ec-1a90a3e56f4f" Title="IServer Schnittstelle" Url="html/c8bd6ae8-49cd-5198-34df-54bfd694d025.htm">
+      <HelpTOCNode Id="fdbcd09f-9688-4981-95dc-0f21d5bff262" Title="IServer Methoden" Url="html/0060f8c5-ba06-dce2-929e-ef80fcb28713.htm">
+        <HelpTOCNode Title="BroadcastPackage Methode " Url="html/289a31ed-c9b8-3d09-ddfd-714662f4d056.htm" />
+        <HelpTOCNode Title="Start Methode " Url="html/6b34721e-c526-da62-efcf-c96e691dc069.htm" />
+        <HelpTOCNode Title="Stop Methode " Url="html/209f3b8d-ef65-ce50-085c-e6c7e4536048.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="6c310af9-6ac3-4311-81f3-3158c8c12c57" Title="IServer Eigenschaften" Url="html/38471159-632e-fea8-aa3b-3eb5e3c7c568.htm">
+        <HelpTOCNode Title="AcceptNew Eigenschaft " Url="html/316de587-527b-e645-cd57-89b05a8a98df.htm" />
+        <HelpTOCNode Title="ClientFactory Eigenschaft " Url="html/5f2980c9-aec7-bf47-9ef4-8138c00ce6e3.htm" />
+        <HelpTOCNode Title="Clients Eigenschaft " Url="html/bed67a6d-0696-5a71-5059-4b0900d3f26e.htm" />
+        <HelpTOCNode Title="EndPoint Eigenschaft " Url="html/d682e33f-00f7-f897-d51a-a8da19a80176.htm" />
+        <HelpTOCNode Title="Port Eigenschaft " Url="html/f4a24f17-6b8b-3060-9043-4113f37ab837.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="85d15b59-00e4-4f7d-88e9-57f107954863" Title="IServer Ereignisse" Url="html/43d6bbb9-24a7-ec82-82fe-9e1c3ad71341.htm">
+        <HelpTOCNode Title="ClientConnected Ereignis" Url="html/90c93e67-4e25-8505-ddd5-e5a85bae2edb.htm" />
+        <HelpTOCNode Title="ClientDisconnected Ereignis" Url="html/bb13c6f2-48f8-4096-fcd5-51dcf6b471bb.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="2ea03486-de5c-4c0a-8419-2d272a0d3a70" Title="Server Klasse" Url="html/415e5aa9-4d56-8c5f-0856-f19d85e9b83f.htm">
+      <HelpTOCNode Title="Server Konstruktor " Url="html/3b6cbe89-2621-bf79-8f2e-41a8d5d9d354.htm" />
+      <HelpTOCNode Id="79f70dbe-7c4b-4360-a010-36548a8050a2" Title="Server Methoden" Url="html/a201ce05-3284-cad4-4f40-23cc33a00d5b.htm">
+        <HelpTOCNode Title="BroadcastPackage Methode " Url="html/e3a4acca-6f11-c751-f957-18654cb0e364.htm" />
+        <HelpTOCNode Title="RaiseClientConnected Methode " Url="html/90b9fb1d-cc28-bfcf-d42d-5c98ef2490b5.htm" />
+        <HelpTOCNode Title="RaiseClientDisconnected Methode " Url="html/950bb076-d41a-b315-d75c-424bbd9aee03.htm" />
+        <HelpTOCNode Title="Start Methode " Url="html/584ce08c-0dd7-0282-38de-8716c126c8e5.htm" />
+        <HelpTOCNode Title="Stop Methode " Url="html/1685b61c-f81f-4a98-b167-b98f294f5058.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="244745f6-6309-4dac-8b77-d6672d7bdeab" Title="Server Eigenschaften" Url="html/0cf42463-0683-284c-246f-8d87e14032a2.htm">
+        <HelpTOCNode Title="AcceptNew Eigenschaft " Url="html/6016b0f1-0907-9b92-7956-d94c3a646fc4.htm" />
+        <HelpTOCNode Title="ClientFactory Eigenschaft " Url="html/1d96afb5-a3be-98d3-719a-029583debd45.htm" />
+        <HelpTOCNode Title="Clients Eigenschaft " Url="html/85c56c40-3878-6603-db3c-385e5c468cab.htm" />
+        <HelpTOCNode Title="EndPoint Eigenschaft " Url="html/f85e7912-c714-22e4-af29-1da15fa2ee29.htm" />
+        <HelpTOCNode Title="Port Eigenschaft " Url="html/bfea928f-edf9-d565-7dfa-c63755103bf8.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="6ee829c4-ba55-41ca-8a76-a18e0f169710" Title="Server Ereignisse" Url="html/52035bc9-9b4e-dabe-29d5-0edd95c354db.htm">
+        <HelpTOCNode Title="ClientConnected Ereignis" Url="html/505a0415-0d2d-f68d-77ff-6beda1d899ce.htm" />
+        <HelpTOCNode Title="ClientDisconnected Ereignis" Url="html/0a0f355e-379f-1803-ee6b-430588fe5cd3.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+  </HelpTOCNode>
+</HelpTOC>

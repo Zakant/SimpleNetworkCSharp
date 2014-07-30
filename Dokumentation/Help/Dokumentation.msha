@@ -1,0 +1,20 @@
+﻿<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>SimpleNetwork</title>
+</head>
+<body class="vendor-book">
+    <div class="details">
+        <span class="vendor">Vendor Name</span>
+        <span class="locale">de-de</span>
+        <span class="product">SimpleNetwork</span>
+        <span class="name">SimpleNetwork</span>
+    </div>
+    <div class="package-list">
+        <div class="package">
+            <!-- NOTE: The "name" span value cannot contain any periods! -->
+            <span class="name">Dokumentation</span>
+            <a class="current-link" href="Dokumentation.mshc">Dokumentation.mshc</a>
+        </div>
+    </div>
+</body>
+</html>
