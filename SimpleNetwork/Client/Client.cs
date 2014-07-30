@@ -30,7 +30,7 @@ namespace SimpleNetwork.Client
         public event EventHandler<DisconnectedEventArgs> Disconnected;
 
         /// <summary>
-        /// Löst das Event <see cref="Client.Disconnected"/> aus.
+        /// Löst das <see cref="Client.Disconnected"/> Ereignis aus.
         /// </summary>
         /// <param name="reason">Der Grund für den Verbindungsabbruch</param>
         /// <returns>Die Verwendeten <see cref="DisconnectedEventArgs"/></returns>
