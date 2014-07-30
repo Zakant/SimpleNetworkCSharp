@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{95B40194-BDEC-4CAE-B79E-D623869C569F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SimpleNetwork</RootNamespace>
+    <AssemblyName>SimpleNetwork</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Client\Client.cs" />
+    <Compile Include="Client\ClientFactory.cs" />
+    <Compile Include="Client\IClient.cs" />
+    <Compile Include="Client\IClientFactory.cs" />
+    <Compile Include="Detection\Announcer\NetworkAnnouncerBase.cs" />
+    <Compile Include="Detection\Data\HostDataTime.cs" />
+    <Compile Include="Detection\Detector\NetworkDetectorBase.cs" />
+    <Compile Include="Detection\Events\HostFoundEventArgs.cs" />
+    <Compile Include="Detection\Events\HostLostEventArgs.cs" />
+    <Compile Include="Detection\Data\HostData.cs" />
+    <Compile Include="Detection\Announcer\INetworkAnnouncer.cs" />
+    <Compile Include="Detection\Detector\INetworkDetector.cs" />
+    <Compile Include="Detection\Announcer\NetworkAnnouncer.cs" />
+    <Compile Include="Detection\Detector\NetworkDetector.cs" />
+    <Compile Include="Detection\Announcer\PushNetworkAnnouncer.cs" />
+    <Compile Include="Detection\Detector\PushNetworkDetector.cs" />
+    <Compile Include="Events\ClientConnectedEventArgs.cs" />
+    <Compile Include="Events\ClientDisconnectedEventArgs.cs" />
+    <Compile Include="Events\DisconnectedEventArgs.cs" />
+    <Compile Include="Events\DisconnectReasons.cs" />
+    <Compile Include="Events\NewMessageEventArgs.cs" />
+    <Compile Include="Events\SimpleNetworkEventArgs.cs" />
+    <Compile Include="Package\Listener\EventPackageListener.cs" />
+    <Compile Include="Package\Packages\FilePackage.cs" />
+    <Compile Include="Package\Packages\Internal\ShutDownPackage.cs" />
+    <Compile Include="Package\Packages\IPackage.cs" />
+    <Compile Include="Package\Listener\IPackageListener.cs" />
+    <Compile Include="Package\Packages\TextPackage.cs" />
+    <Compile Include="Package\Provider\PackageProvider.cs" />
+    <Compile Include="Package\Provider\IPackageProvider.cs" />
+    <Compile Include="Package\Listener\LambdaPackageListener.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Server\IServer.cs" />
+    <Compile Include="Server\Server.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="TODO.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Diagramm.cd" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
