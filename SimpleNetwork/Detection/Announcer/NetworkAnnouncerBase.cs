@@ -13,7 +13,7 @@ namespace SimpleNetwork.Detection.Announcer
     {
         public IServer Server { get; protected set; }
 
-        public int Intervall { get; protected set; }
+        public int Interval { get; protected set; }
 
         public int AnnouncingPort { get; set; }
 
@@ -25,7 +25,7 @@ namespace SimpleNetwork.Detection.Announcer
         {
             Server = server;
             Announcing = false;
-            Intervall = 3000;
+            Interval = 3000;
             AnnouncingPort = 15000;
             Data = new HostData();
             Data.ID = Guid.NewGuid();

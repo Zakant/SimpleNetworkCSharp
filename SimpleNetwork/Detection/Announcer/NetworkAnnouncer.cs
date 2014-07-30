@@ -28,7 +28,7 @@ namespace SimpleNetwork.Detection.Announcer
         {
             if (!Announcing)
             {
-                _sendtimer = new Timer(Intervall);
+                _sendtimer = new Timer(Interval);
                 _sendtimer.AutoReset = true;
                 _client = new UdpClient();
                 _endpoint = new IPEndPoint(IPAddress.Broadcast, AnnouncingPort);
