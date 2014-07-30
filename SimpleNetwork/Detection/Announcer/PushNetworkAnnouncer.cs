@@ -10,6 +10,11 @@ using System.Text;
 
 namespace SimpleNetwork.Detection.Announcer
 {
+    /// <summary>
+    /// Ermöglicht das aufspüren eines Servers im Lokalen Netzwerk.
+    /// Hierbei wird ein Paket an alle potentiellen Server gesendet und auf eine Antwort gewartet. Anhand dieser werden die Verfügbaren Server bestimmt.
+    /// Zum aktualisieren der Serverliste muss <see cref="PushNetworkAnnouncer.Refresh"/> aufgerufen werden.
+    /// </summary>
     public class PushNetworkAnnouncer : NetworkAnnouncerBase
     {
 
@@ -18,11 +23,18 @@ namespace SimpleNetwork.Detection.Announcer
         private IPEndPoint _allpoint;
         private byte[] _data;
 
+        /// <summary>
+        /// Erstellt ein neues NetworkAnnouncer-Objekt auf Grundlage eines IServer-Objektes.
+        /// </summary>
+        /// <param name="server">Das zuverwende IServer-Objekt.</param>
         public PushNetworkAnnouncer(IServer server)
             : base(server)
         {
         }
 
+        /// <summary>
+        /// Starte das Beantworten von Anfragen.
+        /// </summary>
         public override void StartAnnouncing()
         {
             if (!Announcing)
@@ -62,6 +74,9 @@ namespace SimpleNetwork.Detection.Announcer
                 }), null);
         }
 
+        /// <summary>
+        /// Stopt das Beantworten von Anfragen
+        /// </summary>
         public override void StopAnnouncing()
         {
             if (Announcing)
