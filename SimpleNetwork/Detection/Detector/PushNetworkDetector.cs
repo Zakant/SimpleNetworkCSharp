@@ -67,6 +67,8 @@ namespace SimpleNetwork.Detection.Detector
                             _hosts.Add(new HostDataTime() { data = data, stamp = DateTime.Now });
                             RaiseHostFound(data);
                         }
+                        else
+                            _hosts.First(y => y.data.ID == data.ID).stamp = DateTime.Now;
                         RunListening();
                     }
                 }), null);
