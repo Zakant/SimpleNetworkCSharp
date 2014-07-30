@@ -25,7 +25,7 @@ namespace SimpleNetwork.Detection.Announcer
         /// <summary>
         /// Erstellt ein neues NetworkAnnouncer-Objekt auf Grundlage eines IServer-Objektes.
         /// </summary>
-        /// <param name="server"></param>
+        /// <param name="server">Das zuverwende IServer-Objekt</param>
         public NetworkAnnouncer(IServer server)
             : base(server)
         {
