@@ -64,9 +64,14 @@ namespace SimpleNetwork.Detection.Announcer
             return Dns.GetHostAddresses(Dns.GetHostName()).Where(x => x.AddressFamily == AddressFamily.InterNetwork).ToArray();
         }
 
-
+        /// <summary>
+        /// Beginnt die Serverinformationen zu versenden.
+        /// </summary>
         public abstract void StartAnnouncing();
 
+        /// <summary>
+        /// Stopt die Serverinformationen zu versenden.
+        /// </summary>
         public abstract void StopAnnouncing();
 
     }
