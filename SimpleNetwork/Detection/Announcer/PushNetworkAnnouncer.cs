@@ -12,8 +12,6 @@ namespace SimpleNetwork.Detection.Announcer
 {
     /// <summary>
     /// Ermöglicht das aufspüren eines Servers im Lokalen Netzwerk.
-    /// Hierbei wird ein Paket an alle potentiellen Server gesendet und auf eine Antwort gewartet. Anhand dieser werden die Verfügbaren Server bestimmt.
-    /// Zum aktualisieren der Serverliste muss <see cref="PushNetworkAnnouncer.Refresh"/> aufgerufen werden.
     /// </summary>
     public class PushNetworkAnnouncer : NetworkAnnouncerBase
     {
