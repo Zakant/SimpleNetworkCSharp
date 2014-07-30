@@ -9,9 +9,21 @@ using System.Timers;
 
 namespace SimpleNetwork.Detection.Detector
 {
+    /// <summary>
+    /// Basisklasse, die Methoden bereitstellt,die es ermöglichen, Server im lokalen Netzwerk zu entdecken.
+    /// </summary>
     public abstract class NetworkDetectorBase : INetworkDetector
     {
+        /// <summary>
+        /// Tritt ein, wenn ein neuer Host gefunden wurde.
+        /// </summary>
         public event EventHandler<Events.HostFoundEventArgs> HostFound;
+
+        /// <summary>
+        /// Löst das <see cref="HostFound"/> Ereigniss aus.
+        /// </summary>
+        /// <param name="newData">Die Serverinformationen des neu gefunden Hosts.</param>
+        /// <returns>Die verwendeten Ereignis Argumente.</returns>
         protected Events.HostFoundEventArgs RaiseHostFound(HostData newData)
         {
             var myevent = HostFound;
@@ -21,7 +33,15 @@ namespace SimpleNetwork.Detection.Detector
             return args;
         }
 
+        /// <summary>
+        /// Tritt ein, wenn ein Host verloren wurde.
+        /// </summary>
         public event EventHandler<Events.HostLostEventArgs> HostLost;
+        /// <summary>
+        /// Löst das <see cref="HostLost"/> Ereigniss aus.
+        /// </summary>
+        /// <param name="oldData">Die Serverinformationen des Hosts, der verloren wurde.</param>
+        /// <returns>Die verwendeten Ereignis Argumente.</returns>
         protected Events.HostLostEventArgs RaiseHostLost(HostData oldData)
         {
             var myevent = HostLost;
@@ -31,18 +51,33 @@ namespace SimpleNetwork.Detection.Detector
             return args;
         }
 
+        /// <summary>
+        /// Der Port auf dem nach Hosts gesucht wird.
+        /// </summary>
         public int DetectionPort { get; set; }
 
+        /// <summary>
+        /// Die Zeitspanne, die ein gefundener Host als gülltig betrachtet wird, ohne erneut gefunden worden zu sein.
+        /// </summary>
         public TimeSpan LiveTime { get; set; }
 
+        /// <summary>
+        /// Zeigt an, ob aktuell die suche nach Hosts läuft. True, falls ja, False, falls nein.
+        /// </summary>
         public bool isDetecting { get; protected set; }
 
         protected List<HostDataTime> _hosts = new List<HostDataTime>();
+        /// <summary>
+        /// Eine Auflistung, die alle verfügbaren Hosts beinhaltet.
+        /// </summary>
         public virtual IEnumerable<HostData> Hosts
         {
             get { return new List<HostData>(_hosts.Select(x => x.data)); }
         }
 
+        /// <summary>
+        /// Initialisert eine neue Instanz der NetworkDetectorBase-Klasse.
+        /// </summary>
         public NetworkDetectorBase()
         {
             DetectionPort = 15000;
@@ -52,6 +87,9 @@ namespace SimpleNetwork.Detection.Detector
 
         private Timer _removetimer;
 
+        /// <summary>
+        /// Sorgt dafür, dass alle Serverinformationen, die älter als <see cref="LiveTime"/> sind periodisch gelöscht werden.
+        /// </summary>
         protected void StartCleanUp()
         {
             _removetimer = new Timer();
@@ -72,12 +110,18 @@ namespace SimpleNetwork.Detection.Detector
             _removetimer.Start();
         }
 
+        /// <summary>
+        /// Beendet das periodische löschen von Serverinformationen, die älter als <see cref="LiveTime"/> sind.
+        /// </summary>
         protected void StopCleanUp()
         {
             _removetimer.Stop();
             _removetimer.Dispose();
         }
 
+        /// <summary>
+        /// Löscht alle vorhandenen Serverinformationen und löst für jede das <see cref="HostLost"/> Ereignis aus.
+        /// </summary>
         protected void Clear()
         {
             foreach (var d in _hosts)
@@ -87,15 +131,28 @@ namespace SimpleNetwork.Detection.Detector
             _hosts.Clear();
         }
 
+        /// <summary>
+        /// Liefert eine Auflistung aller IPv4 Adressen dieses Computers zurück.
+        /// </summary>
+        /// <returns>Das Array der verfügbaren IP Adressen</returns>
         protected static IPAddress[] GetIPAddress()
         {
             return Dns.GetHostAddresses(Dns.GetHostName()).Where(x => x.AddressFamily == AddressFamily.InterNetwork).ToArray();
         }
 
+        /// <summary>
+        /// Beginnt mit der Erfassung von Servern.
+        /// </summary>
         public abstract void StartDetection();
 
+        /// <summary>
+        /// Aktualisert die vorhandenen Serverinformationen.
+        /// </summary>
         public abstract void Refresh();
 
+        /// <summary>
+        /// Beendet die Erfassung von Servern.
+        /// </summary>
         public abstract void StopDetection();
     }
 }
