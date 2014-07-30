@@ -30,7 +30,7 @@ namespace SimpleNetwork.Client
         public event EventHandler<DisconnectedEventArgs> Disconnected;
 
         /// <summary>
-        /// Löst das Event "Disconnected" aus
+        /// Löst das Event <see cref="Client.Disconnected"/> aus.
         /// </summary>
         /// <param name="reason">Der Grund für den Verbindungsabbruch</param>
         /// <returns>Die Verwendeten <see cref="DisconnectedEventArgs"/></returns>
@@ -95,7 +95,7 @@ namespace SimpleNetwork.Client
         public void Connect(HostData data)
         {
             Ping p = new Ping();
-            foreach(var ip in data.Addresses)
+            foreach (var ip in data.Addresses)
             {
                 if (p.Send(ip).Status == IPStatus.Success)
                 {
@@ -103,7 +103,7 @@ namespace SimpleNetwork.Client
                     break;
                 }
             }
-            
+
         }
 
         private void PrepareConnection()
