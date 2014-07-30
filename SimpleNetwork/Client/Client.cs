@@ -25,7 +25,7 @@ namespace SimpleNetwork.Client
     {
 
         /// <summary>
-        /// Tritt ein, wenn der Client die Verbindung zum Remoteclient verliert
+        /// Tritt ein, wenn der Client die Verbindung zum Remotehost verliert
         /// </summary>
         public event EventHandler<DisconnectedEventArgs> Disconnected;
 
