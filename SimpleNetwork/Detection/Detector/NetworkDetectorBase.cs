@@ -20,7 +20,7 @@ namespace SimpleNetwork.Detection.Detector
         public event EventHandler<Events.HostFoundEventArgs> HostFound;
 
         /// <summary>
-        /// Löst das <see cref="HostFound"/> Ereigniss aus.
+        /// Löst das <see cref="HostFound"/> Ereignis aus.
         /// </summary>
         /// <param name="newData">Die Serverinformationen des neu gefunden Hosts.</param>
         /// <returns>Die verwendeten Ereignis Argumente.</returns>
