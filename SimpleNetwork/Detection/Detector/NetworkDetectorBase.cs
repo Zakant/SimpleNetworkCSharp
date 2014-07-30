@@ -66,6 +66,9 @@ namespace SimpleNetwork.Detection.Detector
         /// </summary>
         public bool isDetecting { get; protected set; }
 
+        /// <summary>
+        /// Die intern geführte Liste der gefundenen Serverinformationen mit dem zusätzlichen Timestampihres fundes.
+        /// </summary>
         protected List<HostDataTime> _hosts = new List<HostDataTime>();
         /// <summary>
         /// Eine Auflistung, die alle verfügbaren Hosts beinhaltet.
