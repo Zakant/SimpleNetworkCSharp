@@ -75,7 +75,7 @@ namespace SimpleNetwork.Detection.Announcer
         }
 
         /// <summary>
-        /// Stopt das Beantworten von Anfragen
+        /// Stopt das Beantworten von Anfragen.
         /// </summary>
         public override void StopAnnouncing()
         {
