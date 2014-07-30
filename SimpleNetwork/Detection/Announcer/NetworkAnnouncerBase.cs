@@ -40,9 +40,9 @@ namespace SimpleNetwork.Detection.Announcer
         public HostData Data { get; set; }
 
         /// <summary>
-        /// Initialisiert eine neue NetworkAnnouncerBase-Klasse unter verwendung eines IServer-Objektes
+        /// Initialisiert eine neue NetworkAnnouncerBase-Klasse unter verwendung eines IServer-Objektes.
         /// </summary>
-        /// <param name="server">Das zu verwendene ISever-Objekt</param>
+        /// <param name="server">Das zu verwendene ISever-Objekt.</param>
         public NetworkAnnouncerBase(IServer server)
         {
             Server = server;
@@ -55,7 +55,10 @@ namespace SimpleNetwork.Detection.Announcer
             Data.Port = server.EndPoint.Port;
         }
 
-
+        /// <summary>
+        /// Liefert eine Auflistung aller IPv4 Adressen dieses Computers zurück.
+        /// </summary>
+        /// <returns>Das Array der verfügbaren IP Adressen</returns>
         protected static IPAddress[] GetIPAddress()
         {
             return Dns.GetHostAddresses(Dns.GetHostName()).Where(x => x.AddressFamily == AddressFamily.InterNetwork).ToArray();
