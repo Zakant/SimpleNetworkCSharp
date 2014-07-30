@@ -51,7 +51,7 @@ namespace SimpleNetwork.Client
         private BinaryFormatter _formatter = new BinaryFormatter();
 
         /// <summary>
-        /// 
+        /// Gibt an, ob das Client-Objekt eine aktive Verbindung besitzt. True fals ja, False, false nein.
         /// </summary>
         public bool isConnected
         {
@@ -59,22 +59,27 @@ namespace SimpleNetwork.Client
         }
 
         /// <summary>
-        /// 
+        /// Initialisiert ein neues leeres Client-Objekt
         /// </summary>
         public Client()
         {
         }
 
         /// <summary>
-        /// 
+        /// Initialisiert ein neues Clinet-Objekt auf der Grundlage des TcpClient-Objektes
         /// </summary>
-        /// <param name="c"></param>
+        /// <param name="c">Das TcpClient-Objekt, dass Zugrunde liegt</param>
         public Client(TcpClient c)
         {
             _client = c;
             PrepareConnection();
         }
 
+        /// <summary>
+        /// Verbindet mit einem Remote Server unter verwendunge der angegebenen IPAdresse und dem Port
+        /// </summary>
+        /// <param name="ip">Die zu verwendene IPAdresse</param>
+        /// <param name="port">Der zu verwendene Port</param>
         public void Connect(System.Net.IPAddress ip, int port)
         {
             _client = new TcpClient();
@@ -83,6 +88,10 @@ namespace SimpleNetwork.Client
             StartListening();
         }
 
+        /// <summary>
+        /// Verbindet mit einem Remote Server unter verwendung des angegeben HostData-Objekst
+        /// </summary>
+        /// <param name="data">Das HostData Objekt, zu dem die Verbindung aufgebaut werden soll</param>
         public void Connect(HostData data)
         {
             Ping p = new Ping();
@@ -108,12 +117,20 @@ namespace SimpleNetwork.Client
         }
 
         private bool isDisconnecting = false;
+
+        /// <summary>
+        /// Trennt die Verbindung zu dem Remotehost, und benarchtigt diesen über den Verbungsabbau
+        /// </summary>
         public void Disconnect()
         {
             SendPackage(new ShutDownPackage("Shut Down"));
             Disconnect(DisconnectReason.ClosedProperly);
         }
 
+        /// <summary>
+        /// Trennt die Verbindung zu dem Remotehost, mit der angegeben Begründung
+        /// </summary>
+        /// <param name="r">Der Grund für den Verbindungsabbau- oder abbruch</param>
         protected void Disconnect(DisconnectReason r)
         {
             if (!isDisconnecting)
@@ -133,6 +150,10 @@ namespace SimpleNetwork.Client
             }
         }
 
+        /// <summary>
+        /// Sendet ein Packet an den Remotehost
+        /// </summary>
+        /// <param name="package">Das zu sendene Packet</param>
         public void SendPackage(IPackage package)
         {
             try
@@ -146,6 +167,9 @@ namespace SimpleNetwork.Client
 
         }
 
+        /// <summary>
+        /// Beginnt auf eingehende Packete zu lauschen
+        /// </summary>
         public void StartListening()
         {
             isrunning = true;
@@ -175,6 +199,9 @@ namespace SimpleNetwork.Client
                 }), null);
         }
 
+        /// <summary>
+        /// Stoppt auf eigehende Pakete zu lauschen
+        /// </summary>
         public void StopListening()
         {
             isrunning = false;
