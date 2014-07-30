@@ -64,6 +64,11 @@ namespace SimpleNetwork.Package.Provider
             _listener[typeof(T)].Add(packagelistener);
         }
 
+        /// <summary>
+        /// Reigstriert einen neunen Listener. Dieser wird durch eine <see cref="Action{T,T2}" /> dargestellt.
+        /// </summary>
+        /// <typeparam name="T">Der Typ, auf den gelauscht wird.</typeparam>
+        /// <param name="action">Die <see cref="Action{T,T2}" />.</param>
         public void RegisterPackageListener<T>(Action<T, IClient> action) where T : IPackage
         {
             RegisterPackageListener<T>(new LambdaPackageListener<T>(action));
@@ -83,7 +88,11 @@ namespace SimpleNetwork.Package.Provider
                 _listener.Remove(typeof(T));
         }
 
-        public void RemoveTypeListener<T>()
+        /// <summary>
+        /// Entfernt alle Listener eines bestimmten Types.
+        /// </summary>
+        /// <typeparam name="T">Der Typ, von dem alle Listener entfernt werden sollen.</typeparam>
+        public void RemoveTypeListener<T>() where T : IPackage
         {
             if (!_listener.ContainsKey(typeof(T))) return;
             _listener.Remove(typeof(T));
