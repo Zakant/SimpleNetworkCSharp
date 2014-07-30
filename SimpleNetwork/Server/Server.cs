@@ -13,11 +13,22 @@ using System.Text;
 
 namespace SimpleNetwork.Server
 {
+    /// <summary>
+    /// Stellt eine Serverklasse zum aufnehmen von Verbindungen mit mehreren Remotehosts da.
+    /// </summary>
     public class Server : PackageProvider, IServer
     {
 
+        /// <summary>
+        ///  Tritt ein, wenn einer neuer Remotehost verbindet.
+        /// </summary>
         public event EventHandler<ClientConnectedEventArgs> ClientConnected;
 
+        /// <summary>
+        /// Löst das <see cref="ClientConnected"/> Ereigniss aus.
+        /// </summary>
+        /// <param name="c">Der neu verbundene Remotehost.</param>
+        /// <returns>Die verwendeten Ereigniss Argumente.</returns>
         protected ClientConnectedEventArgs RaiseClientConnected(IClient c)
         {
             var myevent = ClientConnected;
@@ -27,8 +38,17 @@ namespace SimpleNetwork.Server
             return args;
         }
 
+        /// <summary>
+        /// Tritt ein, wenn die Verbindung zu einem Remotehost abbricht.
+        /// </summary>
         public event EventHandler<ClientDisconnectedEventArgs> ClientDisconnected;
 
+        /// <summary>
+        /// Löst das <see cref="ClientDisconnected"/> Ereigniss aus.
+        /// </summary>
+        /// <param name="c">Der Remotehost, zu dem die Verbindung verloren gegangen ist.</param>
+        /// <param name="reason">Der Grund für den Verbindungsabbruch.</param>
+        /// <returns>Die verwendeten Ereigniss Argumente.</returns>
         protected ClientDisconnectedEventArgs RaiseClientDisconnected(IClient c, DisconnectReason reason)
         {
             var myevent = ClientDisconnected;
@@ -39,23 +59,41 @@ namespace SimpleNetwork.Server
         }
 
         private List<IClient> _clients = new List<IClient>();
+        /// <summary>
+        /// Stellt eine Auflistung aller verbundenen Remotehosts da.
+        /// </summary>
         public IEnumerable<IClient> Clients
         {
             get { return new List<IClient>(_clients); }
         }
 
+        /// <summary>
+        /// Stellt den Endpunkt da, an dem der Server auf eingehende Verbindungsanfragen lauscht.
+        /// </summary>
         public IPEndPoint EndPoint { get; protected set; }
 
+        /// <summary>
+        /// Stellt den Port da, auf dem der Server auf eigehnende Verbindungsanfragen lauscht.
+        /// </summary>
         public int Port { get; set; }
 
+        /// <summary>
+        /// Stellt einen Wert da, der angibt, ob der Server neue Verbindungsanfragen annimmt, oder ablehnt.
+        /// </summary>
         public bool AcceptNew { get; set; }
 
+        /// <summary>
+        /// Stellt die IClientFactory da, mitderen Hilfe der Server neue IClient-Objekte erzeugt.
+        /// </summary>
         public IClientFactory ClientFactory { get; set; }
 
         private bool isRunning = false;
         private TcpListener tcpserver;
 
-
+        /// <summary>
+        /// Initialisiert eine neue Instanz der Server-Klasse unter verwendung des angegebenen Ports.
+        /// </summary>
+        /// <param name="port">Der zu verwendene Port.</param>
         public Server(int port)
         {
             this.Port = port;
@@ -63,6 +101,9 @@ namespace SimpleNetwork.Server
             this.AcceptNew = true;
         }
 
+        /// <summary>
+        /// Starte den Sever.
+        /// </summary>
         public void Start()
         {
             if (!isRunning)
@@ -103,6 +144,9 @@ namespace SimpleNetwork.Server
             }), null);
         }
 
+        /// <summary>
+        /// Stop den Server.
+        /// </summary>
         public void Stop()
         {
             isRunning = false;
@@ -110,6 +154,10 @@ namespace SimpleNetwork.Server
                 c.Disconnect();
         }
 
+        /// <summary>
+        /// Sendet ein Packet an alle verbundenen Remotehosts.
+        /// </summary>
+        /// <param name="package"></param>
         public void BroadcastPackage(IPackage package)
         {
             foreach (var c in Clients)
