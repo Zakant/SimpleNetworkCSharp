@@ -45,6 +45,7 @@
     <Compile Include="Client\ClientFactory.cs" />
     <Compile Include="Client\IClient.cs" />
     <Compile Include="Client\IClientFactory.cs" />
+    <Compile Include="Package\History\IPackageHistory.cs" />
     <Compile Include="Detection\Announcer\NetworkAnnouncerBase.cs" />
     <Compile Include="Detection\Data\HostDataTime.cs" />
     <Compile Include="Detection\Detector\NetworkDetectorBase.cs" />
