@@ -58,11 +58,18 @@ namespace SimpleNetwork.Client
             get { return _client.Connected; }
         }
 
+
+        /// <summary>
+        /// Gibt an, ob der Client alle empfangene und gesendeten Packages speichern soll.
+        /// </summary>
+        public bool logPackageHistory { get; set; }
+
         /// <summary>
         /// Initialisiert ein neues leeres Client-Objekt
         /// </summary>
         public Client()
         {
+            logPackageHistory = false;
         }
 
         /// <summary>
@@ -71,6 +78,7 @@ namespace SimpleNetwork.Client
         /// <param name="c">Das TcpClient-Objekt, dass Zugrunde liegt</param>
         public Client(TcpClient c)
         {
+            logPackageHistory = false;
             _client = c;
             PrepareConnection();
         }
