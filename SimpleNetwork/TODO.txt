@@ -1,15 +1,4 @@
-﻿- Events hinzufügen		DONE
-	-> ClientDisconnected (Server)
-	-> Disconnected (Client)
-	-> Erkennung, wieso der Disconnect eingetreten ist
-
-
-- Packete beim NetworkDetector nach Zeit x wieder entfernen (DONE)
-
-- Server Client erkennung (DONE)
-	-> SimpleNetwork.Detection.*
-
-- Kommunikation Client Server
+﻿- Kommunikation Client Server
 	-> Client ID
 	-> Package History
 		-> Sequenznumber in den Packeten, um verläufe zuordnen zu können
