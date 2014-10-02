@@ -25,6 +25,12 @@ namespace SimpleNetwork.Client
         /// </summary>
         bool isConnected { get; }
 
+
+        /// <summary>
+        /// Gibt an, ob der Client alle empfangene und gesendeten Packages speichern soll.
+        /// </summary>
+        bool logPackageHistory { get; set; }
+
         /// <summary>
         /// Verbindet mit einem Remote Server unter verwendunge der angegebenen IPAdresse und dem Port
         /// </summary>

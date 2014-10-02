@@ -216,5 +216,6 @@ namespace SimpleNetwork.Client
             catch (Exception) // Hier kann auch das Disconnect festgestellt werden!
             { return null; }
         }
+
     }
 }
