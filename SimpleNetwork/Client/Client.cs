@@ -114,7 +114,7 @@ namespace SimpleNetwork.Client
 
         }
 
-        private void PrepareConnection()
+        protected void PrepareConnection()
         {
             _networkstream = _client.GetStream();
             RemoveTypeListener<ShutDownPackage>();
@@ -124,7 +124,7 @@ namespace SimpleNetwork.Client
             });
         }
 
-        private bool isDisconnecting = false;
+        protected bool isDisconnecting = false;
 
         /// <summary>
         /// Trennt die Verbindung zu dem Remotehost, und benarchtigt diesen über den Verbungsabbau
@@ -215,7 +215,7 @@ namespace SimpleNetwork.Client
             isrunning = false;
         }
 
-        private IPackage readFromStream()
+        protected IPackage readFromStream()
         {
             try
             {
