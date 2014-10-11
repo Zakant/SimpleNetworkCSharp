@@ -1,7 +1,6 @@
 ﻿- Kommunikation Client Server
 	-> Client ID
-	-> Package History
+	-> Package History (Klassen vorhanden, aber noch nicht funktionsfähig!)
 		-> Sequenznumber in den Packeten, um verläufe zuordnen zu können
 
-- Dokumentation erstellen (!WICHTIG sobald bugfrei)
 
