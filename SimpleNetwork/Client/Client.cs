@@ -47,7 +47,6 @@ namespace SimpleNetwork.Client
 
         protected bool isrunning = false;
 
-        protected NetworkStream _networkstream;
         protected BinaryFormatter _formatter = new BinaryFormatter();
 
         /// <summary>
@@ -63,6 +62,12 @@ namespace SimpleNetwork.Client
         /// Gibt an, ob der Client alle empfangene und gesendeten Packages speichern soll.
         /// </summary>
         public bool logPackageHistory { get; set; }
+
+
+        protected Stream InStream { get; set; }
+
+        protected Stream OutStream { get; set; }
+
 
         /// <summary>
         /// Initialisiert ein neues leeres Client-Objekt
@@ -116,7 +121,8 @@ namespace SimpleNetwork.Client
 
         protected virtual void PrepareConnection()
         {
-            _networkstream = _client.GetStream();
+            InStream = _client.GetStream();
+            OutStream = _client.GetStream();
             RemoveTypeListener<ShutDownPackage>();
             RegisterPackageListener<ShutDownPackage>((p, c) =>
             {
@@ -166,7 +172,7 @@ namespace SimpleNetwork.Client
         {
             try
             {
-                _formatter.Serialize(_networkstream, package);
+                _formatter.Serialize(OutStream, package);
             }
             catch (Exception)
             {
@@ -219,7 +225,7 @@ namespace SimpleNetwork.Client
         {
             try
             {
-                return (_formatter.Deserialize(_networkstream) as IPackage);
+                return (_formatter.Deserialize(InStream) as IPackage);
             }
             catch (Exception) // Hier kann auch das Disconnect festgestellt werden!
             { return null; }
