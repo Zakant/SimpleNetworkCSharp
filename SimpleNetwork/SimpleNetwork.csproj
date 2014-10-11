@@ -64,6 +64,7 @@
     <Compile Include="Events\DisconnectReasons.cs" />
     <Compile Include="Events\NewMessageEventArgs.cs" />
     <Compile Include="Events\SimpleNetworkEventArgs.cs" />
+    <Compile Include="Package\History\IPackageHistoryEntry.cs" />
     <Compile Include="Package\Listener\EventPackageListener.cs" />
     <Compile Include="Package\Packages\FilePackage.cs" />
     <Compile Include="Package\Packages\Internal\ShutDownPackage.cs" />
