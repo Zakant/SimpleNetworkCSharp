@@ -45,8 +45,6 @@ namespace SimpleNetwork.Client
 
         protected TcpClient _client;
 
-        protected bool isrunning = false;
-
         protected BinaryFormatter _formatter = new BinaryFormatter();
 
         /// <summary>
@@ -68,6 +66,7 @@ namespace SimpleNetwork.Client
 
         protected Stream OutStream { get; set; }
 
+        protected bool isRunning { get; set; }
 
         /// <summary>
         /// Initialisiert ein neues leeres Client-Objekt
@@ -155,7 +154,7 @@ namespace SimpleNetwork.Client
                     _client.Close();
                     RaiseDisconnected(r);
                 }
-                else if (!isConnected && isrunning)
+                else if (!isConnected && isRunning)
                 {
                     RaiseDisconnected(DisconnectReason.LostConnection);
                 }
@@ -186,7 +185,7 @@ namespace SimpleNetwork.Client
         /// </summary>
         public void StartListening()
         {
-            isrunning = true;
+            isRunning = true;
             RunListenting();
         }
 
@@ -195,7 +194,7 @@ namespace SimpleNetwork.Client
             var listenting = new Func<IPackage>(() => readFromStream());
             listenting.BeginInvoke(new AsyncCallback(x =>
                 {
-                    if (isrunning)
+                    if (isRunning)
                     {
                         var r = listenting.EndInvoke(x);
                         if (r == null)
@@ -218,7 +217,7 @@ namespace SimpleNetwork.Client
         /// </summary>
         public void StopListening()
         {
-            isrunning = false;
+            isRunning = false;
         }
 
         protected IPackage readFromStream()
