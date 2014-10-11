@@ -87,6 +87,8 @@ namespace SimpleNetwork.Server
         /// </summary>
         public IClientFactory ClientFactory { get; set; }
 
+        public bool logPackageHistory { get; set; }
+
         private bool isRunning = false;
         private TcpListener tcpserver;
 
@@ -163,5 +165,6 @@ namespace SimpleNetwork.Server
             foreach (var c in Clients)
                 c.SendPackage(package);
         }
+
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SimpleNetwork.Server.Secure
 {
-    public interface ISecureServer
+    public interface ISecureServer : IServer
     {
     }
 }

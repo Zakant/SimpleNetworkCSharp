@@ -43,12 +43,12 @@ namespace SimpleNetwork.Client
             return args;
         }
 
-        private TcpClient _client;
+        protected TcpClient _client;
 
-        private bool isrunning = false;
+        protected bool isrunning = false;
 
-        private NetworkStream _networkstream;
-        private BinaryFormatter _formatter = new BinaryFormatter();
+        protected NetworkStream _networkstream;
+        protected BinaryFormatter _formatter = new BinaryFormatter();
 
         /// <summary>
         /// Gibt an, ob das Client-Objekt eine aktive Verbindung besitzt. True fals ja, False, false nein.
@@ -114,7 +114,7 @@ namespace SimpleNetwork.Client
 
         }
 
-        protected void PrepareConnection()
+        protected virtual void PrepareConnection()
         {
             _networkstream = _client.GetStream();
             RemoveTypeListener<ShutDownPackage>();
@@ -162,7 +162,7 @@ namespace SimpleNetwork.Client
         /// Sendet ein Packet an den Remotehost
         /// </summary>
         /// <param name="package">Das zu sendene Packet</param>
-        public void SendPackage(IPackage package)
+        public virtual void SendPackage(IPackage package)
         {
             try
             {
