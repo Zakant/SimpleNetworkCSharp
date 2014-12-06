@@ -14,6 +14,9 @@ namespace SimpleNetwork.Detection.Detector
     /// </summary>
     public abstract class NetworkDetectorBase : INetworkDetector
     {
+
+        protected object LockObject = new object();
+
         /// <summary>
         /// Tritt ein, wenn ein neuer Host gefunden wurde.
         /// </summary>
@@ -99,15 +102,18 @@ namespace SimpleNetwork.Detection.Detector
             _removetimer.AutoReset = true;
             _removetimer.Elapsed += new ElapsedEventHandler((sender, args) =>
             {
-                List<HostDataTime> temp = new List<HostDataTime>();
-                foreach (var h in _hosts)
+                lock (LockObject)
                 {
-                    if ((DateTime.Now - h.stamp) <= LiveTime)
-                        temp.Add(h);
-                    else
-                        RaiseHostLost(h.data);
+                    List<HostDataTime> temp = new List<HostDataTime>();
+                    foreach (var h in _hosts)
+                    {
+                        if ((DateTime.Now - h.stamp) <= LiveTime)
+                            temp.Add(h);
+                        else
+                            RaiseHostLost(h.data);
+                    }
+                    _hosts = temp;
                 }
-                _hosts = temp;
             });
             _removetimer.Interval = LiveTime.TotalMilliseconds / 2;
             _removetimer.Start();

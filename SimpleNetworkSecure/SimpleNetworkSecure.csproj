@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>SimpleNetwork</RootNamespace>
     <AssemblyName>SimpleNetworkSecure</AssemblyName>
-    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -34,7 +35,6 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
   </ItemGroup>
@@ -42,9 +42,14 @@
     <Compile Include="Client\Secure\ConnectionState.cs" />
     <Compile Include="Client\Secure\ISecureClient.cs" />
     <Compile Include="Client\Secure\SecureClient.cs" />
+    <Compile Include="Client\Secure\SecureClientFactory.cs" />
     <Compile Include="Events\Secure\ConnectionStateChangedEventArgs.cs" />
+    <Compile Include="Package\Packages\Internal\Secure\ClientSecurePackage.cs" />
+    <Compile Include="Package\Packages\Secure\CryptoPackage.cs" />
+    <Compile Include="Package\Packages\Internal\Secure\ServerSecurePackage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Server\Secure\ISecureServer.cs" />
+    <Compile Include="Server\Secure\SecureServer.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SimpleNetwork\SimpleNetwork.csproj">
@@ -52,7 +57,9 @@
       <Name>SimpleNetwork</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

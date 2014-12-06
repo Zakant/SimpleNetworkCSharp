@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using SimpleNetwork.Detection;
 using SimpleNetwork.Detection.Announcer;
+using SimpleNetwork.Server.Secure;
 
 namespace TestServer
 {
@@ -15,10 +16,10 @@ namespace TestServer
     {
         static void Main(string[] args)
         {
-            Server server = new Server(8000);
+            SecureServer server = new SecureServer(8000);
             server.Start();
 
-            PushNetworkAnnouncer ann = new PushNetworkAnnouncer(server);
+            NetworkAnnouncer ann = new NetworkAnnouncer(server);
 
             ann.StartAnnouncing();
 
@@ -26,6 +27,7 @@ namespace TestServer
                 {
                     Console.WriteLine(text.Value);
                     client.SendPackage(new TextPackage() { Value = "Heureka" });
+                    client.SendPackage(new TextPackage("Heureka2"));
                 }));
 
             server.ClientDisconnected += new EventHandler<SimpleNetwork.Events.ClientDisconnectedEventArgs>((sender, a) =>

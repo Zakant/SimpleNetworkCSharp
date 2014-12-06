@@ -15,6 +15,7 @@ using SimpleNetwork.Package.Packages.Internal;
 using SimpleNetwork.Detection;
 using System.Net.NetworkInformation;
 using SimpleNetwork.Detection.Data;
+using System.Runtime.Serialization;
 
 namespace SimpleNetwork.Client
 {
@@ -61,6 +62,7 @@ namespace SimpleNetwork.Client
         /// </summary>
         public bool logPackageHistory { get; set; }
 
+        public bool isServerClient { get; set; }
 
         protected Stream InStream { get; set; }
 
@@ -83,6 +85,7 @@ namespace SimpleNetwork.Client
         public Client(TcpClient c)
         {
             logPackageHistory = false;
+            isServerClient = true;
             _client = c;
             PrepareConnection();
         }
@@ -163,6 +166,8 @@ namespace SimpleNetwork.Client
             }
         }
 
+
+        private object _lock = new object();
         /// <summary>
         /// Sendet ein Packet an den Remotehost
         /// </summary>
@@ -171,9 +176,12 @@ namespace SimpleNetwork.Client
         {
             try
             {
-                _formatter.Serialize(OutStream, package);
+                lock (_lock)
+                {
+                    _formatter.Serialize(OutStream, package);
+                }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 Disconnect(DisconnectReason.LostConnection); // Fehler, verbindung verloren
             }
@@ -185,8 +193,11 @@ namespace SimpleNetwork.Client
         /// </summary>
         public void StartListening()
         {
-            isRunning = true;
-            RunListenting();
+            if (!isRunning)
+            {
+                isRunning = true;
+                RunListenting();
+            }
         }
 
         private void RunListenting()
@@ -203,8 +214,7 @@ namespace SimpleNetwork.Client
                         }
                         else
                         {
-                            RaiseNewMessage(r, this);
-                            informListener(r, this);
+                            HandleNewMessage(r);
                             if (isConnected)
                                 RunListenting();
                         }
@@ -224,11 +234,19 @@ namespace SimpleNetwork.Client
         {
             try
             {
-                return (_formatter.Deserialize(InStream) as IPackage);
+                IPackage p = (_formatter.Deserialize(InStream) as IPackage);
+                return p;
             }
-            catch (Exception) // Hier kann auch das Disconnect festgestellt werden!
-            { return null; }
+            catch (Exception ex) // Hier kann auch das Disconnect festgestellt werden!
+            {
+                return null;
+            }
         }
 
+        protected virtual void HandleNewMessage(IPackage p)
+        {
+            RaiseNewMessage(p, this);
+            informListener(p, this);
+        }
     }
 }

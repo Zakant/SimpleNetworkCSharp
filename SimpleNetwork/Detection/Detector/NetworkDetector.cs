@@ -41,13 +41,16 @@ namespace SimpleNetwork.Detection.Detector
                     if (isDetecting)
                     {
                         var data = HostData.fromByteArray(_client.EndReceive(x, ref _endpoint));
-                        if (!_hosts.Any(y => y.data.ID == data.ID))
+                        lock (LockObject)
                         {
-                            _hosts.Add(new HostDataTime() { data = data, stamp = DateTime.Now });
-                            RaiseHostFound(data);
+                            if (!_hosts.Any(y => y.data.ID == data.ID))
+                            {
+                                _hosts.Add(new HostDataTime() { data = data, stamp = DateTime.Now });
+                                RaiseHostFound(data);
+                            }
+                            else
+                                _hosts.First(y => y.data.ID == data.ID).stamp = DateTime.Now;
                         }
-                        else
-                            _hosts.First(y => y.data.ID == data.ID).stamp = DateTime.Now;
                         RunListening();
                     }
                 }), null);

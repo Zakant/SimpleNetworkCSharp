@@ -3,7 +3,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace SimpleNetwork.Client.Secure
 {
@@ -12,7 +11,7 @@ namespace SimpleNetwork.Client.Secure
         event EventHandler<ConnectionStateChangedEventArgs> ConnectionStateChanged;
 
         byte[] PublicKey { get; }
-        byte[] PrivateKey { get; }
+        byte[] SharedKey { get; }
         ConnectionState State { get; }
     }
 }
