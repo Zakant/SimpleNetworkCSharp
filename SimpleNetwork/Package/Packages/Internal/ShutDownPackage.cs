@@ -7,7 +7,7 @@ using System.Text;
 namespace SimpleNetwork.Package.Packages.Internal
 {
     [Serializable]
-    public class ShutDownPackage : IPackage
+    internal class ShutDownPackage : IPackage
     {
         public string ShutDownMessage { get; set; }
         public DisconnectReason Reason { get; set; }

@@ -15,6 +15,9 @@ namespace SimpleNetwork.Detection.Detector
     public abstract class NetworkDetectorBase : INetworkDetector
     {
 
+        /// <summary>
+        /// Lock Object das verwendet wird um beim CleanUp Race-Conditions zu verhindern.
+        /// </summary>
         protected object LockObject = new object();
 
         /// <summary>

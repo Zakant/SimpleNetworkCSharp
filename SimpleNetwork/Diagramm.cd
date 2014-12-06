@@ -1,15 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
   <Class Name="SimpleNetwork.Client.Client">
-    <Position X="0.75" Y="9.25" Width="4.75" />
+    <Position X="12" Y="8.25" Width="4.75" />
     <TypeIdentifier>
-      <HashCode>AAQAAAAAAAAAAEBYABAAQoCgAAAAAgAAAAAAEgAAAYA=</HashCode>
+      <HashCode>AAQAAAAAAAAAAEB4IBAAQoIiAAAAAgAAAAgAEgAAAYA=</HashCode>
       <FileName>Client\Client.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="SimpleNetwork.Client.ClientFactory" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="23.5" Y="0.5" Width="1.5" />
+    <Position X="24.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAA=</HashCode>
       <FileName>Client\ClientFactory.cs</FileName>
@@ -17,14 +17,14 @@
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
   <Class Name="SimpleNetwork.Detection.Announcer.NetworkAnnouncer">
-    <Position X="4" Y="19.25" Width="2.5" />
+    <Position X="11.25" Y="19.25" Width="2.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAABAAAAEAAAAAAAAAAAgAABAAAAAAAAAAgCAA=</HashCode>
       <FileName>Detection\Announcer\NetworkAnnouncer.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SimpleNetwork.Detection.Announcer.NetworkAnnouncerBase">
-    <Position X="2" Y="15.5" Width="2.75" />
+    <Position X="9.25" Y="15.5" Width="2.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAABAAAAgABIAAAAAAAgAAABAAAAAAAgAgAAA=</HashCode>
       <FileName>Detection\Announcer\NetworkAnnouncerBase.cs</FileName>
@@ -32,99 +32,99 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="SimpleNetwork.Detection.Announcer.PushNetworkAnnouncer">
-    <Position X="0.5" Y="19.25" Width="2.75" />
+    <Position X="7.75" Y="19.25" Width="2.75" />
     <TypeIdentifier>
       <HashCode>AgAAAAAABAAAAAAIAAAAgAIAAgAAAAAAAAAAAAAgAAA=</HashCode>
       <FileName>Detection\Announcer\PushNetworkAnnouncer.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SimpleNetwork.Detection.Data.HostData" Collapsed="true">
-    <Position X="23.5" Y="1.5" Width="1.5" />
+    <Position X="24.25" Y="1.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AIBAAAAAAAAAgAAAAAAAAAQACAAAAAAAAAAAAAAAAAg=</HashCode>
       <FileName>Detection\Data\HostData.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SimpleNetwork.Detection.Data.HostDataTime" Collapsed="true">
-    <Position X="25.25" Y="1.5" Width="1.5" />
+    <Position X="26" Y="1.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAA=</HashCode>
       <FileName>Detection\Data\HostDataTime.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SimpleNetwork.Detection.Detector.NetworkDetector">
-    <Position X="16.25" Y="17.5" Width="2" />
+    <Position X="3.5" Y="18.5" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAABAAEAAAAAACAAAAAABAAAAAAAAEAAACAA=</HashCode>
       <FileName>Detection\Detector\NetworkDetector.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SimpleNetwork.Detection.Detector.NetworkDetectorBase">
-    <Position X="13.75" Y="11.5" Width="4" />
+    <Position X="1" Y="12.5" Width="4" />
     <TypeIdentifier>
-      <HashCode>AAAAARBAAABABEgAgAACCAEAABAAAAAAIBAAFABAAAA=</HashCode>
+      <HashCode>AAAAARBAABBABEgAgAACCAEAABAAAAAAIBAAFABAAAA=</HashCode>
       <FileName>Detection\Detector\NetworkDetectorBase.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="SimpleNetwork.Detection.Detector.PushNetworkDetector">
-    <Position X="13.25" Y="17.5" Width="2.25" />
+    <Position X="0.5" Y="18.5" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AgAABAAAAABgAAAAAAAAiAIAAAABAAAAAAAAEAAAAAA=</HashCode>
       <FileName>Detection\Detector\PushNetworkDetector.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SimpleNetwork.Detection.Events.HostFoundEventArgs" Collapsed="true">
-    <Position X="27" Y="1.5" Width="1.5" />
+    <Position X="27.75" Y="1.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAA=</HashCode>
       <FileName>Detection\Events\HostFoundEventArgs.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SimpleNetwork.Detection.Events.HostLostEventArgs" Collapsed="true">
-    <Position X="28.75" Y="1.5" Width="1.5" />
+    <Position X="29.5" Y="1.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAA=</HashCode>
       <FileName>Detection\Events\HostLostEventArgs.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SimpleNetwork.Events.ClientConnectedEventArgs">
-    <Position X="9.5" Y="2.25" Width="3" />
+    <Position X="9.75" Y="2.25" Width="3" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQ=</HashCode>
       <FileName>Events\ClientConnectedEventArgs.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SimpleNetwork.Events.ClientDisconnectedEventArgs">
-    <Position X="13.25" Y="2.25" Width="4" />
+    <Position X="13.5" Y="2.25" Width="4" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAQ=</HashCode>
       <FileName>Events\ClientDisconnectedEventArgs.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SimpleNetwork.Events.DisconnectedEventArgs">
-    <Position X="1" Y="2.25" Width="3.25" />
+    <Position X="1.25" Y="2.25" Width="3.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Events\DisconnectedEventArgs.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SimpleNetwork.Events.NewMessageEventArgs">
-    <Position X="5" Y="2.25" Width="3.75" />
+    <Position X="5.25" Y="2.25" Width="3.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAEAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAQ=</HashCode>
       <FileName>Events\NewMessageEventArgs.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SimpleNetwork.Events.SimpleNetworkEventArgs">
-    <Position X="8.25" Y="0.5" Width="1.75" />
+    <Position X="8.5" Y="0.5" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Events\SimpleNetworkEventArgs.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SimpleNetwork.Package.Listener.EventPackageListener&lt;T&gt;" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="25.25" Y="0.5" Width="1.5" />
+    <Position X="26" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAA=</HashCode>
       <FileName>Package\Listener\EventPackageListener.cs</FileName>
@@ -132,14 +132,14 @@
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
   <Class Name="SimpleNetwork.Package.Listener.EventPackageListenerEventArgs&lt;T&gt;" Collapsed="true">
-    <Position X="27" Y="0.5" Width="1.5" />
+    <Position X="27.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAQ=</HashCode>
       <FileName>Package\Listener\EventPackageListener.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SimpleNetwork.Package.Listener.LambdaPackageListener&lt;T&gt;" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="23.5" Y="2.5" Width="1.5" />
+    <Position X="24.25" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAACAAA=</HashCode>
       <FileName>Package\Listener\LambdaPackageListener.cs</FileName>
@@ -147,7 +147,7 @@
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
   <Class Name="SimpleNetwork.Package.Packages.FilePackage" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="28.75" Y="0.5" Width="1.5" />
+    <Position X="29.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAABAAAAAAAEAAAAA=</HashCode>
       <FileName>Package\Packages\FilePackage.cs</FileName>
@@ -155,7 +155,7 @@
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
   <Class Name="SimpleNetwork.Package.Packages.TextPackage" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="27" Y="2.5" Width="1.5" />
+    <Position X="27.75" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
       <FileName>Package\Packages\TextPackage.cs</FileName>
@@ -163,7 +163,7 @@
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
   <Class Name="SimpleNetwork.Package.Packages.Internal.ShutDownPackage" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="25.25" Y="2.5" Width="1.5" />
+    <Position X="26" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAABAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Package\Packages\Internal\ShutDownPackage.cs</FileName>
@@ -171,7 +171,7 @@
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
   <Class Name="SimpleNetwork.Package.Provider.PackageProvider">
-    <Position X="4" Y="5.5" Width="4.75" />
+    <Position X="15.25" Y="4.5" Width="4.75" />
     <TypeIdentifier>
       <HashCode>AgACAAAAAAACAAQAEAAAAAAABAAAAAgAAAAAAAAAAAA=</HashCode>
       <FileName>Package\Provider\PackageProvider.cs</FileName>
@@ -179,71 +179,71 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="SimpleNetwork.Server.Server">
-    <Position X="6.25" Y="9.25" Width="5.75" />
+    <Position X="17.5" Y="8.25" Width="5.75" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAACCAQABAACgAAAQACAAAQIAAJEAAIAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAACCAQABAACgAAAYACAAAQIAAJEAAIAAAAAA=</HashCode>
       <FileName>Server\Server.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
   <Interface Name="SimpleNetwork.Client.IClient">
-    <Position X="13.5" Y="7.5" Width="3.75" />
+    <Position X="0.75" Y="8.5" Width="3.75" />
     <TypeIdentifier>
-      <HashCode>AAQAAAAAAAAAAAAAABAAQIAAAAAAAAAAAAAAEgAAAIA=</HashCode>
+      <HashCode>AAQAAAAAAAAAAAAAABAAQIIAAAAAAAAAAAAAEgAAAIA=</HashCode>
       <FileName>Client\IClient.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="SimpleNetwork.Client.IClientFactory" Collapsed="true">
-    <Position X="23.5" Y="3.75" Width="1.5" />
+    <Position X="24.25" Y="3.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAA=</HashCode>
       <FileName>Client\IClientFactory.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="SimpleNetwork.Detection.Announcer.INetworkAnnouncer" Collapsed="true">
-    <Position X="25.25" Y="3.75" Width="1.5" />
+    <Position X="26" Y="3.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAABAAAAAABIAAAAAAAgAAABAAAAAAAgAgAAA=</HashCode>
       <FileName>Detection\Announcer\INetworkAnnouncer.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="SimpleNetwork.Detection.Detector.INetworkDetector" Collapsed="true">
-    <Position X="27" Y="3.75" Width="1.5" />
+    <Position X="27.75" Y="3.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAQBAAABABEAAgAAACAAAABAAAAAAAAAAEAAAAAA=</HashCode>
       <FileName>Detection\Detector\INetworkDetector.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="SimpleNetwork.Package.Listener.IPackageListener&lt;T&gt;" Collapsed="true">
-    <Position X="23.5" Y="4.5" Width="1.5" />
+    <Position X="24.25" Y="4.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAA=</HashCode>
       <FileName>Package\Listener\IPackageListener.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="SimpleNetwork.Package.Packages.IPackage" Collapsed="true">
-    <Position X="28.75" Y="3.75" Width="1.5" />
+    <Position X="29.5" Y="3.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Package\Packages\IPackage.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="SimpleNetwork.Package.Provider.IPackageProvider">
-    <Position X="15.75" Y="4.5" Width="4.75" />
+    <Position X="3" Y="5.5" Width="4.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAQAEAAAAAAABAAAAAgAAAAAAAAAAAA=</HashCode>
       <FileName>Package\Provider\IPackageProvider.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="SimpleNetwork.Server.IServer">
-    <Position X="18" Y="7.5" Width="4.5" />
+    <Position X="5.25" Y="8.5" Width="4.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAACCAQAAAACgAAAAACAAAQAAAJAAAIAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAACCAQAAAACgAAAIACAAAQAAAJAAAIAAAAAA=</HashCode>
       <FileName>Server\IServer.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Enum Name="SimpleNetwork.Events.DisconnectReason" Collapsed="true">
-    <Position X="23.5" Y="5.5" Width="1.5" />
+    <Position X="24.25" Y="5.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAWAAAAAAAAAAAAAAAAAAAAAAABAAAAAAABA=</HashCode>
       <FileName>Events\DisconnectReasons.cs</FileName>

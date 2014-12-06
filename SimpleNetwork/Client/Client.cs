@@ -44,12 +44,12 @@ namespace SimpleNetwork.Client
             return args;
         }
 
-        protected TcpClient _client;
+        private TcpClient _client;
 
-        protected BinaryFormatter _formatter = new BinaryFormatter();
+        private BinaryFormatter _formatter = new BinaryFormatter();
 
         /// <summary>
-        /// Gibt an, ob das Client-Objekt eine aktive Verbindung besitzt. True fals ja, False, false nein.
+        /// Gibt an, ob das Client-Objekt eine aktive Verbindung besitzt.
         /// </summary>
         public bool isConnected
         {
@@ -62,12 +62,24 @@ namespace SimpleNetwork.Client
         /// </summary>
         public bool logPackageHistory { get; set; }
 
+        /// <summary>
+        /// Gibt an, ob es sich um einen Client handelt der als Teil eines Servers arbeitet oder nicht.
+        /// </summary>
         public bool isServerClient { get; set; }
 
+        /// <summary>
+        /// Der Eingabestrom, aus dem die Pakete gelesen werden.
+        /// </summary>
         protected Stream InStream { get; set; }
 
+        /// <summary>
+        /// Der Ausgabestrom, in den die Pakete geschrieben werden.
+        /// </summary>
         protected Stream OutStream { get; set; }
 
+        /// <summary>
+        /// Gibt an, ob der Client aktuell läuft.
+        /// </summary>
         protected bool isRunning { get; set; }
 
         /// <summary>
@@ -104,7 +116,7 @@ namespace SimpleNetwork.Client
         }
 
         /// <summary>
-        /// Verbindet mit einem Remote Server unter verwendung des angegeben HostData-Objekst
+        /// Verbindet mit einem Remotehost unter verwendung des angegeben HostData-Objekst
         /// </summary>
         /// <param name="data">Das HostData Objekt, zu dem die Verbindung aufgebaut werden soll</param>
         public void Connect(HostData data)
@@ -121,9 +133,12 @@ namespace SimpleNetwork.Client
 
         }
 
+        /// <summary>
+        /// Wird aufgerufen um die bestehende Verbindung mit einem Remotehost auf die Übertragung vorzubereiten.
+        /// </summary>
         protected virtual void PrepareConnection()
         {
-            InStream = _client.GetStream();
+            InStream =_client.GetStream();
             OutStream = _client.GetStream();
             RemoveTypeListener<ShutDownPackage>();
             RegisterPackageListener<ShutDownPackage>((p, c) =>
@@ -132,6 +147,9 @@ namespace SimpleNetwork.Client
             });
         }
 
+        /// <summary>
+        /// Gibt an, ob zum aktuellen Zeitpunkt ein Verbindungtrennungs Vorgang läuft.
+        /// </summary>
         protected bool isDisconnecting = false;
 
         /// <summary>
@@ -230,6 +248,10 @@ namespace SimpleNetwork.Client
             isRunning = false;
         }
 
+        /// <summary>
+        /// List das neuste Paket aus dem <see cref="Client.InStream"/>.
+        /// </summary>
+        /// <returns>Das neuste gelesene Paket.</returns>
         protected IPackage readFromStream()
         {
             try
@@ -243,6 +265,10 @@ namespace SimpleNetwork.Client
             }
         }
 
+        /// <summary>
+        /// Wird für jedes neue Paket aufgerufen um es weiterzuverarbeiten.
+        /// </summary>
+        /// <param name="p">Das zuverarbeitende Paket.</param>
         protected virtual void HandleNewMessage(IPackage p)
         {
             RaiseNewMessage(p, this);
