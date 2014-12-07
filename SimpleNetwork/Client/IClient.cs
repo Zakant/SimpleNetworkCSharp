@@ -13,7 +13,7 @@ namespace SimpleNetwork.Client
     /// <summary>
     /// Stellt eine Objekt da, dass über das Netzwerk mit einem Remotehost verbunden ist
     /// </summary>
-    public interface IClient : IPackageProvider
+    public interface IClient : IPackageProvider, IDisposable
     {
         /// <summary>
         /// Tritt ein, wenn der Client die Verbindung zum Remotehost verliert

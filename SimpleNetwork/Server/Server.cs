@@ -166,5 +166,12 @@ namespace SimpleNetwork.Server
                 c.SendPackage(package);
         }
 
+        /// <summary>
+        /// Gibt diese Server Instance und alle verwendeten Resourcen frei.
+        /// </summary>
+        public virtual void Dispose()
+        {
+            Stop();   
+        }
     }
 }

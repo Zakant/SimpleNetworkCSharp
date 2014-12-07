@@ -35,6 +35,16 @@ namespace SimpleNetwork.Detection.Data
         public string Name { get; set; }
 
         /// <summary>
+        /// Eine zusätzliche Beschreibung des Hosts.
+        /// </summary>
+        public string Description { get; set; }
+
+        /// <summary>
+        /// Weitere zusätzliche Informationen über den Host. Nicht zur direkten Anzeige gedacht.
+        /// </summary>
+        public string AdditionalInformation { get; set; }
+
+        /// <summary>
         /// Konvertiert diese HostData-Objekt in seine Byte Array Darstellung.
         /// </summary>
         /// <returns>Die Byte Array Darstellung diese HostData-Objektes</returns>

@@ -10,7 +10,7 @@ namespace SimpleNetwork.Detection.Detector
     /// <summary>
     /// Stellt Mehtoden bereit, um Server im lokalen Netzwerk zu finden.
     /// </summary>
-    public interface INetworkDetector
+    public interface INetworkDetector : IDisposable
     {
         /// <summary>
         /// Tritt ein, wenn ein neuer Host gefunden wurde.

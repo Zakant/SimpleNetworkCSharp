@@ -166,5 +166,13 @@ namespace SimpleNetwork.Detection.Detector
         /// Beendet die Erfassung von Servern.
         /// </summary>
         public abstract void StopDetection();
+
+        /// <summary>
+        /// Gibt diesen Netzwerk Detektor und alle verwendeten Resourcen frei.
+        /// </summary>
+        public virtual void Dispose()
+        {
+            StopDetection();
+        }
     }
 }

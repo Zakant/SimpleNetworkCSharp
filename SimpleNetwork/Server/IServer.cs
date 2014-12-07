@@ -14,7 +14,7 @@ namespace SimpleNetwork.Server
     /// <summary>
     /// Stellt Methoden bereit, um Verbindungen von Remotehosts entgegennehmen zu können.
     /// </summary>
-    public interface IServer : IPackageProvider
+    public interface IServer : IPackageProvider, IDisposable
     {
         /// <summary>
         /// Tritt ein, wenn einer neuer Remotehost verbindet.

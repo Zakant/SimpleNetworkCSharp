@@ -99,5 +99,12 @@ namespace SimpleNetwork.Detection.Detector
                 StopCleanUp();
             }
         }
+
+        public override void Dispose()
+        {
+            base.Dispose();
+            _sendClient.Close();
+            _receiveClient.Close();
+        }
     }
 }

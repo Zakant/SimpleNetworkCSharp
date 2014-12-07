@@ -274,5 +274,13 @@ namespace SimpleNetwork.Client
             RaiseNewMessage(p, this);
             informListener(p, this);
         }
+
+        /// <summary>
+        /// Gitb diese Client Instanz und alle verwendeten Resourcen frei.
+        /// </summary>
+        public virtual void Dispose()
+        {
+            Disconnect();
+        }
     }
 }
