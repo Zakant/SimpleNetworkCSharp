@@ -49,11 +49,6 @@ namespace SimpleNetwork.Server
         IClientFactory ClientFactory { get; set; }
 
         /// <summary>
-        /// Gibt an, ob der Server alle empfangene und gesendeten Packages speichern soll.
-        /// </summary>
-        bool logPackageHistory { get; set; }
-
-        /// <summary>
         /// Starte den Sever.
         /// </summary>
         void Start();
