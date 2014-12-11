@@ -71,6 +71,8 @@
     <Compile Include="Package\Packages\IPackage.cs" />
     <Compile Include="Package\Listener\IPackageListener.cs" />
     <Compile Include="Package\Packages\TextPackage.cs" />
+    <Compile Include="Package\Provider\Internal\IListenerEntry.cs" />
+    <Compile Include="Package\Provider\Internal\ListenerEntry.cs" />
     <Compile Include="Package\Provider\PackageProvider.cs" />
     <Compile Include="Package\Provider\IPackageProvider.cs" />
     <Compile Include="Package\Listener\LambdaPackageListener.cs" />

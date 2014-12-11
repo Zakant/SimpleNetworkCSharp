@@ -1,22 +1,13 @@
-﻿using SimpleNetwork.Detection.Data;
-using SimpleNetwork.Events;
-using SimpleNetwork.Events.Secure;
+﻿using SimpleNetwork.Events.Secure;
 using SimpleNetwork.Package.Packages;
-using SimpleNetwork.Package.Packages.Internal;
 using SimpleNetwork.Package.Packages.Internal.Secure;
 using SimpleNetwork.Package.Packages.Secure;
-using SimpleNetwork.Package.Provider;
 using SimpleNetwork.Utils;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Net;
-using System.Net.NetworkInformation;
 using System.Net.Sockets;
-using System.Runtime.Serialization.Formatters.Binary;
 using System.Security.Cryptography;
-using System.Text;
 
 namespace SimpleNetwork.Client.Secure
 {
@@ -53,6 +44,9 @@ namespace SimpleNetwork.Client.Secure
 
         private ECDiffieHellmanCng dh;
         private RijndaelManaged rjd;
+
+        private ICryptoTransform EncTransform;
+        private ICryptoTransform DecTransform;
 
         public SecureClient()
             : base()
@@ -117,6 +111,8 @@ namespace SimpleNetwork.Client.Secure
             SharedKey = dh.DeriveKeyMaterial(CngKey.Import(PublicKey, CngKeyBlobFormat.EccPublicBlob));
             rjd.Key = SharedKey;
             rjd.IV = iv;
+            DecTransform = rjd.CreateDecryptor();
+            EncTransform = rjd.CreateEncryptor();
             State = ConnectionState.Secure;
         }
 
@@ -154,7 +150,7 @@ namespace SimpleNetwork.Client.Secure
             byte[] data = p.ToByteArray();
             using (MemoryStream ms = new MemoryStream())
             {
-                using (CryptoStream cs = new CryptoStream(ms, rjd.CreateEncryptor(), CryptoStreamMode.Write))
+                using (CryptoStream cs = new CryptoStream(ms, EncTransform, CryptoStreamMode.Write))
                     cs.Write(data, 0, data.Length);
                 return ms.ToArray();
             }
@@ -165,7 +161,7 @@ namespace SimpleNetwork.Client.Secure
         {
             using (MemoryStream ms = new MemoryStream())
             {
-                using (CryptoStream cs = new CryptoStream(ms, rjd.CreateDecryptor(), CryptoStreamMode.Write))
+                using (CryptoStream cs = new CryptoStream(ms, DecTransform, CryptoStreamMode.Write))
                     cs.Write(data, 0, data.Length);
                 return ms.ToArray().ToPackage();
             }

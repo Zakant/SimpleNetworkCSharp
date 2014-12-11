@@ -1,15 +1,11 @@
 ﻿using SimpleNetwork.Client;
 using SimpleNetwork.Events;
-using SimpleNetwork.Package.Listener;
 using SimpleNetwork.Package.Packages;
-using SimpleNetwork.Package.Packages.Internal;
 using SimpleNetwork.Package.Provider;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Net;
 using System.Net.Sockets;
-using System.Text;
 
 namespace SimpleNetwork.Server
 {
@@ -152,7 +148,8 @@ namespace SimpleNetwork.Server
         public void Stop()
         {
             isRunning = false;
-            foreach (var c in _clients)
+            var _c = new List<IClient>(_clients);
+            foreach (var c in _c)
                 c.Disconnect();
         }
 
@@ -171,7 +168,7 @@ namespace SimpleNetwork.Server
         /// </summary>
         public virtual void Dispose()
         {
-            Stop();   
+            Stop();
         }
     }
 }

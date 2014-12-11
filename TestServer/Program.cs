@@ -1,14 +1,8 @@
-﻿using SimpleNetwork.Package.Packages;
+﻿using SimpleNetwork.Detection.Announcer;
 using SimpleNetwork.Package.Listener;
-using SimpleNetwork.Server;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using SimpleNetwork.Detection;
-using SimpleNetwork.Detection.Announcer;
+using SimpleNetwork.Package.Packages;
 using SimpleNetwork.Server.Secure;
+using System;
 
 namespace TestServer
 {

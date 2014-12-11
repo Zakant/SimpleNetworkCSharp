@@ -1,12 +1,8 @@
-﻿using SimpleNetwork.Detection;
-using SimpleNetwork.Detection.Data;
+﻿using SimpleNetwork.Detection.Data;
 using SimpleNetwork.Package.Packages;
 using SimpleNetwork.Package.Provider;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net;
-using System.Text;
 
 namespace SimpleNetwork.Client
 {

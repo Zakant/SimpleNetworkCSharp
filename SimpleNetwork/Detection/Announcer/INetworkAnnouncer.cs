@@ -1,9 +1,5 @@
 ﻿using SimpleNetwork.Detection.Data;
 using SimpleNetwork.Server;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace SimpleNetwork.Detection.Announcer
 {

@@ -1,12 +1,6 @@
-﻿using SimpleNetwork.Detection.Data;
-using SimpleNetwork.Server;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using SimpleNetwork.Server;
 using System.Net;
-using System.Net.NetworkInformation;
 using System.Net.Sockets;
-using System.Text;
 using System.Timers;
 
 namespace SimpleNetwork.Detection.Announcer

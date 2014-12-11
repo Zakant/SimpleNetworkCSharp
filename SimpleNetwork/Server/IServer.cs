@@ -1,13 +1,10 @@
 ﻿using SimpleNetwork.Client;
 using SimpleNetwork.Events;
-using SimpleNetwork.Package;
 using SimpleNetwork.Package.Packages;
 using SimpleNetwork.Package.Provider;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Net;
-using System.Text;
 
 namespace SimpleNetwork.Server
 {

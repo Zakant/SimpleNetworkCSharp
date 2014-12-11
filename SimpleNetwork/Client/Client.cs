@@ -1,21 +1,14 @@
-﻿using SimpleNetwork.Events;
-using SimpleNetwork.Package;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Sockets;
-using System.Text;
-using System.IO;
-using System.Runtime.Serialization.Formatters.Binary;
-using System.Net;
+﻿using SimpleNetwork.Detection.Data;
+using SimpleNetwork.Events;
 using SimpleNetwork.Package.Packages;
-using SimpleNetwork.Package.Listener;
-using SimpleNetwork.Package.Provider;
 using SimpleNetwork.Package.Packages.Internal;
-using SimpleNetwork.Detection;
+using SimpleNetwork.Package.Provider;
+using System;
+using System.IO;
+using System.Net;
 using System.Net.NetworkInformation;
-using SimpleNetwork.Detection.Data;
-using System.Runtime.Serialization;
+using System.Net.Sockets;
+using System.Runtime.Serialization.Formatters.Binary;
 
 namespace SimpleNetwork.Client
 {
