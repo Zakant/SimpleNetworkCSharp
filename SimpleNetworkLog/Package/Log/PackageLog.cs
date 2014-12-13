@@ -4,6 +4,7 @@ using SimpleNetwork.Package.Log.Entries.Client;
 using SimpleNetwork.Package.Packages;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.Contracts;
 using System.Linq;
 using System.Text;
 
@@ -24,6 +25,7 @@ namespace SimpleNetwork.Package.Log
             Client = client;
             client.NewMessage += (s, e) =>
                 {
+                    Contract.Assume(e.Package != null);
                     addPackage(e.Package, PackageOrigin.Remote);
                 };
             client.MessageSend += (s, e) =>
@@ -39,6 +41,7 @@ namespace SimpleNetwork.Package.Log
 
         public void addPackage<T>(T package, PackageOrigin origin) where T : IPackage
         {
+            Contract.Requires<ArgumentNullException>(package != null);
             packages.Add(new PackageLogEntry(package, origin));
         }
     }

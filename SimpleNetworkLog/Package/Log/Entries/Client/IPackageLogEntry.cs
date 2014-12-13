@@ -6,10 +6,7 @@ using System.Text;
 
 namespace SimpleNetwork.Package.Log.Entries.Client
 {
-    public interface IPackageLogEntry
+    public interface IPackageLogEntry : ITypedPackageLogEntry<IPackage>
     {
-        IPackage Package { get; }
-        PackageOrigin Origin { get; }
-        DateTime TimeStamp { get; }
     }
 }

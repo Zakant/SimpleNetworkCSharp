@@ -2,6 +2,7 @@
 using SimpleNetwork.Server;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.Contracts;
 using System.Linq;
 using System.Text;
 
@@ -18,6 +19,10 @@ namespace SimpleNetwork.Package.Log.Entries.Server
 
         public ServerLogEntry(IServer server, IClient client, IPackageLog log)
         {
+            Contract.Requires<ArgumentNullException>(server != null);
+            Contract.Requires<ArgumentNullException>(client != null);
+            Contract.Requires<ArgumentNullException>(log != null);
+
             Server = server;
             Client = client;
             Log = log;
