@@ -12,7 +12,6 @@ namespace SimpleNetwork.Package.Log
     [Serializable]
     public class PackageLog : IPackageLog
     {
-        [NonSerialized]
         public IClient Client { get; protected set; }
 
         public IEnumerable<IPackageLogEntry> AllPackages { get { return new List<IPackageLogEntry>(packages); } }

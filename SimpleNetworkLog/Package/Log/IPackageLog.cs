@@ -9,10 +9,8 @@ using System.Text;
 
 namespace SimpleNetwork.Package.Log
 {
-    [Serializable]
     public interface IPackageLog
     {
-        [NonSerialized]
         IClient Client { get; }
         IEnumerable<IPackageLogEntry> AllPackages { get; }
 
