@@ -9,8 +9,10 @@ using System.Text;
 
 namespace SimpleNetwork.Package.Log
 {
+    [Serializable]
     public interface IServerPackageLog
     {
+        [NonSerialized]
         IServer Server { get; }
 
         bool keepOnDisconnect { get; set; }

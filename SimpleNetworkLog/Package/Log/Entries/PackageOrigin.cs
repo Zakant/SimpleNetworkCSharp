@@ -5,6 +5,7 @@ using System.Text;
 
 namespace SimpleNetwork.Package.Log.Entries
 {
+    [Serializable]
     public enum PackageOrigin : int
     {
         Local,

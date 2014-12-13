@@ -6,6 +6,7 @@ using System.Text;
 
 namespace SimpleNetwork.Package.Log.Entries.Client
 {
+    [Serializable]
     public class PackageLogEntry : IPackageLogEntry
     {
         public IPackage Package { get; protected set; }
