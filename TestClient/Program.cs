@@ -1,6 +1,7 @@
 ﻿using SimpleNetwork.Client.Secure;
 using SimpleNetwork.Detection.Detector;
 using SimpleNetwork.Package.Packages;
+using SimpleNetwork.Package.Log;
 using System;
 using System.Linq;
 using System.Threading;
@@ -12,10 +13,11 @@ namespace TestClient
         static void Main(string[] args)
         {
             SecureClient client = new SecureClient();
+            var log = client.createLog();
+
             client.RegisterPackageListener<TextPackage>((p, c) =>
                 {
-                    Console.WriteLine(p.Value);
-                    Console.WriteLine("Key is: {0}", BitConverter.ToString(client.SharedKey));
+                    //Console.WriteLine(p.Value);
                 });
             client.ConnectionStateChanged += ((s, e) =>
                 {
@@ -30,9 +32,11 @@ namespace TestClient
             client.SendPackage(new TextPackage("Hallo Welt"));
 
             Console.ReadKey();
-            client.SendPackage(new TextPackage("Test 2"));
-            client.SendPackage(new TextPackage("Test 3"));
-            client.SendPackage(new TextPackage("Test 4"));
+            for (int i = 0; i < 5; i++)
+            {
+                client.SendPackage(new TextPackage(String.Format("Test {0}", i)));
+            }
+            Console.WriteLine("Done sending");
             Console.ReadKey();
             d.StopDetection();
             client.Disconnect();

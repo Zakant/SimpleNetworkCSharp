@@ -18,18 +18,39 @@ namespace SimpleNetwork.Package.Provider
         /// <summary>
         /// Tritt ein, wenn eine neue Nachricht eintrifft.
         /// </summary>
-        public event EventHandler<Events.NewMessageEventArgs> NewMessage;
+        public event EventHandler<NewMessageEventArgs> NewMessage;
+
+        /// <summary>
+        /// Tritt ein, wenn eine Nachricht gesendet werden soll.
+        /// </summary>
+        public event EventHandler<MessageSendEventArgs> MessageSend;
 
         /// <summary>
         /// Löst das <see cref="PackageProvider.NewMessage" /> Ereignis aus.
         /// </summary>
         /// <param name="package">Das neu empfangene Packet.</param>
-        /// <param name="c">Der Remotehost, der das Packet versendet hat.</param>
-        /// <returns>Die verwendeten Erignis Argumente.</returns>
-        protected NewMessageEventArgs RaiseNewMessage(IPackage package, IClient c)
+        /// <param name="client">Der Remotehost, der das Packet versendet hat.</param>
+        /// <returns>Die verwendeten Ereignis Argumente.</returns>
+        protected NewMessageEventArgs RaiseNewMessage(IPackage package, IClient client)
         {
             var myevent = NewMessage;
-            var args = new NewMessageEventArgs(c, package);
+            var args = new NewMessageEventArgs(client, package);
+            if (myevent != null)
+                myevent(this, args);
+            return args;
+        }
+
+        /// <summary>
+        /// Löst das <see cref="PackageProvider.MessageSend" /> Ereignis aus.
+        /// </summary>
+        /// <param name="package">Das zu sendene Packet.</param>
+        /// <param name="client">Der Host, der das Packet versenden möchte.</param>
+        /// <param name="target">Der Remotehost, an den das Packet gesendet werden soll.</param>
+        /// <returns>Die verwendeten Ereignis Argumente.</returns>
+        protected MessageSendEventArgs RaiseSendMessage(IPackage package, IClient target)
+        {
+            var myevent = MessageSend;
+            var args = new MessageSendEventArgs(target, package);
             if (myevent != null)
                 myevent(this, args);
             return args;
@@ -39,7 +60,7 @@ namespace SimpleNetwork.Package.Provider
         /// Informiert alle <see cref="SimpleNetwork.Package.Listener.IPackageListener{T}" />, die den entsprechenden Typ abboniert haben.
         /// </summary>
         /// <param name="package">Das Packet, das empfangen wurde.</param>
-        /// <param name="client">Der RemoteHost, der das Packet versendet hat.</param>
+        /// <param name="client">Der Remotehost, der das Packet versendet hat.</param>
         protected void informListener(IPackage package, IClient client)
         {
             var li = listener.Where(x => x.AcceptType == package.GetType() || (x.AcceptSubType && package.GetType().IsAssignableFrom(x.AcceptType)));

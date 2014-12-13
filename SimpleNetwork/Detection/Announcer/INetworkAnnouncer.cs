@@ -1,12 +1,13 @@
 ﻿using SimpleNetwork.Detection.Data;
 using SimpleNetwork.Server;
+using System;
 
 namespace SimpleNetwork.Detection.Announcer
 {
     /// <summary>
     /// Stellt Methoden bereit, um einen Server inheralb eines Lokalen Netzwerkes aufspüren zu können.
     /// </summary>
-    public interface INetworkAnnouncer
+    public interface INetworkAnnouncer : IDisposable
     {
         /// <summary>
         /// Der Server, dessen Verbindungsinformationen mitgeteilt werden sollen. ReadOnly.

@@ -2,7 +2,9 @@
 using SimpleNetwork.Package.Listener;
 using SimpleNetwork.Package.Packages;
 using SimpleNetwork.Server.Secure;
+using SimpleNetwork.Package.Log;
 using System;
+using System.Linq;
 
 namespace TestServer
 {
@@ -11,6 +13,8 @@ namespace TestServer
         static void Main(string[] args)
         {
             SecureServer server = new SecureServer(8000);
+            var log = server.createLog();
+
             server.Start();
 
             NetworkAnnouncer ann = new NetworkAnnouncer(server);
@@ -20,8 +24,7 @@ namespace TestServer
             server.RegisterPackageListener<TextPackage>(new LambdaPackageListener<TextPackage>((text, client) =>
                 {
                     Console.WriteLine(text.Value);
-                    client.SendPackage(new TextPackage() { Value = "Heureka" });
-                    client.SendPackage(new TextPackage("Heureka2"));
+                    client.SendPackage(new TextPackage("Heureka"));
                 }));
 
             server.ClientDisconnected += new EventHandler<SimpleNetwork.Events.ClientDisconnectedEventArgs>((sender, a) =>
@@ -30,6 +33,7 @@ namespace TestServer
             });
 
             Console.ReadKey();
+            var test = log.Logs.First();
             ann.StopAnnouncing();
             server.Stop();
         }

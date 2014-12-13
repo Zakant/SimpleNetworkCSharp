@@ -34,6 +34,7 @@ namespace SimpleNetwork.Detection.Announcer
         {
             if (!Announcing)
             {
+                UpdateHostData();
                 _allpoint = new IPEndPoint(IPAddress.Any, AnnouncingPort);
                 _sendClient = new UdpClient();
                 _receiveClient = new UdpClient(_allpoint);

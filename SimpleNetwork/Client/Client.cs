@@ -131,7 +131,7 @@ namespace SimpleNetwork.Client
         /// </summary>
         protected virtual void PrepareConnection()
         {
-            InStream =_client.GetStream();
+            InStream = _client.GetStream();
             OutStream = _client.GetStream();
             RemoveTypeListener<ShutDownPackage>();
             RegisterPackageListener<ShutDownPackage>((p, c) =>
@@ -189,7 +189,8 @@ namespace SimpleNetwork.Client
             {
                 lock (_lock)
                 {
-                    _formatter.Serialize(OutStream, package);
+                    if (!RaiseSendMessage(package, this).Handled)
+                        _formatter.Serialize(OutStream, package);
                 }
             }
             catch (Exception ex)

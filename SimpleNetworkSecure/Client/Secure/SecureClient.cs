@@ -132,6 +132,11 @@ namespace SimpleNetwork.Client.Secure
             }
         }
 
+        public IPackage decryptPackage(CryptoPackage cryptoPackage)
+        {
+            return DecryptPackage(cryptoPackage.Data);
+        }
+
         protected override void HandleNewMessage(IPackage p)
         {
             if (p is CryptoPackage)

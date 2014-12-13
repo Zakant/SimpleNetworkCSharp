@@ -19,7 +19,7 @@ namespace SimpleNetwork.Detection.Announcer
         /// <summary>
         /// Erstellt ein neues NetworkAnnouncer-Objekt auf Grundlage eines IServer-Objektes.
         /// </summary>
-        /// <param name="server">Das zuverwende IServer-Objekt</param>
+        /// <param name="server">Das zu verwendene IServer-Objekt</param>
         public NetworkAnnouncer(IServer server)
             : base(server)
         {
@@ -32,6 +32,7 @@ namespace SimpleNetwork.Detection.Announcer
         {
             if (!Announcing)
             {
+                UpdateHostData();
                 _sendtimer = new Timer(Interval);
                 _sendtimer.AutoReset = true;
                 _client = new UdpClient();

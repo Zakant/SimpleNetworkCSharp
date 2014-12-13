@@ -45,7 +45,6 @@
     <Compile Include="Client\ClientFactory.cs" />
     <Compile Include="Client\IClient.cs" />
     <Compile Include="Client\IClientFactory.cs" />
-    <Compile Include="Package\History\IPackageHistory.cs" />
     <Compile Include="Detection\Announcer\NetworkAnnouncerBase.cs" />
     <Compile Include="Detection\Data\HostDataTime.cs" />
     <Compile Include="Detection\Detector\NetworkDetectorBase.cs" />
@@ -62,9 +61,9 @@
     <Compile Include="Events\ClientDisconnectedEventArgs.cs" />
     <Compile Include="Events\DisconnectedEventArgs.cs" />
     <Compile Include="Events\DisconnectReasons.cs" />
+    <Compile Include="Events\MessageSendEventArgs.cs" />
     <Compile Include="Events\NewMessageEventArgs.cs" />
     <Compile Include="Events\SimpleNetworkEventArgs.cs" />
-    <Compile Include="Package\History\IPackageHistoryEntry.cs" />
     <Compile Include="Package\Listener\EventPackageListener.cs" />
     <Compile Include="Package\Packages\FilePackage.cs" />
     <Compile Include="Package\Packages\Internal\ShutDownPackage.cs" />

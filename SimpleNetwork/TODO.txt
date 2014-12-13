@@ -1,9 +1,6 @@
 ﻿- Kommentare ergänzen und Doku neu erstellen
 
-- Kommunikation Client Server
-	-> Client ID
-	-> Package History (Klassen vorhanden, aber noch nicht funktionsfähig!)
-		-> Sequenznumber in den Packeten, um verläufe zuordnen zu können
-
-
 - Unit Tests für den Client und Server!
+
+- Argumente überprüfen und Ausnhamen erzeugen
+ --> Contract klasse

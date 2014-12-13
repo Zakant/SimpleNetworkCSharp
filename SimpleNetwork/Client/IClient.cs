@@ -1,4 +1,5 @@
 ﻿using SimpleNetwork.Detection.Data;
+using SimpleNetwork.Events;
 using SimpleNetwork.Package.Packages;
 using SimpleNetwork.Package.Provider;
 using System;
@@ -14,18 +15,12 @@ namespace SimpleNetwork.Client
         /// <summary>
         /// Tritt ein, wenn der Client die Verbindung zum Remotehost verliert
         /// </summary>
-        event EventHandler<SimpleNetwork.Events.DisconnectedEventArgs> Disconnected;
+        event EventHandler<DisconnectedEventArgs> Disconnected;
 
         /// <summary>
         /// Gibt an, ob das Client-Objekt eine aktive Verbindung besitzt. True fals ja, False, false nein.
         /// </summary>
         bool isConnected { get; }
-
-
-        /// <summary>
-        /// Gibt an, ob der Client alle empfangene und gesendeten Packages speichern soll.
-        /// </summary>
-        bool logPackageHistory { get; set; }
 
         /// <summary>
         /// Verbindet mit einem Remote Server unter verwendunge der angegebenen IPAdresse und dem Port

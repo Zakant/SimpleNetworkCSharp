@@ -47,10 +47,7 @@ namespace SimpleNetwork.Detection.Announcer
             Announcing = false;
             Interval = 3000;
             AnnouncingPort = 15000;
-            Data = new HostData();
-            Data.ID = Guid.NewGuid();
-            Data.Addresses = GetIPAddress();
-            Data.Port = server.EndPoint.Port;
+            UpdateHostData();
         }
 
         /// <summary>
@@ -63,6 +60,17 @@ namespace SimpleNetwork.Detection.Announcer
         }
 
         /// <summary>
+        /// Aktualisiert die zu versendenen Daten.
+        /// </summary>
+        protected void UpdateHostData()
+        {
+            Data = new HostData();
+            Data.ID = Guid.NewGuid();
+            Data.Addresses = GetIPAddress();
+            Data.Port = Server.EndPoint == null ? 0 : Server.EndPoint.Port;
+        }
+
+        /// <summary>
         /// Beginnt die Serverinformationen zu versenden.
         /// </summary>
         public abstract void StartAnnouncing();
@@ -71,6 +79,11 @@ namespace SimpleNetwork.Detection.Announcer
         /// Stopt die Serverinformationen zu versenden.
         /// </summary>
         public abstract void StopAnnouncing();
+
+        public void Dispose()
+        {
+            StopAnnouncing();
+        }
 
     }
 }

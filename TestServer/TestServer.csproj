@@ -49,6 +49,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\SimpleNetworkLog\SimpleNetworkLog.csproj">
+      <Project>{8b166d88-221e-4e89-a07f-a1be0efd24e6}</Project>
+      <Name>SimpleNetworkLog</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SimpleNetworkSecure\SimpleNetworkSecure.csproj">
       <Project>{34d86e86-207f-4a66-a015-10ad7c62df71}</Project>
       <Name>SimpleNetworkSecure</Name>

@@ -1,4 +1,6 @@
 ﻿using SimpleNetwork.Events.Secure;
+using SimpleNetwork.Package.Packages;
+using SimpleNetwork.Package.Packages.Secure;
 using System;
 
 namespace SimpleNetwork.Client.Secure
@@ -10,5 +12,7 @@ namespace SimpleNetwork.Client.Secure
         byte[] PublicKey { get; }
         byte[] SharedKey { get; }
         ConnectionState State { get; }
+
+        IPackage decryptPackage(CryptoPackage cryptoPackage);
     }
 }
