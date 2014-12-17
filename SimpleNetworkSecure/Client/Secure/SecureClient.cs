@@ -127,13 +127,12 @@ namespace SimpleNetwork.Client.Secure
             if (State != ConnectionState.Secure)
                 outqueue.Enqueue(package);
             else
-            {
                 base.SendPackage(new CryptoPackage(EncryptPackage(package)));
-            }
         }
 
         public IPackage decryptPackage(CryptoPackage cryptoPackage)
         {
+            if (cryptoPackage == null) throw new ArgumentNullException("cryptoPackage");
             return DecryptPackage(cryptoPackage.Data);
         }
 
@@ -152,6 +151,7 @@ namespace SimpleNetwork.Client.Secure
 
         protected byte[] EncryptPackage(IPackage p)
         {
+            if (p == null) throw new ArgumentNullException("p");
             byte[] data = p.ToByteArray();
             using (MemoryStream ms = new MemoryStream())
             {
@@ -164,6 +164,7 @@ namespace SimpleNetwork.Client.Secure
 
         protected IPackage DecryptPackage(byte[] data)
         {
+            if (data == null) throw new ArgumentNullException("data");
             using (MemoryStream ms = new MemoryStream())
             {
                 using (CryptoStream cs = new CryptoStream(ms, DecTransform, CryptoStreamMode.Write))

@@ -14,11 +14,11 @@ namespace SimpleNetwork.Package.Provider
         /// <summary>
         /// Tritt ein, wenn eine neue Nachricht eintrifft.
         /// </summary>
-        event EventHandler<NewMessageEventArgs> NewMessage;
+        event EventHandler<MessageInEventArgs> MessageIn;
         /// <summary>
         /// Tritt ein, wenn eine Nachricht gesendet werden soll.
         /// </summary>
-        event EventHandler<MessageSendEventArgs> MessageSend;
+        event EventHandler<MessageOutEventArgs> MessageOut;
         /// <summary>
         /// Registriert einen neuen <see cref="SimpleNetwork.Package.Listener.IPackageListener{T}" />.
         /// </summary>

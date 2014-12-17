@@ -122,7 +122,7 @@ namespace SimpleNetwork.Server
                     var ic = ClientFactory.createFromTcpClient(tcpserver.EndAcceptTcpClient(x)); // Das TcpClient Object besorgen und durch die Fabrik jagen
                     var r = RaiseClientConnected(ic); // Mitteilen, dass es einen neune Client gibt
                     _clients.Add(ic);
-                    ic.NewMessage += new EventHandler<NewMessageEventArgs>((sender, args) =>
+                    ic.MessageIn += new EventHandler<MessageInEventArgs>((sender, args) =>
                     {
                         RaiseNewMessage(args.Package, args.Client);
                         informListener(args.Package, args.Client);

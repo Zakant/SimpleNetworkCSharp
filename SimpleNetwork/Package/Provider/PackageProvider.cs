@@ -18,39 +18,39 @@ namespace SimpleNetwork.Package.Provider
         /// <summary>
         /// Tritt ein, wenn eine neue Nachricht eintrifft.
         /// </summary>
-        public event EventHandler<NewMessageEventArgs> NewMessage;
+        public event EventHandler<MessageInEventArgs> MessageIn;
 
         /// <summary>
         /// Tritt ein, wenn eine Nachricht gesendet werden soll.
         /// </summary>
-        public event EventHandler<MessageSendEventArgs> MessageSend;
+        public event EventHandler<MessageOutEventArgs> MessageOut;
 
         /// <summary>
-        /// Löst das <see cref="PackageProvider.NewMessage" /> Ereignis aus.
+        /// Löst das <see cref="PackageProvider.MessageIn" /> Ereignis aus.
         /// </summary>
         /// <param name="package">Das neu empfangene Packet.</param>
         /// <param name="client">Der Remotehost, der das Packet versendet hat.</param>
         /// <returns>Die verwendeten Ereignis Argumente.</returns>
-        protected NewMessageEventArgs RaiseNewMessage(IPackage package, IClient client)
+        protected MessageInEventArgs RaiseNewMessage(IPackage package, IClient client)
         {
-            var myevent = NewMessage;
-            var args = new NewMessageEventArgs(client, package);
+            var myevent = MessageIn;
+            var args = new MessageInEventArgs(client, package);
             if (myevent != null)
                 myevent(this, args);
             return args;
         }
 
         /// <summary>
-        /// Löst das <see cref="PackageProvider.MessageSend" /> Ereignis aus.
+        /// Löst das <see cref="PackageProvider.MessageOut" /> Ereignis aus.
         /// </summary>
         /// <param name="package">Das zu sendene Packet.</param>
         /// <param name="client">Der Host, der das Packet versenden möchte.</param>
         /// <param name="target">Der Remotehost, an den das Packet gesendet werden soll.</param>
         /// <returns>Die verwendeten Ereignis Argumente.</returns>
-        protected MessageSendEventArgs RaiseSendMessage(IPackage package, IClient target)
+        protected MessageOutEventArgs RaiseSendMessage(IPackage package, IClient target)
         {
-            var myevent = MessageSend;
-            var args = new MessageSendEventArgs(target, package);
+            var myevent = MessageOut;
+            var args = new MessageOutEventArgs(target, package);
             if (myevent != null)
                 myevent(this, args);
             return args;

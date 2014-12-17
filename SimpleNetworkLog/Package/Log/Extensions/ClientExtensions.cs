@@ -2,7 +2,6 @@
 using SimpleNetwork.Package.Log;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics.Contracts;
 using System.Linq;
 using System.Text;
 
@@ -12,7 +11,7 @@ namespace SimpleNetwork.Package.Log
     {
         public static IPackageLog createLog(this IClient client)
         {
-            Contract.Requires<ArgumentNullException>(client != null);
+            if (client == null) throw new ArgumentNullException("client");
             return new PackageLog(client);
         }
 

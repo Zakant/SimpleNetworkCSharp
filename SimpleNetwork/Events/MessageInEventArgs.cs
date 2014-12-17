@@ -1,18 +1,18 @@
 ﻿using SimpleNetwork.Client;
 using SimpleNetwork.Package.Packages;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace SimpleNetwork.Events
 {
-    public class MessageSendEventArgs : SimpleNetworkEventArgs
+    /// <summary>
+    /// Stellt Daten für das <see cref="SimpleNetwork.Package.Provider.IPackageProvider.MessageIn"/> Ereigniss bereit.
+    /// </summary>
+    public class MessageInEventArgs : SimpleNetworkEventArgs
     {
         /// <summary>
-        /// Der Remotehost, an den das Paket geht.
+        /// Der Remotehost, von dem das Packet stammt.
         /// </summary>
-        public IClient Target { get; protected set; }
+        public IClient Client { get; protected set; }
         /// <summary>
         /// Das empfangene Packet.
         /// </summary>
@@ -23,21 +23,14 @@ namespace SimpleNetwork.Events
         public Type MessageType { get { return (this.Package.GetType()); } }
 
         /// <summary>
-        /// Zeigt an, ob die Nachricht bereits behandelt wurde.
-        /// </summary>
-        public bool Handled { get; set; }
-
-        /// <summary>
         /// Initialisiert eine neue Instanz der NewMessageEventArgs unter verwendung des angegeben IClient-Objekts und dem IPackage-Objekt.
         /// </summary>
         /// <param name="client">Der IClient, von dem die Nachricht stammt.</param>
         /// <param name="package">Das empfangene Packet.</param>
-        public MessageSendEventArgs(IClient target, IPackage package)
+        public MessageInEventArgs(IClient client, IPackage package)
         {
-            Target = target;
+            Client = client;
             Package = package;
-            Handled = false;
         }
-
     }
 }

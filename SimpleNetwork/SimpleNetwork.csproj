@@ -61,8 +61,8 @@
     <Compile Include="Events\ClientDisconnectedEventArgs.cs" />
     <Compile Include="Events\DisconnectedEventArgs.cs" />
     <Compile Include="Events\DisconnectReasons.cs" />
-    <Compile Include="Events\MessageSendEventArgs.cs" />
-    <Compile Include="Events\NewMessageEventArgs.cs" />
+    <Compile Include="Events\MessageOutEventArgs.cs" />
+    <Compile Include="Events\MessageInEventArgs.cs" />
     <Compile Include="Events\SimpleNetworkEventArgs.cs" />
     <Compile Include="Package\Listener\EventPackageListener.cs" />
     <Compile Include="Package\Packages\FilePackage.cs" />

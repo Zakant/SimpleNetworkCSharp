@@ -1,7 +1,6 @@
 ﻿using SimpleNetwork.Package.Packages;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics.Contracts;
 using System.Linq;
 using System.Text;
 
@@ -20,8 +19,6 @@ namespace SimpleNetwork.Package.Log.Entries.Client
 
         public TypedPackageLogEntry(T package, PackageOrigin origin, DateTime timeStamp)
         {
-            Contract.Requires<ArgumentNullException>(package != null);
-
             Package = package;
             Origin = origin;
             TimeStamp = timeStamp;
