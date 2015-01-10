@@ -127,7 +127,7 @@ namespace SimpleNetwork.Client.Secure
             if (State != ConnectionState.Secure)
                 outqueue.Enqueue(package);
             else
-                base.SendPackage(new CryptoPackage(EncryptPackage(package)));
+                base.SendPackage(package);
         }
 
         public IPackage decryptPackage(CryptoPackage cryptoPackage)
@@ -147,6 +147,13 @@ namespace SimpleNetwork.Client.Secure
             }
             else
                 base.HandleNewMessage(p);
+        }
+
+        protected override IPackage transformPackageForSend(IPackage package)
+        {
+            if (State == ConnectionState.Secure)
+                return new CryptoPackage(EncryptPackage(package));
+            return package;
         }
 
         protected byte[] EncryptPackage(IPackage p)

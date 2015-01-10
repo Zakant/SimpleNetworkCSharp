@@ -221,7 +221,7 @@ namespace SimpleNetwork.Client
                 lock (_lock)
                 {
                     if (!RaiseSendMessage(package, this).Handled)
-                        _formatter.Serialize(OutStream, package);
+                        _formatter.Serialize(OutStream, transformPackageForSend(package));
                 }
             }
             catch (Exception ex)
@@ -229,6 +229,11 @@ namespace SimpleNetwork.Client
                 Disconnect(DisconnectReason.LostConnection); // Fehler, verbindung verloren
             }
 
+        }
+
+        protected virtual IPackage transformPackageForSend(IPackage package)
+        {
+            return package;
         }
 
         /// <summary>
