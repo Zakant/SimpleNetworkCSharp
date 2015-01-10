@@ -28,10 +28,8 @@ namespace SimpleNetwork.Package.Packages
         /// <param name="fi">Das FileInfo-Objekt.</param>
         public FilePackage(FileInfo fi)
         {
-            using (var fs = new FileStream(fi.FullName, FileMode.Open))
-            {
-                Data = (new BinaryReader(fs)).ReadBytes((int)fs.Length);
-            }
+            if (!fi.Exists) throw new Exception(String.Format("File \"{0}\" does not exsits!", fi.FullName));
+            Data = File.ReadAllBytes(fi.FullName);
             Name = fi.Name;
             Info = fi;
         }
