@@ -32,7 +32,7 @@ namespace TestServer
                 Console.WriteLine("Client disconnected: " + a.Reason.ToString());
             });
 
-            Console.ReadKey();
+            Console.ReadKey(false);
             var test = log.Logs.First();
             ann.StopAnnouncing();
             server.Stop();

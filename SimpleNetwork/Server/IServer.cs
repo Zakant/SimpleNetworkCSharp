@@ -26,7 +26,7 @@ namespace SimpleNetwork.Server
         /// <summary>
         /// Stellt eine Auflistung aller verbundenen Remotehosts da.
         /// </summary>
-        IEnumerable<IClient> Clients { get; }
+        ICollection<IClient> Clients { get; }
 
         /// <summary>
         /// Stellt den Endpunkt da, an dem der Server auf eingehende Verbindungsanfragen lauscht.

@@ -23,6 +23,31 @@ namespace SimpleNetwork.Client
         bool isConnected { get; }
 
         /// <summary>
+        /// Gibt den Localen Endpunkt an, an den dieser Client gebunden ist.
+        /// </summary>
+        IPEndPoint LocalEndPoint { get; }
+
+        /// <summary>
+        /// Gitb den Remote Endpunkt an, zu dem dieser Client verbunden ist.
+        /// </summary>
+        IPEndPoint RemoteEndPoint { get; }
+
+        /// <summary>
+        /// Gibt an, ob der Client alle empfangene und gesendeten Packages speichern soll.
+        /// </summary>
+        bool logPackageHistory { get; set; }
+
+        /// <summary>
+        /// Gibt an, ob es sich um einen Client handelt der als Teil eines Servers arbeitet oder nicht.
+        /// </summary>
+        bool isServerClient { get; }
+
+        /// <summary>
+        /// Gibt an, ob der Client aktuell läuft.
+        /// </summary>
+        bool isRunning { get; }
+
+        /// <summary>
         /// Verbindet mit einem Remote Server unter verwendunge der angegebenen IPAdresse und dem Port
         /// </summary>
         /// <param name="ip">Die zu verwendene IPAdresse</param>

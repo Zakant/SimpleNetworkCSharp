@@ -84,7 +84,7 @@ namespace SimpleNetwork.Client.Secure
                 SendUnsecure(new ServerSecurePackage(PublicKey, rjd.IV));
         }
 
-        protected override void PrepareConnection()
+        protected override void OpenConnection()
         {
             RemoveTypeListener<ClientSecurePackage>();
             RemoveTypeListener<ServerSecurePackage>();
@@ -101,7 +101,7 @@ namespace SimpleNetwork.Client.Secure
                         MakeSecure(p.PublicKey, p.IV);
                     });
 
-            base.PrepareConnection();
+            base.OpenConnection();
             InitializeSecureConnection();
         }
 

@@ -31,13 +31,13 @@ namespace TestClient
             client.Connect(d.Hosts.First());
             client.SendPackage(new TextPackage("Hallo Welt"));
 
-            Console.ReadKey();
+            Console.ReadKey(false);
             for (int i = 0; i < 5; i++)
             {
                 client.SendPackage(new TextPackage(String.Format("Test {0}", i)));
             }
             Console.WriteLine("Done sending");
-            Console.ReadKey();
+            Console.ReadKey(false);
             d.StopDetection();
             client.Disconnect();
         }

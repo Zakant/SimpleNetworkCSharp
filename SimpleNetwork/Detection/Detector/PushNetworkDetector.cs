@@ -98,6 +98,9 @@ namespace SimpleNetwork.Detection.Detector
             }
         }
 
+        /// <summary>
+        /// Gibt alle verwendeten Resourcen frei.
+        /// </summary>
         public override void Dispose()
         {
             base.Dispose();

@@ -7,6 +7,9 @@ using System.Text;
 
 namespace SimpleNetwork.Events
 {
+    /// <summary>
+    /// Stellt Daten für das <see cref="SimpleNetwork.Package.Provider.IPackageProvider.MessageOut"/>-Ereigniss bereit.
+    /// </summary>
     public class MessageOutEventArgs : SimpleNetworkEventArgs
     {
         /// <summary>
@@ -30,7 +33,7 @@ namespace SimpleNetwork.Events
         /// <summary>
         /// Initialisiert eine neue Instanz der NewMessageEventArgs unter verwendung des angegeben IClient-Objekts und dem IPackage-Objekt.
         /// </summary>
-        /// <param name="client">Der IClient, von dem die Nachricht stammt.</param>
+        /// <param name="target">Der IClient, von dem die Nachricht stammt.</param>
         /// <param name="package">Das empfangene Packet.</param>
         public MessageOutEventArgs(IClient target, IPackage package)
         {

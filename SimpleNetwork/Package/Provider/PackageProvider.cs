@@ -44,7 +44,6 @@ namespace SimpleNetwork.Package.Provider
         /// Löst das <see cref="PackageProvider.MessageOut" /> Ereignis aus.
         /// </summary>
         /// <param name="package">Das zu sendene Packet.</param>
-        /// <param name="client">Der Host, der das Packet versenden möchte.</param>
         /// <param name="target">Der Remotehost, an den das Packet gesendet werden soll.</param>
         /// <returns>Die verwendeten Ereignis Argumente.</returns>
         protected MessageOutEventArgs RaiseSendMessage(IPackage package, IClient target)
@@ -82,7 +81,7 @@ namespace SimpleNetwork.Package.Provider
         /// <summary>
         /// Registriert einen neuen <see cref="SimpleNetwork.Package.Listener.IPackageListener{T}" />.
         /// </summary>
-        /// <typeparam name="T">Den Packettype, den der <see cref="SimpleNetwork.Package.Listener.IPackageListener{T}" /> abbonieren möchte.</typeparam>
+        /// <typeparam name="T">Der Packettype, den der Listener abbonieren soll.</typeparam>
         /// <param name="packagelistener">Der <see cref="SimpleNetwork.Package.Listener.IPackageListener{T}" />.</param>
         public void RegisterPackageListener<T>(IPackageListener<T> packagelistener) where T : IPackage
         {
@@ -92,9 +91,9 @@ namespace SimpleNetwork.Package.Provider
         /// <summary>
         /// Registriert einen neuen <see cref="SimpleNetwork.Package.Listener.IPackageListener{T}" />.
         /// </summary>
-        /// <typeparam name="T">Den Packettype, den der <see cref="SimpleNetwork.Package.Listener.IPackageListener{T}" /> abbonieren möchte.</typeparam>
+        /// <typeparam name="T">Der Packettype, den der Listener abbonieren soll.</typeparam>
         /// <param name="packagelistener">Der <see cref="SimpleNetwork.Package.Listener.IPackageListener{T}" />.</param>
-        /// <param name="acceptSubTypes">Ein Wahrheitswert, der angibt, ob auch Sub Typen berücksichtigt werden soll</param>
+        /// <param name="acceptSubTypes">Ein Wahrheitswert, der angibt, ob auch Sub Typen berücksichtigt werden sollen.</param>
         public void RegisterPackageListener<T>(IPackageListener<T> packagelistener, bool acceptSubTypes) where T : IPackage
         {
             listener.Add(new ListenerEntry(packagelistener, typeof(T), acceptSubTypes));
@@ -103,7 +102,7 @@ namespace SimpleNetwork.Package.Provider
         /// <summary>
         /// Reigstriert einen neunen Listener. Dieser wird durch eine <see cref="Action{T,T2}" /> dargestellt.
         /// </summary>
-        /// <typeparam name="T">Der Typ, auf den gelauscht wird.</typeparam>
+        /// <typeparam name="T">Der Packettype, den der Listener abbonieren soll.</typeparam>
         /// <param name="action">Die <see cref="Action{T,T2}" />.</param>
         public void RegisterPackageListener<T>(Action<T, IClient> action) where T : IPackage
         {
@@ -113,9 +112,9 @@ namespace SimpleNetwork.Package.Provider
         /// <summary>
         /// Reigstriert einen neunen Listener. Dieser wird durch eine <see cref="Action{T,T2}" /> dargestellt.
         /// </summary>
-        /// <typeparam name="T">Der Typ, auf den gelauscht wird.</typeparam>
+        /// <typeparam name="T">Der Packettype, den der Listener abbonieren soll.</typeparam>
         /// <param name="action">Die <see cref="Action{T,T2}" />.</param>
-        /// <param name="acceptSubTypes">Ein Wahrheitswert, der angibt, ob auch Sub Typen berücksichtigt werden soll</param>
+        /// <param name="acceptSubTypes">Ein Wahrheitswert, der angibt, ob auch Sub Typen berücksichtigt werden sollen.</param>
         public void RegisterPackageListener<T>(Action<T, IClient> action, bool acceptSubTypes) where T : IPackage
         {
             RegisterPackageListener<T>(new LambdaPackageListener<T>(action), acceptSubTypes);
@@ -140,21 +139,43 @@ namespace SimpleNetwork.Package.Provider
             listener.RemoveAll(x => x.AcceptType == typeof(T));
         }
 
+        /// <summary>
+        /// Registriet einen neunen Listener mit exclusiv Rechten über den angegeben Typen.
+        /// </summary>
+        /// <typeparam name="T">Der Packettype, den der Listener abbonieren soll.</typeparam>
+        /// <param name="packagelistener">Der Listener, der mit exclusiv Rechten registriert werden soll.</param>
         protected void RegisterExclusivPackageListern<T>(IPackageListener<T> packagelistener) where T : IPackage
         {
             listener.Add(new ListenerEntry(packagelistener, typeof(T), false, true));
         }
 
+        /// <summary>
+        /// Registriet einen neunen Listener mit exclusiv Rechten über den angegeben Typen.
+        /// </summary>
+        /// <typeparam name="T">Der Packettype, den der Listener abbonieren soll.</typeparam>
+        /// <param name="packagelistener">Der Listener, der mit exclusiv Rechten registriert werden soll.</param>
+        /// <param name="acceptSubTypes">Ein Wahrheitswert, der angibt, ob auch Sub Typen berücksichtigt werden sollen.</param>
         protected void RegisterExclusivPackageListern<T>(IPackageListener<T> packagelistener, bool acceptSubTypes) where T : IPackage
         {
             listener.Add(new ListenerEntry(packagelistener, typeof(T), acceptSubTypes, true));
         }
 
+        /// <summary>
+        /// Registriet einen neunen Listener mit exclusiv Rechten über den angegeben Typen.
+        /// </summary>
+        /// <typeparam name="T">Der Packettype, den der Listener abbonieren soll.</typeparam>
+        /// <param name="action">Der Listener, der mit exclusiv Rechten registriert werden soll. Repräsentiert durch eine <see cref="Action{T, IClient}"/> Methode.</param>
         protected void RegisterExclusivPackageListern<T>(Action<T, IClient> action) where T : IPackage
         {
             listener.Add(new ListenerEntry(new LambdaPackageListener<T>(action), typeof(T), false, true));
         }
 
+        /// <summary>
+        /// Registriet einen neunen Listener mit exclusiv Rechten über den angegeben Typen.
+        /// </summary>
+        /// <typeparam name="T">Der Packettype, den der Listener abbonieren soll.</typeparam>
+        /// <param name="action">Der Listener, der mit exclusiv Rechten registriert werden soll. Repräsentiert durch eine <see cref="Action{T, IClient}"/> Methode.</param>
+        /// <param name="acceptSubTypes">Ein Wahrheitswert, der angibt, ob auch Sub Typen berücksichtigt werden sollen.</param>
         protected void RegisterExclusivPackageListern<T>(Action<T, IClient> action, bool acceptSubTypes) where T : IPackage
         {
             listener.Add(new ListenerEntry(new LambdaPackageListener<T>(action), typeof(T), acceptSubTypes, true));

@@ -80,6 +80,9 @@ namespace SimpleNetwork.Detection.Announcer
         /// </summary>
         public abstract void StopAnnouncing();
 
+        /// <summary>
+        /// Gibt alle verwendeten Resourcen frei.
+        /// </summary>
         public void Dispose()
         {
             StopAnnouncing();

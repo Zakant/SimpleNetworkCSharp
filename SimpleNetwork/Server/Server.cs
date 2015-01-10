@@ -58,7 +58,7 @@ namespace SimpleNetwork.Server
         /// <summary>
         /// Stellt eine Auflistung aller verbundenen Remotehosts da.
         /// </summary>
-        public IEnumerable<IClient> Clients
+        public ICollection<IClient> Clients
         {
             get { return new List<IClient>(_clients); }
         }
