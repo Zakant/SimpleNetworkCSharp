@@ -1,9 +1,9 @@
 SimpleNetworkCSharp
 ===================
 
+[![Build Status](https://travis-ci.org/Zakant/SimpleNetworkCSharp.svg)](https://travis-ci.org/Zakant/SimpleNetworkCSharp)
+
 Eine einfachere Wrapper, der Netzwerfunktionen unter .NET bereitstellt.
-
-
 
 Diese Bibliothek bietet eine einfache Verwendungsmöglichkeite der in .NET bereits vorhandenen Netzwerkkomponenten.
 
