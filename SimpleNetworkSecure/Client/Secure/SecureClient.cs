@@ -1,10 +1,12 @@
-﻿using SimpleNetwork.Events.Secure;
+﻿using Mono.Security.Cryptography;
+using SimpleNetwork.Events.Secure;
 using SimpleNetwork.Package.Packages;
 using SimpleNetwork.Package.Packages.Internal.Secure;
 using SimpleNetwork.Package.Packages.Secure;
 using SimpleNetwork.Utils;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.IO;
 using System.Net.Sockets;
 using System.Security.Cryptography;
@@ -23,7 +25,7 @@ namespace SimpleNetwork.Client.Secure
             return args;
         }
 
-
+        public DHParameters KeyExchangeParameters { get; protected set; }
         public byte[] PublicKey { get; protected set; }
         public byte[] SharedKey { get; protected set; }
 
@@ -42,7 +44,7 @@ namespace SimpleNetwork.Client.Secure
         protected Queue<IPackage> outqueue = new Queue<IPackage>();
         protected Queue<CryptoPackage> inqueue = new Queue<CryptoPackage>();
 
-        private ECDiffieHellmanCng dh;
+        private DiffieHellmanManaged dh;
         private RijndaelManaged rjd;
 
         private ICryptoTransform EncTransform;
@@ -77,11 +79,14 @@ namespace SimpleNetwork.Client.Secure
 
         protected void InitializeSecureConnection()
         {
-            dh = new ECDiffieHellmanCng();
+            dh = new DiffieHellmanManaged();
             rjd = new RijndaelManaged();
-            PublicKey = dh.PublicKey.ToByteArray();
             if (isServerClient)
-                SendUnsecure(new ServerSecurePackage(PublicKey, rjd.IV));
+            {
+                KeyExchangeParameters = dh.ExportParameters(true);
+                PublicKey = dh.CreateKeyExchange();
+                SendUnsecure(new ServerSecurePackage(PublicKey, rjd.IV, dh.ExportParameters(false)));
+            }
         }
 
         protected override void OpenConnection()
@@ -97,6 +102,9 @@ namespace SimpleNetwork.Client.Secure
             else
                 RegisterPackageListener<ServerSecurePackage>((p, c) =>
                     {
+                        dh.ImportParameters(p.Paramters);
+                        KeyExchangeParameters = dh.ExportParameters(true);
+                        PublicKey = dh.CreateKeyExchange();
                         SendUnsecure(new ClientSecurePackage(PublicKey));
                         MakeSecure(p.PublicKey, p.IV);
                     });
@@ -108,7 +116,7 @@ namespace SimpleNetwork.Client.Secure
         protected void MakeSecure(byte[] PublicKey, byte[] iv)
         {
             State = ConnectionState.Securing;
-            SharedKey = dh.DeriveKeyMaterial(CngKey.Import(PublicKey, CngKeyBlobFormat.EccPublicBlob));
+            SharedKey = dh.DecryptKeyExchange(PublicKey).Take(rjd.LegalKeySizes.OrderBy(x => x.MaxSize).First().MaxSize / 8).ToArray();
             rjd.Key = SharedKey;
             rjd.IV = iv;
             DecTransform = rjd.CreateDecryptor();
