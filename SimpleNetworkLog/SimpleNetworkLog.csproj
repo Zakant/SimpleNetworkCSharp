@@ -97,7 +97,7 @@
     <Compile Include="Package\Log\IPackageLog.cs" />
     <Compile Include="Package\Log\IServerPackageLog.cs" />
     <Compile Include="Package\Log\Extensions\PackageExtensions.cs" />
-    <Compile Include="Package\Log\Attributes\NotLoggableAttribute.cs" />
+    <Compile Include="Package\Log\Attributes\NonLogedAttribute.cs" />
     <Compile Include="Package\Log\PackageLog.cs" />
     <Compile Include="Package\Log\Extensions\ServerExtensions.cs" />
     <Compile Include="Package\Log\ServerPackageLog.cs" />

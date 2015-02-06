@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 
 namespace SimpleNetwork.Package.Log.Entries.Client
@@ -19,7 +20,7 @@ namespace SimpleNetwork.Package.Log.Entries.Client
 
         public PackageLogEntry(IPackage package, PackageOrigin origin, DateTime timeStamp)
         {
-            Package = package;
+            Package = package.Clone().hideFields();
             Origin = origin;
             TimeStamp = timeStamp;
         }

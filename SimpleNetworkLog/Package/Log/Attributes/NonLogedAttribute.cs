@@ -6,7 +6,7 @@ using System.Text;
 namespace SimpleNetwork.Package.Log
 {
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Interface | AttributeTargets.Assembly, Inherited = true, AllowMultiple = false)]
-    public sealed class NotLoggableAttribute : Attribute
+    public sealed class NonLoggedAttribute : Attribute
     {
     }
 }
