@@ -64,6 +64,7 @@
     <Compile Include="Events\MessageOutEventArgs.cs" />
     <Compile Include="Events\MessageInEventArgs.cs" />
     <Compile Include="Events\SimpleNetworkEventArgs.cs" />
+    <Compile Include="Package\Extensions\PackageExtensions.cs" />
     <Compile Include="Package\Listener\EventPackageListener.cs" />
     <Compile Include="Package\Packages\Authentication\BaseAuthPackage.cs" />
     <Compile Include="Package\Packages\FilePackage.cs" />

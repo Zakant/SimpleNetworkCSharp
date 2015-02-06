@@ -41,7 +41,8 @@ namespace SimpleNetwork.Package.Log
         public void addPackage<T>(T package, PackageOrigin origin) where T : IPackage
         {
             if (package == null) throw new ArgumentNullException("package");
-            packages.Add(new PackageLogEntry(package, origin));
+            if (package.shouldLogged())
+                packages.Add(new PackageLogEntry(package, origin));
         }
     }
 }
