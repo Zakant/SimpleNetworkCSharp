@@ -93,9 +93,11 @@
     <Compile Include="Package\Log\Entries\Client\TypedPackageLogEntry.cs" />
     <Compile Include="Package\Log\Entries\Server\ServerLogEntry.cs" />
     <Compile Include="Package\Log\Extensions\ClientExtensions.cs" />
+    <Compile Include="Package\Log\Attributes\HideInLogAttribute.cs" />
     <Compile Include="Package\Log\IPackageLog.cs" />
     <Compile Include="Package\Log\IServerPackageLog.cs" />
     <Compile Include="Package\Log\Extensions\PackageExtensions.cs" />
+    <Compile Include="Package\Log\Attributes\NonLogedAttribute.cs" />
     <Compile Include="Package\Log\PackageLog.cs" />
     <Compile Include="Package\Log\Extensions\ServerExtensions.cs" />
     <Compile Include="Package\Log\ServerPackageLog.cs" />
