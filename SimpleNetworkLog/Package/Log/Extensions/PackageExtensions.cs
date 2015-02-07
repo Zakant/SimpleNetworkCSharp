@@ -14,7 +14,6 @@ namespace SimpleNetwork.Package.Log
             return !Attribute.IsDefined(package.GetType(), typeof(NonLoggedAttribute));
         }
 
-
         private static BindingFlags flags = BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public;
         internal static IPackage hideFields(this IPackage package)
         {
