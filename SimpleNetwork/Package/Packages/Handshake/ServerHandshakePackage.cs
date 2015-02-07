@@ -5,7 +5,7 @@ using System.Text;
 
 namespace SimpleNetwork.Package.Packages.Handshake
 {
-    public class ServerHandshakePackage : IHandshakePackage
+    public class ServerHandshakePackage : HandshakePackage
     {
     }
 }

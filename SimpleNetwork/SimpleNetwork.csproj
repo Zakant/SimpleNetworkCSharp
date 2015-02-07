@@ -68,7 +68,7 @@
     <Compile Include="Package\Listener\EventPackageListener.cs" />
     <Compile Include="Package\Packages\FilePackage.cs" />
     <Compile Include="Package\Packages\Handshake\ClientHandshakePackage.cs" />
-    <Compile Include="Package\Packages\Handshake\IHandshakePackage.cs" />
+    <Compile Include="Package\Packages\Handshake\HandshakePackage.cs" />
     <Compile Include="Package\Packages\Handshake\ServerHandshakePackage.cs" />
     <Compile Include="Package\Packages\Internal\ShutDownPackage.cs" />
     <Compile Include="Package\Packages\IPackage.cs" />
