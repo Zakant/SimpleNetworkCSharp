@@ -3,7 +3,7 @@
 namespace SimpleNetwork.Events
 {
     /// <summary>
-    /// Stellt Daten für das <see cref="SimpleNetwork.Server.IServer.ClientConnected"/> Ereigniss bereit.
+    /// Stellt Daten für das <see cref="SimpleNetwork.Server.IServer.ClientConnected"/> Ereignis bereit.
     /// </summary>
     public class ClientConnectedEventArgs : SimpleNetworkEventArgs
     {

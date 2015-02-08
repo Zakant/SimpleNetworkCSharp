@@ -5,7 +5,7 @@ using System;
 namespace SimpleNetwork.Events
 {
     /// <summary>
-    /// Stellt Daten für das <see cref="SimpleNetwork.Package.Provider.IPackageProvider.MessageIn"/> Ereigniss bereit.
+    /// Stellt Daten für das <see cref="SimpleNetwork.Package.Provider.IPackageProvider.MessageIn"/> Ereignis bereit.
     /// </summary>
     public class MessageInEventArgs : SimpleNetworkEventArgs
     {

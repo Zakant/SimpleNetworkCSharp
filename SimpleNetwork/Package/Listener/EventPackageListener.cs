@@ -5,7 +5,7 @@ using System;
 namespace SimpleNetwork.Package.Listener
 {
     /// <summary>
-    /// Stellte eine Klasse bereit, um auf eingehende Packete mithilfe von Ereignissen reagieren zu können.
+    /// Stellte eine Klasse bereit, um auf eingehende Packete mithilfe von Ereignisen reagieren zu können.
     /// </summary>
     /// <typeparam name="T">Der Typ der Pakete, auf die reagiert werden soll.</typeparam>
     public class EventPackageListener<T> : IPackageListener<T> where T : IPackage
@@ -28,7 +28,7 @@ namespace SimpleNetwork.Package.Listener
         }
     }
     /// <summary>
-    /// Stellt Daten für das <see cref="EventPackageListener{T}.PackageReceived"/> Ereigniss bereit.
+    /// Stellt Daten für das <see cref="EventPackageListener{T}.PackageReceived"/> Ereignis bereit.
     /// </summary>
     /// <typeparam name="T"></typeparam>
     public class EventPackageListenerEventArgs<T> : EventArgs where T : IPackage

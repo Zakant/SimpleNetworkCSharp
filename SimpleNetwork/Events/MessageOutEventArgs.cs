@@ -8,7 +8,7 @@ using System.Text;
 namespace SimpleNetwork.Events
 {
     /// <summary>
-    /// Stellt Daten für das <see cref="SimpleNetwork.Package.Provider.IPackageProvider.MessageOut"/>-Ereigniss bereit.
+    /// Stellt Daten für das <see cref="SimpleNetwork.Package.Provider.IPackageProvider.MessageOut"/>-Ereignis bereit.
     /// </summary>
     public class MessageOutEventArgs : SimpleNetworkEventArgs
     {

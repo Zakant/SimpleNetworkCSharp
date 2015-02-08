@@ -3,7 +3,7 @@
 namespace SimpleNetwork.Events.Secure
 {
     /// <summary>
-    /// Stellt Daten für das  
+    /// Stellt Daten für das  <see cref=""/> Ereignis bereit.
     /// </summary>
     public class ConnectionStateChangedEventArgs : SimpleNetworkEventArgs
     {

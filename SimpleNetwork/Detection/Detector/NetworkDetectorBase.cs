@@ -43,7 +43,7 @@ namespace SimpleNetwork.Detection.Detector
         /// </summary>
         public event EventHandler<Events.HostLostEventArgs> HostLost;
         /// <summary>
-        /// Löst das <see cref="HostLost"/> Ereigniss aus.
+        /// Löst das <see cref="HostLost"/> Ereignis aus.
         /// </summary>
         /// <param name="oldData">Die Serverinformationen des Hosts, der verloren wurde.</param>
         /// <returns>Die verwendeten Ereignis Argumente.</returns>
