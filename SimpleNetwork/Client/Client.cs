@@ -1,9 +1,12 @@
 ﻿using SimpleNetwork.Detection.Data;
 using SimpleNetwork.Events;
 using SimpleNetwork.Package.Packages;
+using SimpleNetwork.Package.Packages.Handshake;
 using SimpleNetwork.Package.Packages.Internal;
 using SimpleNetwork.Package.Provider;
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.IO;
 using System.Net;
 using System.Net.NetworkInformation;
@@ -71,6 +74,20 @@ namespace SimpleNetwork.Client
             }
         }
 
+        private bool _isHandshakeCompleted = false;
+        /// <summary>
+        /// Gibt an, ob der Server-Client Handschlag abgeschlossen wurde.
+        /// </summary>
+        public bool isHandshakeCompleted
+        {
+            get { return _isHandshakeCompleted; }
+            protected set
+            {
+                _isHandshakeCompleted = value;
+                ResendPackages();
+            }
+        }
+
         /// <summary>
         /// Gibt an, ob der Client alle empfangene und gesendeten Packages speichern soll.
         /// </summary>
@@ -114,7 +131,6 @@ namespace SimpleNetwork.Client
             isServerClient = true;
             _client = c;
             SetUpConnection();
-            OpenConnection();
         }
 
         /// <summary>
@@ -127,8 +143,6 @@ namespace SimpleNetwork.Client
             _client = new TcpClient();
             _client.Connect(new IPEndPoint(ip, port));
             SetUpConnection();
-            OpenConnection();
-            StartListening();
         }
 
         /// <summary>
@@ -161,12 +175,52 @@ namespace SimpleNetwork.Client
             {
                 Disconnect(DisconnectReason.ClosedProperly);
             });
+
+            if (isServerClient)
+            {
+                RemoveTypeListener<ClientHandshakePackage>();
+                RegisterPackageListener<ClientHandshakePackage>((p, c) =>
+                    {
+                        var serverHandshake = new ServerHandshakePackage();
+                        PrepareServerAnswerHandshake(p, serverHandshake);
+                        SendPackage(serverHandshake, true, true);
+                        isHandshakeCompleted = true;
+                        OpenConnection();
+                    });
+            }
+            else
+            {
+                RemoveTypeListener<ServerHandshakePackage>();
+                RegisterPackageListener<ServerHandshakePackage>((p, c) =>
+                    {
+                        HandleServerAnswerHandshake(p);
+                        isHandshakeCompleted = true;
+                        OpenConnection();
+                    });
+                var clientHandshake = new ClientHandshakePackage();
+                PrepareClientHandshake(clientHandshake);
+                SendPackage(clientHandshake, true, true);
+            }
+            StartListening();
         }
 
         /// <summary>
         /// Wird aufgerufen wenn der Client-Server Handschlag abgeschlossen wurde.
         /// </summary>
         protected virtual void OpenConnection()
+        {
+
+        }
+
+        protected virtual void PrepareClientHandshake(ClientHandshakePackage outClientHandshake)
+        {
+            outClientHandshake.KeyValues.Add("OS", Environment.OSVersion.VersionString);
+        }
+        protected virtual void PrepareServerAnswerHandshake(ClientHandshakePackage inClientHandshake, ServerHandshakePackage outServerHandshake)
+        {
+            outServerHandshake.KeyValues.Add("OS", Environment.OSVersion.VersionString);
+        }
+        protected virtual void HandleServerAnswerHandshake(ServerHandshakePackage inServerHandshake)
         {
 
         }
@@ -210,27 +264,61 @@ namespace SimpleNetwork.Client
 
 
         private object _lock = new object();
+        private Queue<IPackage> _queue = new Queue<IPackage>();
+
         /// <summary>
-        /// Sendet ein Packet an den Remotehost.
+        /// Sendet ein Paket an den Remotehost.
         /// </summary>
-        /// <param name="package">Das zu sendene Packet.</param>
+        /// <param name="package">Das zu sendene Paket.</param>
         public virtual void SendPackage(IPackage package)
+        {
+            SendPackage(package, false, false);
+        }
+
+        /// <summary>
+        /// Sendet ein Paket an den Remotehost. Erlaubt es den Client-Server Handschlag sowie das <see cref="SimpleNetwork.Package.Provider.PackageProvider.MessageOut"/>-Event zu uebergeghen.
+        /// </summary>
+        /// <param name="package">Das zu sendene Paket.</param>
+        /// <param name="bypassHandshake">Gibt an, ob der Client-Sever Handschlag ignoriert werden soll.</param>
+        /// <param name="bypassMessageOut">Gitb an, ob das <see cref="SimpleNetwork.Package.Provider.PackageProvider.MessageOut"/>-Event ignoriert werden soll.</param>
+        protected void SendPackage(IPackage package, bool bypassHandshake, bool bypassMessageOut)
         {
             try
             {
                 lock (_lock)
                 {
-                    if (!RaiseSendMessage(package, this).Handled)
-                        _formatter.Serialize(OutStream, transformPackageForSend(package));
+                    if (!(isHandshakeCompleted || bypassHandshake))
+                        _queue.Enqueue(package);
+                    else
+                        if (bypassMessageOut || !RaiseSendMessage(package, this).Handled)
+                            _formatter.Serialize(OutStream, transformPackageForSend(package));
                 }
             }
-            catch (Exception ex)
+                catch(ArgumentException argumentEx)
             {
-                Disconnect(DisconnectReason.LostConnection); // Fehler, verbindung verloren
+                Disconnect(DisconnectReason.LostConnection);
             }
-
+            catch (IOException ex)
+            {
+                Disconnect(DisconnectReason.LostConnection); // Fehler, Verbindung verloren
+            }
         }
 
+        private void ResendPackages()
+        {
+            if (_queue.Count == 0 || !isHandshakeCompleted) return; // Wenn es keine Pakete gibt, koennen wir aufhoeren, oder wenn der handschlag nicht fertig ist.
+            foreach (var p in _queue.ToArray()) // Alle Pakete in ein neues Array und durchloopen.
+            {
+                SendPackage(p); // Jedes Paket versenden.
+            }
+            ResendPackages(); // Und rekursiv aufrufen, um sicherzustellen, dass wirklich alle Pakete gesendet wurden.
+        }
+
+        /// <summary>
+        /// Transformiert ein Paket so, dass es an den Remotehost gesendet werden kann.
+        /// </summary>
+        /// <param name="package">Das urspruengliche Paket.</param>
+        /// <returns>Das transformierte Paket.</returns>
         protected virtual IPackage transformPackageForSend(IPackage package)
         {
             return package;

@@ -48,6 +48,11 @@ namespace SimpleNetwork.Client
         bool isRunning { get; }
 
         /// <summary>
+        /// Gibt an, ob der Server-Client Handschlag abgeschlossen wurde.
+        /// </summary>
+        bool isHandshakeCompleted { get; }
+
+        /// <summary>
         /// Verbindet mit einem Remote Server unter verwendunge der angegebenen IPAdresse und dem Port
         /// </summary>
         /// <param name="ip">Die zu verwendene IPAdresse</param>
