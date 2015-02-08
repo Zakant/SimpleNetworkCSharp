@@ -7,8 +7,16 @@ using System.Text;
 
 namespace SimpleNetwork.Package.Log
 {
+    /// <summary>
+    /// Stellt Erweiterungs Methoden fuer Pakete bereit.
+    /// </summary>
     public static class PackageExtensions
     {
+        /// <summary>
+        /// Stellt fest, ob ein Paket im Log auftauchen soll.
+        /// </summary>
+        /// <param name="package">Das zu pruefende Paket.</param>
+        /// <returns>Ein Wahrheitswert, der angibt, ob das Paket im Log auftauchen soll.</returns>
         public static bool shouldLogged(this IPackage package)
         {
             return !Attribute.IsDefined(package.GetType(), typeof(NonLoggedAttribute));
