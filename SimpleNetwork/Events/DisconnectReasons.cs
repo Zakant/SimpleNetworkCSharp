@@ -17,7 +17,7 @@ namespace SimpleNetwork.Events
         /// <summary>
         /// Verbindung geschlossen.
         /// </summary>
-        ConnectionShoutDown,
+        ConnectionShutDown,
         /// <summary>
         /// Verbindung wurde ortnungsgemäß beendet.
         /// </summary>
