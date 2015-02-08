@@ -212,14 +212,27 @@ namespace SimpleNetwork.Client
 
         }
 
+        /// <summary>
+        /// Wird aufgerufen, um das Client Paket des Client-Server Handschlages zu erzeugen.
+        /// </summary>
+        /// <param name="outClientHandshake">Das Client Paket des Handschlages, dass an den Server gesendet wird.</param>
         protected virtual void PrepareClientHandshake(ClientHandshakePackage outClientHandshake)
         {
             outClientHandshake.KeyValues.Add("OS", Environment.OSVersion.VersionString);
         }
+        /// <summary>
+        /// Wird aufgerufen, um das Server Paket des Client-Server Handschlages zu erzeugen.
+        /// </summary>
+        /// <param name="inClientHandshake">Das Client Paket des Handschlages, dass empfangen wurde.</param>
+        /// <param name="outServerHandshake">Das Server Paket des Handschlages, dass an den Client gesendet wird.</param>
         protected virtual void PrepareServerAnswerHandshake(ClientHandshakePackage inClientHandshake, ServerHandshakePackage outServerHandshake)
         {
             outServerHandshake.KeyValues.Add("OS", Environment.OSVersion.VersionString);
         }
+        /// <summary>
+        /// Wird aufgerufen, um das Server Paket des Client-Server Handschlages zu verarbeiten.
+        /// </summary>
+        /// <param name="inServerHandshake">Das Server Paket des Handschlages, dass empfangen wurde.</param>
         protected virtual void HandleServerAnswerHandshake(ServerHandshakePackage inServerHandshake)
         {
 
