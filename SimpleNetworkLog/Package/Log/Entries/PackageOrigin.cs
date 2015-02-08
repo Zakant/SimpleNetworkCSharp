@@ -12,11 +12,11 @@ namespace SimpleNetwork.Package.Log.Entries
     public enum PackageOrigin : int
     {
         /// <summary>
-        /// Gibt an, dass das Paket vom localen Host stammt.
+        /// Paket stammt vom Localen Host.
         /// </summary>
         Local,
         /// <summary>
-        /// Gibt an, dass das Paket vom remote Host stammt.
+        /// Paket stammt vom Remote Host.
         /// </summary>
         Remote
     }
