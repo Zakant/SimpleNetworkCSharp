@@ -10,18 +10,18 @@ using System.Text;
 namespace SimpleNetwork.Package.Log
 {
     /// <summary>
-    /// Stellt ein Paket Log fuer einen <see cref="SimpleNetwork.Client.IClient"/> da.
+    /// Stellt ein Paket Log für einen <see cref="SimpleNetwork.Client.IClient"/> da.
     /// </summary>
     [Serializable]
     public class PackageLog : IPackageLog
     {
         /// <summary>
-        /// Der <see cref="SimpleNetwork.Client.IClient"/> fuer den das Log erstellt wurde.
+        /// Der <see cref="SimpleNetwork.Client.IClient"/> für den das Log erstellt wurde.
         /// </summary>
         public IClient Client { get; protected set; }
 
         /// <summary>
-        /// Eine Auflistung aller fuer diesen Client geloggten Pakete.
+        /// Eine Auflistung aller für diesen Client geloggten Pakete.
         /// </summary>
         public IEnumerable<IPackageLogEntry> AllPackages { get { return new List<IPackageLogEntry>(packages); } }
 
@@ -31,9 +31,9 @@ namespace SimpleNetwork.Package.Log
         protected List<IPackageLogEntry> packages = new List<IPackageLogEntry>();
 
         /// <summary>
-        /// Erstellt ein neues Log fuer den angegeben Client.
+        /// Erstellt ein neues Log für den angegeben Client.
         /// </summary>
-        /// <param name="client">Der Client fuer den das Log erstellt werden soll.</param>
+        /// <param name="client">Der Client für den das Log erstellt werden soll.</param>
         public PackageLog(IClient client)
         {
             if (client == null) throw new ArgumentNullException("client");

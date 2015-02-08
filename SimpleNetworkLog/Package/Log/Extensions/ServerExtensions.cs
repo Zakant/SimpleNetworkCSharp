@@ -7,15 +7,15 @@ using System.Text;
 namespace SimpleNetwork.Package.Log
 {
     /// <summary>
-    /// Stellt Erweiterungs Methoden fuer Server bereit.
+    /// Stellt Erweiterungs Methoden für Server bereit.
     /// </summary>
     public static class ServerExtensions
     {
         /// <summary>
-        /// Erstellt ein neues Log fuer den angegebenen Server.
+        /// Erstellt ein neues Log für den angegebenen Server.
         /// </summary>
-        /// <param name="server">Der Server, fuer den das Log erstellt werden soll.</param>
-        /// <returns>Das neu erstellte Log fuer den Server.</returns>
+        /// <param name="server">Der Server, für den das Log erstellt werden soll.</param>
+        /// <returns>Das neu erstellte Log für den Server.</returns>
         public static IServerPackageLog createLog(this IServer server)
         {
             if (server == null) throw new ArgumentNullException("server");

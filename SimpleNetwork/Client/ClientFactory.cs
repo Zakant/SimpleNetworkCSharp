@@ -7,19 +7,19 @@ namespace SimpleNetwork.Client
     public class ClientFactory : IClientFactory
     {
         /// <summary>
-        /// Erzeugt ein neues Client-Objekt aus einem angegebenen TcpClient
+        /// Erstellt einen <see cref="SimpleNetwork.Client.Client"/> aus einem <see cref="System.Net.Sockets.TcpClient"/>.
         /// </summary>
-        /// <param name="client">Das bei der Erstellung zu verwendene TcpClient-Objekt</param>
-        /// <returns>Das neu erstellte IClient-Objekt</returns>
+        /// <param name="client">Der <see cref="System.Net.Sockets.TcpClient"/> aus dem der <see cref="SimpleNetwork.Client.Client"/> erstellt werden soll.</param>
+        /// <returns>Der neu erstellte <see cref="SimpleNetwork.Client.Client"/>.</returns>
         public IClient createFromTcpClient(System.Net.Sockets.TcpClient client)
         {
             return new Client(client);
         }
 
         /// <summary>
-        /// Erzeugt ein neues leeres IClient-Objekt
+        /// Erstekkt ein neues <see cref="SimpleNetwork.Client.Client"/> Objekt.
         /// </summary>
-        /// <returns>Das neue leere IClient-Objekt</returns>
+        /// <returns>Der neu erstellte <see cref="SimpleNetwork.Client.Client"/>.</returns>
         public IClient createDefault()
         {
             return new Client();

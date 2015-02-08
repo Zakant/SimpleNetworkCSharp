@@ -14,12 +14,12 @@ namespace SimpleNetwork.Package.Log.Entries.Server
     public class ServerLogEntry : IServerLogEntry
     {
         /// <summary>
-        /// Der <see cref="SimpleNetwork.Server.IServer"/> fuer den der Eintrag erstellt wurde.
+        /// Der <see cref="SimpleNetwork.Server.IServer"/> für den der Eintrag erstellt wurde.
         /// </summary>
         public IServer Server { get; protected set; }
 
         /// <summary>
-        /// Der <see cref="SimpleNetwork.Client.IClient"/> fuer den der Eintrag erstellt wurde.
+        /// Der <see cref="SimpleNetwork.Client.IClient"/> für den der Eintrag erstellt wurde.
         /// </summary>
         public IClient Client { get; protected set; }
 
@@ -31,8 +31,8 @@ namespace SimpleNetwork.Package.Log.Entries.Server
         /// <summary>
         /// Erstellt einen Log Eintrag.
         /// </summary>
-        /// <param name="server">Der <see cref="SimpleNetwork.Server.IServer"/> fuer den das Log erstellt wurde.</param>
-        /// <param name="client">Der <see cref="SimpleNetwork.Client.IClient"/> fuer den der Eintrag erstellt wurde.</param>
+        /// <param name="server">Der <see cref="SimpleNetwork.Server.IServer"/> für den das Log erstellt wurde.</param>
+        /// <param name="client">Der <see cref="SimpleNetwork.Client.IClient"/> für den der Eintrag erstellt wurde.</param>
         /// <param name="log">Das zugehoerige <see cref="SimpleNetwork.Package.Log.IPackageLog"/>.</param>
         public ServerLogEntry(IServer server, IClient client, IPackageLog log)
         {

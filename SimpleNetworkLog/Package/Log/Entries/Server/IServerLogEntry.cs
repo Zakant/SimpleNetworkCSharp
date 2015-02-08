@@ -13,12 +13,12 @@ namespace SimpleNetwork.Package.Log.Entries.Server
     public interface IServerLogEntry
     {
         /// <summary>
-        /// Der <see cref="SimpleNetwork.Server.IServer"/> fuer den der Eintrag erstellt wurde.
+        /// Der <see cref="SimpleNetwork.Server.IServer"/> für den der Eintrag erstellt wurde.
         /// </summary>
         IServer Server { get; }
 
         /// <summary>
-        /// Der <see cref="SimpleNetwork.Client.IClient"/> fuer den der Eintrag erstellt wurde.
+        /// Der <see cref="SimpleNetwork.Client.IClient"/> für den der Eintrag erstellt wurde.
         /// </summary>
         IClient Client { get; }
 

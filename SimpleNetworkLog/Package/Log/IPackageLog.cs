@@ -10,17 +10,17 @@ using System.Text;
 namespace SimpleNetwork.Package.Log
 {
     /// <summary>
-    /// Stellt ein Paket Log fuer einen <see cref="SimpleNetwork.Client.IClient"/> da.
+    /// Stellt ein Paket Log für einen <see cref="SimpleNetwork.Client.IClient"/> da.
     /// </summary>
     public interface IPackageLog
     {
         /// <summary>
-        /// Der <see cref="SimpleNetwork.Client.IClient"/> fuer den das Log erstellt wurde.
+        /// Der <see cref="SimpleNetwork.Client.IClient"/> für den das Log erstellt wurde.
         /// </summary>
         IClient Client { get; }
 
         /// <summary>
-        /// Eine Auflistung aller fuer diesen Client geloggten Pakete.
+        /// Eine Auflistung aller für diesen Client geloggten Pakete.
         /// </summary>
         IEnumerable<IPackageLogEntry> AllPackages { get; }
 

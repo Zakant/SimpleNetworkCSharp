@@ -2,6 +2,9 @@
 
 namespace SimpleNetwork.Events.Secure
 {
+    /// <summary>
+    /// Stellt Daten für das  
+    /// </summary>
     public class ConnectionStateChangedEventArgs : SimpleNetworkEventArgs
     {
         public ConnectionState OldState { get; protected set; }

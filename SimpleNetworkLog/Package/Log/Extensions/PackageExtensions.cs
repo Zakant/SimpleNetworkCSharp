@@ -8,7 +8,7 @@ using System.Text;
 namespace SimpleNetwork.Package.Log
 {
     /// <summary>
-    /// Stellt Erweiterungs Methoden fuer Pakete bereit.
+    /// Stellt Erweiterungs Methoden für Pakete bereit.
     /// </summary>
     public static class PackageExtensions
     {

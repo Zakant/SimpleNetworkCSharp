@@ -10,12 +10,12 @@ using System.Text;
 namespace SimpleNetwork.Package.Log
 {
     /// <summary>
-    /// Stellt ein Paket Log fuer einen <see cref="SimpleNetwork.Server.IServer"/> da.
+    /// Stellt ein Paket Log für einen <see cref="SimpleNetwork.Server.IServer"/> da.
     /// </summary>
     public interface IServerPackageLog
     {
         /// <summary>
-        /// Der <see cref="SimpleNetwork.Server.IServer"/> fuer den das Log erstellt wurde.
+        /// Der <see cref="SimpleNetwork.Server.IServer"/> für den das Log erstellt wurde.
         /// </summary>
         IServer Server { get; }
 
@@ -30,10 +30,10 @@ namespace SimpleNetwork.Package.Log
         IEnumerable<IServerLogEntry> Logs { get; }
 
         /// <summary>
-        /// Gibt das Log fuer einen mit dem Server verbundenen Client zurueck.
+        /// Gibt das Log für einen mit dem Server verbundenen Client zurueck.
         /// </summary>
-        /// <param name="client">Der Client fuer den das Log zurueckgegeben werden soll.</param>
-        /// <returns>Das Log fuer den angegebenen Client.</returns>
+        /// <param name="client">Der Client für den das Log zurueckgegeben werden soll.</param>
+        /// <returns>Das Log für den angegebenen Client.</returns>
         IPackageLog getLogForClient(IClient client);
 
         /// <summary>

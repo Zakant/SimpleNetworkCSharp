@@ -17,7 +17,7 @@ namespace SimpleNetwork.Package.Packages.Handshake
         public Dictionary<string, string> KeyValues { get; protected set; }
 
         /// <summary>
-        /// Erzeugt ein neues Paket fuer den Client-Server Handschlag.
+        /// Erzeugt ein neues Paket für den Client-Server Handschlag.
         /// </summary>
         public HandshakePackage()
         {
