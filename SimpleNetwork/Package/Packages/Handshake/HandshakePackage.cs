@@ -5,6 +5,7 @@ using System.Text;
 
 namespace SimpleNetwork.Package.Packages.Handshake
 {
+    [Serializable]
     public abstract class HandshakePackage : IPackage
     {
         public Dictionary<string, string> KeyValues { get; protected set; }
