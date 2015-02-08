@@ -62,7 +62,7 @@ namespace SimpleNetwork.Package.Provider
         /// <param name="client">Der Remotehost, der das Packet versendet hat.</param>
         protected void informListener(IPackage package, IClient client)
         {
-            var li = listener.Where(x => x.AcceptType == package.GetType() || (x.AcceptSubType && package.GetType().IsAssignableFrom(x.AcceptType)));
+            var li = listener.Where(x => x.AcceptType == package.GetType() || (x.AcceptSubType && package.GetType().IsAssignableFrom(x.AcceptType))).ToList();
             if (li.Any(x => x.ExclusivListener))
                 foreach (var l in li.Where(x => x.ExclusivListener))
                     CallProcess(l, package, client);
