@@ -2,7 +2,7 @@
 namespace SimpleNetwork.Client
 {
     /// <summary>
-    /// Eine Fabrik zum erstellen von IClient-Objekten
+    /// Eine Fabrik Klasse zum erzeugen von <see cref="SimpleNetwork.Client.Client"/> Objekten.
     /// </summary>
     public class ClientFactory : IClientFactory
     {
