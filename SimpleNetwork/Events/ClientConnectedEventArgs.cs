@@ -13,7 +13,7 @@ namespace SimpleNetwork.Events
         public IClient Client { get; protected set; }
 
         /// <summary>
-        /// Initialisiert eine neue Instanz der ClientConnectedEventArgs unter verwendung des angegeben ICLient-Objekts.
+        /// Initialisiert eine neue Instanz der ClientConnectedEventArgs unter Verwendung des angegeben <see cref="SimpleNetwork.Client.IClient"/> Objektes.
         /// </summary>
         /// <param name="client">Der neu verbunende IClient.</param>
         public ClientConnectedEventArgs(IClient client)

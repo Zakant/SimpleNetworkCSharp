@@ -65,6 +65,7 @@
     <Compile Include="Events\MessageInEventArgs.cs" />
     <Compile Include="Events\SimpleNetworkEventArgs.cs" />
     <Compile Include="Package\Extensions\PackageExtensions.cs" />
+    <Compile Include="Package\Listener\BasePackageListener.cs" />
     <Compile Include="Package\Listener\EventPackageListener.cs" />
     <Compile Include="Package\Packages\FilePackage.cs" />
     <Compile Include="Package\Packages\Handshake\ClientHandshakePackage.cs" />

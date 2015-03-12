@@ -10,7 +10,7 @@ using System.Linq;
 namespace SimpleNetwork.Package.Provider
 {
     /// <summary>
-    /// Stellt eine Abstrakte Basisklasse bereit, um Packete an <see cref="SimpleNetwork.Package.Listener.IPackageListener{T}" /> weiterzuleiten.
+    /// Stellt eine Abstrakte Basisklasse bereit, um Packete an <see cref="SimpleNetwork.Package.Listener.IPackageListener" /> weiterzuleiten.
     /// </summary>
     public abstract class PackageProvider : IPackageProvider
     {
@@ -56,7 +56,7 @@ namespace SimpleNetwork.Package.Provider
         }
 
         /// <summary>
-        /// Informiert alle <see cref="SimpleNetwork.Package.Listener.IPackageListener{T}" />, die den entsprechenden Typ abboniert haben.
+        /// Informiert alle <see cref="SimpleNetwork.Package.Listener.IPackageListener" />, die den entsprechenden Typ abboniert haben.
         /// </summary>
         /// <param name="package">Das Packet, das empfangen wurde.</param>
         /// <param name="client">Der Remotehost, der das Packet versendet hat.</param>
@@ -73,28 +73,28 @@ namespace SimpleNetwork.Package.Provider
 
         private void CallProcess(ListenerEntry entry, IPackage package, IClient client)
         {
-            entry.Listener.GetType().GetMethod("ProcessIncommingPackage").Invoke(entry.Listener, new object[] { package, client });
+            entry.Listener.ProcessIncommingPackage(package, client);
         }
 
         private List<ListenerEntry> listener = new List<ListenerEntry>();
 
         /// <summary>
-        /// Registriert einen neuen <see cref="SimpleNetwork.Package.Listener.IPackageListener{T}" />.
+        /// Registriert einen neuen <see cref="SimpleNetwork.Package.Listener.IPackageListener" />.
         /// </summary>
         /// <typeparam name="T">Der Packettype, den der Listener abbonieren soll.</typeparam>
-        /// <param name="packagelistener">Der <see cref="SimpleNetwork.Package.Listener.IPackageListener{T}" />.</param>
-        public void RegisterPackageListener<T>(IPackageListener<T> packagelistener) where T : IPackage
+        /// <param name="packagelistener">Der <see cref="SimpleNetwork.Package.Listener.IPackageListener" />.</param>
+        public void RegisterPackageListener<T>(IPackageListener packagelistener) where T : IPackage
         {
             listener.Add(new ListenerEntry(packagelistener, typeof(T)));
         }
 
         /// <summary>
-        /// Registriert einen neuen <see cref="SimpleNetwork.Package.Listener.IPackageListener{T}" />.
+        /// Registriert einen neuen <see cref="SimpleNetwork.Package.Listener.IPackageListener" />.
         /// </summary>
         /// <typeparam name="T">Der Packettype, den der Listener abbonieren soll.</typeparam>
-        /// <param name="packagelistener">Der <see cref="SimpleNetwork.Package.Listener.IPackageListener{T}" />.</param>
+        /// <param name="packagelistener">Der <see cref="SimpleNetwork.Package.Listener.IPackageListener" />.</param>
         /// <param name="acceptSubTypes">Ein Wahrheitswert, der angibt, ob auch Sub Typen berücksichtigt werden sollen.</param>
-        public void RegisterPackageListener<T>(IPackageListener<T> packagelistener, bool acceptSubTypes) where T : IPackage
+        public void RegisterPackageListener<T>(IPackageListener packagelistener, bool acceptSubTypes) where T : IPackage
         {
             listener.Add(new ListenerEntry(packagelistener, typeof(T), acceptSubTypes));
         }
@@ -121,11 +121,11 @@ namespace SimpleNetwork.Package.Provider
         }
 
         /// <summary>
-        /// Entfernt einen <see cref="SimpleNetwork.Package.Listener.IPackageListener{T}" />.
+        /// Entfernt einen <see cref="SimpleNetwork.Package.Listener.IPackageListener" />.
         /// </summary>
-        /// <typeparam name="T">Der Packettype, den <see cref="SimpleNetwork.Package.Listener.IPackageListener{T}" /> abboniert hat.</typeparam>
-        /// <param name="packagelistener">Der <see cref="SimpleNetwork.Package.Listener.IPackageListener{T}" />, der entfernt werden soll.</param>
-        public void RemovePackageListener<T>(IPackageListener<T> packagelistener) where T : IPackage
+        /// <typeparam name="T">Der Packettype, den <see cref="SimpleNetwork.Package.Listener.IPackageListener" /> abboniert hat.</typeparam>
+        /// <param name="packagelistener">Der <see cref="SimpleNetwork.Package.Listener.IPackageListener" />, der entfernt werden soll.</param>
+        public void RemovePackageListener<T>(IPackageListener packagelistener) where T : IPackage
         {
             listener.RemoveAll(x => x.Listener == packagelistener);
         }
@@ -144,7 +144,7 @@ namespace SimpleNetwork.Package.Provider
         /// </summary>
         /// <typeparam name="T">Der Packettype, den der Listener abbonieren soll.</typeparam>
         /// <param name="packagelistener">Der Listener, der mit exclusiv Rechten registriert werden soll.</param>
-        protected void RegisterExclusivPackageListern<T>(IPackageListener<T> packagelistener) where T : IPackage
+        protected void RegisterExclusivPackageListern<T>(IPackageListener packagelistener) where T : IPackage
         {
             listener.Add(new ListenerEntry(packagelistener, typeof(T), false, true));
         }
@@ -155,7 +155,7 @@ namespace SimpleNetwork.Package.Provider
         /// <typeparam name="T">Der Packettype, den der Listener abbonieren soll.</typeparam>
         /// <param name="packagelistener">Der Listener, der mit exclusiv Rechten registriert werden soll.</param>
         /// <param name="acceptSubTypes">Ein Wahrheitswert, der angibt, ob auch Sub Typen berücksichtigt werden sollen.</param>
-        protected void RegisterExclusivPackageListern<T>(IPackageListener<T> packagelistener, bool acceptSubTypes) where T : IPackage
+        protected void RegisterExclusivPackageListern<T>(IPackageListener packagelistener, bool acceptSubTypes) where T : IPackage
         {
             listener.Add(new ListenerEntry(packagelistener, typeof(T), acceptSubTypes, true));
         }

@@ -8,7 +8,7 @@ namespace SimpleNetwork.Package.Listener
     /// Stellte eine Klasse bereit, um auf eingehende Packete mithilfe von Ereignisen reagieren zu können.
     /// </summary>
     /// <typeparam name="T">Der Typ der Pakete, auf die reagiert werden soll.</typeparam>
-    public class EventPackageListener<T> : IPackageListener<T> where T : IPackage
+    public class EventPackageListener<T> : BasePackageListener<T> where T : IPackage
     {
         /// <summary>
         /// Tritt ein, wenn ein neues Packet eingetroffen ist.
@@ -20,7 +20,7 @@ namespace SimpleNetwork.Package.Listener
         /// </summary>
         /// <param name="package">Das eigehende Packet.</param>
         /// <param name="client">Der Remotehost, von dem das Packet stammt.</param>
-        public void ProcessIncommingPackage(T package, Client.IClient client)
+        public override void ProcessIncommingPackage(T package, Client.IClient client)
         {
             var myevent = PackageReceived;
             if (myevent != null)
