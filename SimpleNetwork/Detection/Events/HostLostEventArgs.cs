@@ -4,7 +4,7 @@ using System;
 namespace SimpleNetwork.Detection.Events
 {
     /// <summary>
-    /// Stellt Daten für das <see cref="SimpleNetwork.Detection.Detector.INetworkDetector.HostLost"/> Ereigniss bereit.
+    /// Stellt Daten für das <see cref="SimpleNetwork.Detection.Detector.INetworkDetector.HostLost"/> Ereignis bereit.
     /// </summary>
     [Serializable]
     public class HostLostEventArgs : EventArgs

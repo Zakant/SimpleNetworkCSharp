@@ -9,20 +9,39 @@ using System.Text;
 
 namespace SimpleNetwork.Package.Log
 {
+    /// <summary>
+    /// Stellt ein Paket Log für einen <see cref="SimpleNetwork.Server.IServer"/> da.
+    /// </summary>
     [Serializable]
     public class ServerPackageLog : IServerPackageLog
     {
+        /// <summary>
+        /// Der <see cref="SimpleNetwork.Server.IServer"/> für den das Log erstellt wurde.
+        /// </summary>
         public IServer Server { get; protected set; }
 
+        /// <summary>
+        /// Gibt an, ob ein Client Log ueber den Disconnect des Clients gespeichert werden soll.
+        /// </summary>
         public bool keepOnDisconnect { get; set; }
 
+        /// <summary>
+        /// Interne Sammlung der Client Logs.
+        /// </summary>
         protected Dictionary<IClient, IPackageLog> clientLogs = new Dictionary<IClient, IPackageLog>();
 
+        /// <summary>
+        /// Eine Auflistung aller verfuegbaren Logs.
+        /// </summary>
         public IEnumerable<IServerLogEntry> Logs
         {
             get { return clientLogs.Select(x => new ServerLogEntry(Server, x.Key, x.Value) as IServerLogEntry); }
         }
 
+        /// <summary>
+        /// Erstellt ein neues Log für den angegebenen Server.
+        /// </summary>
+        /// <param name="server">Der Server für den das Log erstellt werden soll.</param>
         public ServerPackageLog(IServer server)
         {
             if (server == null) throw new ArgumentNullException("server");
@@ -39,6 +58,11 @@ namespace SimpleNetwork.Package.Log
             keepOnDisconnect = true;
         }
 
+        /// <summary>
+        /// Gibt das Log für einen mit dem Server verbundenen Client zurueck.
+        /// </summary>
+        /// <param name="client">Der Client für den das Log zurueckgegeben werden soll.</param>
+        /// <returns>Das Log für den angegebenen Client.</returns>
         public IPackageLog getLogForClient(IClient client)
         {
             if (client == null) throw new ArgumentNullException("client");
@@ -46,6 +70,10 @@ namespace SimpleNetwork.Package.Log
             return clientLogs[client];
         }
 
+        /// <summary>
+        /// Fuegt ein neues Log hinzu.
+        /// </summary>
+        /// <param name="log">Das hinzuzufuegende Log.</param>
         public void addPackageLog(IPackageLog log)
         {
             if (log == null) throw new ArgumentNullException("log");

@@ -307,11 +307,11 @@ namespace SimpleNetwork.Client
                             _formatter.Serialize(OutStream, transformPackageForSend(package));
                 }
             }
-                catch(ArgumentException argumentEx)
+            catch (ArgumentException)
             {
                 Disconnect(DisconnectReason.LostConnection);
             }
-            catch (IOException ex)
+            catch (IOException)
             {
                 Disconnect(DisconnectReason.LostConnection); // Fehler, Verbindung verloren
             }
@@ -390,7 +390,7 @@ namespace SimpleNetwork.Client
                 IPackage p = (_formatter.Deserialize(InStream) as IPackage);
                 return p;
             }
-            catch (Exception ex) // Hier kann auch das Disconnect festgestellt werden!
+            catch (Exception) // Hier kann auch das Disconnect festgestellt werden!
             {
                 return null;
             }

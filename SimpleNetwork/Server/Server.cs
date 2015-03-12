@@ -21,10 +21,10 @@ namespace SimpleNetwork.Server
         public event EventHandler<ClientConnectedEventArgs> ClientConnected;
 
         /// <summary>
-        /// Löst das <see cref="ClientConnected"/> Ereigniss aus.
+        /// Löst das <see cref="ClientConnected"/> Ereignis aus.
         /// </summary>
         /// <param name="c">Der neu verbundene Remotehost.</param>
-        /// <returns>Die verwendeten Ereigniss Argumente.</returns>
+        /// <returns>Die verwendeten Ereignis Argumente.</returns>
         protected ClientConnectedEventArgs RaiseClientConnected(IClient c)
         {
             var myevent = ClientConnected;
@@ -40,11 +40,11 @@ namespace SimpleNetwork.Server
         public event EventHandler<ClientDisconnectedEventArgs> ClientDisconnected;
 
         /// <summary>
-        /// Löst das <see cref="ClientDisconnected"/> Ereigniss aus.
+        /// Löst das <see cref="ClientDisconnected"/> Ereignis aus.
         /// </summary>
         /// <param name="c">Der Remotehost, zu dem die Verbindung verloren gegangen ist.</param>
         /// <param name="reason">Der Grund für den Verbindungsabbruch.</param>
-        /// <returns>Die verwendeten Ereigniss Argumente.</returns>
+        /// <returns>Die verwendeten Ereignis Argumente.</returns>
         protected ClientDisconnectedEventArgs RaiseClientDisconnected(IClient c, DisconnectReason reason)
         {
             var myevent = ClientDisconnected;

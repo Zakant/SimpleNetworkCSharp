@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SimpleNetwork.Package.Listener;
+using System;
 
 namespace SimpleNetwork.Package.Provider.Internal
 {
@@ -8,7 +9,7 @@ namespace SimpleNetwork.Package.Provider.Internal
 
         Type AcceptType { get; }
 
-        object Listener { get; }
+        IPackageListener Listener { get; }
 
         bool ExclusivListener { get; }
     }
