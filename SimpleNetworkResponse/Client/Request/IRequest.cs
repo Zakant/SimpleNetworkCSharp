@@ -1,4 +1,5 @@
-﻿using SimpleNetwork.Package.Packages.Response;
+﻿using SimpleNetwork.Package.Packages.Request;
+using SimpleNetwork.Package.Packages.Response;
 using System;
 using System.Collections.Generic;
 using System.Linq;
