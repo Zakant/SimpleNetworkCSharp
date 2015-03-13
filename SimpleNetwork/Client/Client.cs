@@ -303,8 +303,11 @@ namespace SimpleNetwork.Client
                     if (!(isHandshakeCompleted || bypassHandshake))
                         _queue.Enqueue(package);
                     else
+                    {
+                        ApplySendLogic(package);
                         if (bypassMessageOut || !RaiseSendMessage(package, this).Handled)
                             _formatter.Serialize(OutStream, transformPackageForSend(package));
+                    }
                 }
             }
             catch (ArgumentException)
@@ -402,8 +405,9 @@ namespace SimpleNetwork.Client
         /// <param name="p">Das zuverarbeitende Paket.</param>
         protected virtual void HandleNewMessage(IPackage p)
         {
-            RaiseNewMessage(p, this);
-            informListener(p, this);
+            ApplyReceiveLogic(p);
+            if (!RaiseNewMessage(p, this).Handled)
+                informListener(p, this);
         }
 
         /// <summary>
@@ -413,5 +417,17 @@ namespace SimpleNetwork.Client
         {
             Disconnect();
         }
+
+
+        private void ApplySendLogic(IPackage package)
+        {
+
+        }
+
+        private void ApplyReceiveLogic(IPackage package)
+        {
+
+        }
+
     }
 }

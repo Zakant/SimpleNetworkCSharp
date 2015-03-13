@@ -124,8 +124,8 @@ namespace SimpleNetwork.Server
                     _clients.Add(ic);
                     ic.MessageIn += new EventHandler<MessageInEventArgs>((sender, args) =>
                     {
-                        RaiseNewMessage(args.Package, args.Client);
-                        informListener(args.Package, args.Client);
+                        if (!RaiseNewMessage(args.Package, args.Client).Handled)
+                            informListener(args.Package, args.Client);
                     });
                     ic.Disconnected += new EventHandler<DisconnectedEventArgs>((sender, args) =>
                     {

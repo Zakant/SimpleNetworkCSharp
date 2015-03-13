@@ -23,6 +23,11 @@ namespace SimpleNetwork.Events
         public Type MessageType { get { return (this.Package.GetType()); } }
 
         /// <summary>
+        /// Gibt an, ob die Nachricht behandelt wurde.
+        /// </summary>
+        public bool Handled { get; set; }
+
+        /// <summary>
         /// Initialisiert eine neue Instanz der NewMessageEventArgs unter verwendung des angegeben IClient-Objekts und dem IPackage-Objekt.
         /// </summary>
         /// <param name="client">Der IClient, von dem die Nachricht stammt.</param>

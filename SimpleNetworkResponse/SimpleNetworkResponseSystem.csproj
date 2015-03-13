@@ -8,9 +8,10 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>SimpleNetwork</RootNamespace>
-    <AssemblyName>SimpleNetworkResponse</AssemblyName>
-    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <AssemblyName>SimpleNetworkResponseSystem</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -39,8 +40,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Client\Request\IRequest.cs" />
+    <Compile Include="Events\Request\ResponseReceivedEventArgs.cs" />
+    <Compile Include="Package\Attributes\InsertClientAttribute.cs" />
+    <Compile Include="Package\Attributes\InsertIdAttribute.cs" />
+    <Compile Include="Client\Request\Request.cs" />
+    <Compile Include="Client\Request\RequestExtensions.cs" />
+    <Compile Include="Package\Extensions\ReflectionExtensions.cs" />
+    <Compile Include="Package\Packages\Request\RequestPackage.cs" />
+    <Compile Include="Package\Packages\Response\ResponsePackage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Server\Response\ReponseExtensions.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SimpleNetwork\SimpleNetwork.csproj">
+      <Project>{95b40194-bdec-4cae-b79e-d623869c569f}</Project>
+      <Name>SimpleNetwork</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
