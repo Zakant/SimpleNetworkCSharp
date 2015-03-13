@@ -1,10 +1,13 @@
-﻿using SimpleNetwork.Client.Secure;
+﻿using SimpleNetwork.Client.Request;
+using SimpleNetwork.Client.Secure;
 using SimpleNetwork.Detection.Detector;
 using SimpleNetwork.Package.Packages;
 using SimpleNetwork.Package.Log;
 using System;
 using System.Linq;
 using System.Threading;
+using SimpleNetwork.Package.Packages.Request;
+using SimpleNetwork.Package.Packages.Response;
 
 namespace TestClient
 {
@@ -29,7 +32,13 @@ namespace TestClient
 
 
             client.Connect(d.Hosts.First());
-            client.SendPackage(new TextPackage("Hallo Welt"));
+
+
+            var request = client.createRequest<TextRequestPackage, TextResponsePackage>((new TextRequestPackage("Hallo Welt")));
+
+            request.Send();
+            request.WaitOne();
+            var result = request.ResponsePackage;
 
             Console.ReadKey(false);
             for (int i = 0; i < 5; i++)

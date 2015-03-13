@@ -8,7 +8,7 @@ namespace SimpleNetwork.Package.Packages.Response
     [Serializable]
     public abstract class ResponsePackage : IPackage
     {
-        public long ResponseId { get; set; }
+        public ulong ResponseId { get; set; }
 
     }
 }

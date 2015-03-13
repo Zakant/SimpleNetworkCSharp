@@ -15,7 +15,7 @@ namespace SimpleNetwork.Client.Request
 
         private static List<IClient> _registeredClients = new List<IClient>();
 
-        private static Dictionary<long, IRequest> _requests = new Dictionary<long, IRequest>();
+        private static Dictionary<ulong, IRequest> _requests = new Dictionary<ulong, IRequest>();
 
         public static Request<TRequest, ResponsePackage> createRequest<TRequest>(this IClient client, TRequest package) where TRequest : RequestPackage
         {
@@ -29,8 +29,9 @@ namespace SimpleNetwork.Client.Request
             if (!isClientRegistered(client))
                 RegisterClient(client);
 
-            long id = -1;
-            package.ReplaceValues(typeof(InsertIdAttribute), x => ((id == -1) ? (id = getID()) : getID()));
+            package.ID = getID();
+            // package.ReplaceValues(typeof(InsertIdAttribute), x => ((id == -1) ? (id = getID()) : getID()));
+            id = package.ID;
 
             var request = new Request<TRequest, TResponse>(package, client);
             _requests.Add(id, request);
@@ -44,7 +45,7 @@ namespace SimpleNetwork.Client.Request
             {
                 var response = (ResponsePackage)e.Package;
                 if (_requests.ContainsKey(response.ResponseId))
-                    if (_requests[response.ResponseId].ResponseType == e.MessageType)
+                    if (_requests[response.ResponseId].ResponseType.IsAssignableFrom(e.MessageType))
                     {
                         _requests[response.ResponseId].ReceiveResponse(response);
                         _requests.Remove(response.ResponseId);
@@ -66,8 +67,8 @@ namespace SimpleNetwork.Client.Request
         }
 
         private static object idLock = new object();
-        private static long id = 0;
-        private static long getID()
+        private static ulong id = 0;
+        private static ulong getID()
         {
             lock (idLock)
                 return id++;

@@ -47,8 +47,13 @@
     <Compile Include="Client\Request\Request.cs" />
     <Compile Include="Client\Request\RequestExtensions.cs" />
     <Compile Include="Package\Extensions\ReflectionExtensions.cs" />
+    <Compile Include="Package\Packages\Extensions\PackageExtensions.cs" />
     <Compile Include="Package\Packages\Request\RequestPackage.cs" />
+    <Compile Include="Package\Packages\Request\RequestWrapper.cs" />
+    <Compile Include="Package\Packages\Request\TextRequestPackage.cs" />
     <Compile Include="Package\Packages\Response\ResponsePackage.cs" />
+    <Compile Include="Package\Packages\Response\ResponseWrapper.cs" />
+    <Compile Include="Package\Packages\Response\TextResponsePackage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Server\Response\ReponseExtensions.cs" />
   </ItemGroup>

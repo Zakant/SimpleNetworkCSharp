@@ -11,9 +11,9 @@ namespace SimpleNetwork.Package.Packages.Request
     public abstract class RequestPackage : IPackage
     {
         [InsertId]
-        public long ID { get; private set; }
+        public ulong ID { get; set; }
 
         [InsertClient]
-        public IClient Client { get; private set; }
+        public IClient Client { get; set; }
     }
 }

@@ -2,9 +2,12 @@
 using SimpleNetwork.Package.Listener;
 using SimpleNetwork.Package.Packages;
 using SimpleNetwork.Server.Secure;
+using SimpleNetwork.Server.Response;
 using SimpleNetwork.Package.Log;
 using System;
 using System.Linq;
+using SimpleNetwork.Package.Packages.Request;
+using SimpleNetwork.Package.Packages.Response;
 
 namespace TestServer
 {
@@ -15,11 +18,17 @@ namespace TestServer
             SecureServer server = new SecureServer(8000);
             var log = server.createLog();
 
+            server.EnableResponseSystem();
             server.Start();
 
             NetworkAnnouncer ann = new NetworkAnnouncer(server);
 
             ann.StartAnnouncing();
+
+            server.RegisterPackageListener<TextRequestPackage>((p, c) =>
+                {
+                    p.SendResponse(new TextResponsePackage("Hallo Da!"));
+                });
 
             server.RegisterPackageListener<TextPackage>(new LambdaPackageListener<TextPackage>((text, client) =>
                 {
