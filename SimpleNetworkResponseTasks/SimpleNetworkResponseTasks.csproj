@@ -4,24 +4,22 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{34D86E86-207F-4A66-A015-10AD7C62DF71}</ProjectGuid>
+    <ProjectGuid>{DDCDDCFC-CBBD-4220-B27D-F6B012090578}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>SimpleNetwork</RootNamespace>
-    <AssemblyName>SimpleNetworkSecure</AssemblyName>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <AssemblyName>SimpleNetworkResponseTasks</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
-    <Optimize>true</Optimize>
+    <Optimize>false</Optimize>
     <OutputPath>bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Debug\SimpleNetworkSecure.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -31,41 +29,29 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <PropertyGroup>
-    <RunPostBuildEvent>Always</RunPostBuildEvent>
-  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Client\Secure\ConnectionState.cs" />
-    <Compile Include="Client\Secure\ISecureClient.cs" />
-    <Compile Include="Client\Secure\SecureClient.cs" />
-    <Compile Include="Client\Secure\SecureClientFactory.cs" />
-    <Compile Include="Events\Secure\ConnectionStateChangedEventArgs.cs" />
-    <Compile Include="Package\Packages\Internal\Secure\ClientSecurePackage.cs" />
-    <Compile Include="Package\Packages\Secure\CryptoPackage.cs" />
-    <Compile Include="Package\Packages\Internal\Secure\ServerSecurePackage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Server\Secure\ISecureServer.cs" />
-    <Compile Include="Server\Secure\SecureServer.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\SimpleNetworkResponse\SimpleNetworkResponseSystem.csproj">
+      <Project>{a8fe0d4d-6105-41eb-a78b-6bc2c7d8f8cc}</Project>
+      <Name>SimpleNetworkResponseSystem</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SimpleNetwork\SimpleNetwork.csproj">
       <Project>{95b40194-bdec-4cae-b79e-d623869c569f}</Project>
       <Name>SimpleNetwork</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <PropertyGroup>
-    <PostBuildEvent>copy $(TargetFileName)  .\..\..\..\bin\$(ConfigurationName)\$(TargetFileName)
-copy $(TargetFileName)  .\..\..\..\bin\$(ConfigurationName)\$(TargetName).xml</PostBuildEvent>
-  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
