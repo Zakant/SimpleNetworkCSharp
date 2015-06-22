@@ -10,6 +10,9 @@ using System.Text;
 
 namespace SimpleNetwork.Client.Request
 {
+    /// <summary>
+    /// Stellt Erweiterungsmethoden bereit, um Anfragen zu erstellen und zu verwalten.
+    /// </summary>
     public static class RequestExtensions
     {
 
@@ -17,11 +20,38 @@ namespace SimpleNetwork.Client.Request
 
         private static Dictionary<ulong, IRequest> _requests = new Dictionary<ulong, IRequest>();
 
+        /// <summary>
+        /// Erstellt eine neue Anfrage.
+        /// </summary>
+        /// <typeparam name="TRequest">Der Typ des Anfrage Paketes.</typeparam>
+        /// <param name="client">Der Client über die die Anfrage versendet wird.</param>
+        /// <param name="package">Das Anfrage Paket.</param>
+        /// <returns>Die Anfrage.</returns>
         public static Request<TRequest, ResponsePackage> createRequest<TRequest>(this IClient client, TRequest package) where TRequest : RequestPackage
         {
             return createRequest<TRequest, ResponsePackage>(client, package);
         }
 
+        /// <summary>
+        /// Erstellt eine neue Anfrage.
+        /// </summary>
+        /// <typeparam name="TResponse">Der Typ des Antwort Paketes.</typeparam>
+        /// <param name="client">Der Client über die die Anfrage versendet wird.</param>
+        /// <param name="package">Das Anfrage Paket.</param>
+        /// <returns>Die Anfrage.</returns>
+        public static Request<RequestPackage, TResponse> createRequest<TResponse>(this IClient client, RequestPackage package) where TResponse : ResponsePackage
+        {
+            return createRequest<RequestPackage, TResponse>(client, package);
+        }
+
+        /// <summary>
+        /// Erstellt eine neue Anfrage.
+        /// </summary>
+        /// <typeparam name="TRequest">Der Typ des Anfrage Paketes.</typeparam>
+        /// <typeparam name="TResponse">Der Typ des Antwort Paketes.</typeparam>
+        /// <param name="client">Der Client über die die Anfrage versendet wird.</param>
+        /// <param name="package">Das Anfrage Paket.</param>
+        /// <returns>Die Anfrage.</returns>
         public static Request<TRequest, TResponse> createRequest<TRequest, TResponse>(this IClient client, TRequest package)
             where TRequest : RequestPackage
             where TResponse : ResponsePackage

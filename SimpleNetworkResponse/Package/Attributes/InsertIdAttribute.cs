@@ -7,6 +7,9 @@ using System.Text;
 
 namespace SimpleNetwork.Package.Attributes
 {
+    /// <summary>
+    /// Attribute das angibt, dass an den markierten Stellen einen eindeutige Nummer eingefügt werden soll.
+    /// </summary>
     [AttributeUsage(AttributeTargets.Property, Inherited = true, AllowMultiple = false)]
     public sealed class InsertIdAttribute : Attribute
     {

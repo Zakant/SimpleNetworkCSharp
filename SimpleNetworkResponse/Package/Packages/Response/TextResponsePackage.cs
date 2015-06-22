@@ -5,12 +5,22 @@ using System.Text;
 
 namespace SimpleNetwork.Package.Packages.Response
 {
+    /// <summary>
+    /// Stellt ein einfaches Text-Antwort Paket da.
+    /// </summary>
     [Serializable]
- public    class TextResponsePackage : ResponsePackage
+    public class TextResponsePackage : ResponsePackage
     {
-             public string Text { get; protected set; }
+        /// <summary>
+        /// Der Text der Antwort.
+        /// </summary>
+        public string Text { get; protected set; }
 
-             public TextResponsePackage(string text)
+        /// <summary>
+        /// Erstellt ein neues Text-Antwort Paket.
+        /// </summary>
+        /// <param name="text">Der Text der Antwort.</param>
+        public TextResponsePackage(string text)
         {
             Text = text;
         }

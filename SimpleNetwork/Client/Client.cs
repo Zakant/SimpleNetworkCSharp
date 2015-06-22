@@ -49,7 +49,7 @@ namespace SimpleNetwork.Client
         /// </summary>
         public bool isConnected
         {
-            get { return _client.Connected; }
+            get { return _client != null && _client.Connected; }
         }
 
         /// <summary>
@@ -118,6 +118,7 @@ namespace SimpleNetwork.Client
         /// </summary>
         public Client()
         {
+            _client = new TcpClient();
             logPackageHistory = false;
         }
 
@@ -140,7 +141,6 @@ namespace SimpleNetwork.Client
         /// <param name="port">Der zu verwendene Port.</param>
         public void Connect(System.Net.IPAddress ip, int port)
         {
-            _client = new TcpClient();
             _client.Connect(new IPEndPoint(ip, port));
             SetUpConnection();
         }

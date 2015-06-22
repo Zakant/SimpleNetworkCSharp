@@ -8,6 +8,9 @@ using System.Text;
 
 namespace SimpleNetwork.Package.Packages
 {
+    /// <summary>
+    /// Stellt Erweiterungsmethoden für Pakete bereit.
+    /// </summary>
     public static class PackageExtensions
     {
         // Funktioniert nicht wie erwartet!

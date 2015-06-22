@@ -7,7 +7,7 @@ using System;
 namespace SimpleNetwork.Package.Provider
 {
     /// <summary>
-    /// Stellt Methoden bereit, um Packete an <see cref="SimpleNetwork.Package.Listener.IPackageListener{T}" /> weiterzuleiten.
+    /// Stellt Methoden bereit, um Packete an <see cref="SimpleNetwork.Package.Listener.IPackageListener" /> weiterzuleiten.
     /// </summary>
     public interface IPackageProvider
     {
@@ -20,10 +20,10 @@ namespace SimpleNetwork.Package.Provider
         /// </summary>
         event EventHandler<MessageOutEventArgs> MessageOut;
         /// <summary>
-        /// Registriert einen neuen <see cref="SimpleNetwork.Package.Listener.IPackageListener{T}" />.
+        /// Registriert einen neuen <see cref="SimpleNetwork.Package.Listener.IPackageListener" />.
         /// </summary>
-        /// <typeparam name="T">Den Packettyp, den der <see cref="SimpleNetwork.Package.Listener.IPackageListener{T}" /> abbonieren möchte.</typeparam>
-        /// <param name="packagelistener">Der <see cref="SimpleNetwork.Package.Listener.IPackageListener{T}" />.</param>
+        /// <typeparam name="T">Den Packettyp, den der <see cref="SimpleNetwork.Package.Listener.IPackageListener" /> abbonieren möchte.</typeparam>
+        /// <param name="packagelistener">Der <see cref="SimpleNetwork.Package.Listener.IPackageListener" />.</param>
         void RegisterPackageListener<T>(IPackageListener packagelistener) where T : IPackage;
 
         /// <summary>
@@ -34,10 +34,10 @@ namespace SimpleNetwork.Package.Provider
         void RegisterPackageListener<T>(Action<T, IClient> action) where T : IPackage;
 
         /// <summary>
-        /// Entfernt einen <see cref="SimpleNetwork.Package.Listener.IPackageListener{T}" />.
+        /// Entfernt einen <see cref="SimpleNetwork.Package.Listener.IPackageListener" />.
         /// </summary>
-        /// <typeparam name="T">Der Packettype, den <see cref="SimpleNetwork.Package.Listener.IPackageListener{T}" /> abboniert hat.</typeparam>
-        /// <param name="packagelistener">Der <see cref="SimpleNetwork.Package.Listener.IPackageListener{T}" />, der entfernt werden soll.</param>
+        /// <typeparam name="T">Der Packettype, den <see cref="SimpleNetwork.Package.Listener.IPackageListener" /> abboniert hat.</typeparam>
+        /// <param name="packagelistener">Der <see cref="SimpleNetwork.Package.Listener.IPackageListener" />, der entfernt werden soll.</param>
         void RemovePackageListener<T>(IPackageListener packagelistener) where T : IPackage;
 
         /// <summary>
