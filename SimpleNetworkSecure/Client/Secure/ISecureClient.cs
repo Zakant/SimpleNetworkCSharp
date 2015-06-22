@@ -8,12 +8,17 @@ namespace SimpleNetwork.Client.Secure
     /// <summary>
     /// Stellt einen Vertrag da, um sicher mit einem Remotehost zu kommunizieren.
     /// </summary>
-    public interface ISecureClient : IClient
+    public interface ISecureClient : ISecureClient
     {
         /// <summary>
         /// Tritt ein, wenn sich der Zustand der sicheren Verbindung veränert.
         /// </summary>
         event EventHandler<ConnectionStateChangedEventArgs> ConnectionStateChanged;
+
+        /// <summary>
+        /// Der aktuelle Zustand der Verbindung.
+        /// </summary>
+        ConnectionState State { get; }
 
         /// <summary>
         /// Der öffentliche Schlüssel der Verbindung.
@@ -24,17 +29,5 @@ namespace SimpleNetwork.Client.Secure
         /// Der geheime Schlüssel der Verbindung
         /// </summary>
         byte[] SharedKey { get; }
-
-        /// <summary>
-        /// Der aktuelle Zustand der Verbindung.
-        /// </summary>
-        ConnectionState State { get; }
-
-        /// <summary>
-        /// Entschlüsselt ein Paket.
-        /// </summary>
-        /// <param name="cryptoPackage">Das zu entschlüsselnde Paket.</param>
-        /// <returns>Das entschlüsselte Paket.</returns>
-        IPackage decryptPackage(CryptoPackage cryptoPackage);
     }
 }

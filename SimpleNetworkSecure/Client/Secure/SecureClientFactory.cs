@@ -4,7 +4,7 @@ namespace SimpleNetwork.Client.Secure
     /// <summary>
     /// Eine Fabrik Klasse zum erzeugen von <see cref="SimpleNetwork.Client.Secure.SecureClient"/> Objekten.
     /// </summary>
-    public class SecureClientFactory : IClientFactory
+    public class DhSecureClientFactory : IClientFactory
     {
         /// <summary>
         /// Erstellt einen <see cref="SimpleNetwork.Client.Secure.SecureClient"/> aus einem <see cref="System.Net.Sockets.TcpClient"/>.

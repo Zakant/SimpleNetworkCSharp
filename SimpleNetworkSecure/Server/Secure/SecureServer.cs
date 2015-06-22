@@ -14,7 +14,7 @@ namespace SimpleNetwork.Server.Secure
         public SecureServer(int port)
             : base(port)
         {
-            ClientFactory = new SecureClientFactory();
+            ClientFactory = new DhSecureClientFactory();
         }
 
     }

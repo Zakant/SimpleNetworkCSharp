@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace SimpleNetwork.Server.Secure
+namespace SimpleNetwork.Client.Secure.Modules.PackageBased
 {
-    public interface ISecureServer
+    class DiffieHellmanSecureModule
     {
     }
 }
