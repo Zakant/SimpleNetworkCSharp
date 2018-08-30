@@ -15,7 +15,7 @@ namespace TestServer
     {
         static void Main(string[] args)
         {
-            DhSecureServer server = new DhSecureServer(8000);
+            SecureServer server = new SecureServer(8000);
             var log = server.createLog();
 
             server.EnableResponseSystem();

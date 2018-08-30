@@ -8,7 +8,7 @@ namespace SimpleNetwork.Client.Secure
     /// <summary>
     /// Stellt einen Vertrag da, um sicher mit einem Remotehost zu kommunizieren.
     /// </summary>
-    public interface ISecureClient : ISecureClient
+    public interface ISecureClient : IClient
     {
         /// <summary>
         /// Tritt ein, wenn sich der Zustand der sicheren Verbindung veränert.
