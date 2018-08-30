@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading;
+using System.Threading.Tasks;
 
 namespace SimpleNetwork.Client.Request
 {
@@ -93,6 +94,20 @@ namespace SimpleNetwork.Client.Request
         {
             Client.SendPackage(RequestPackage);
             isSend = true;
+        }
+
+        /// <summary>
+        /// Sendet die Anfrage asynchron.
+        /// </summary>
+        /// <returns>Die Antwort auf die Anfrage.</returns>
+        public Task<TResponse> SendAsync()
+        {
+            Send();
+            return Task.Run<TResponse>(() =>
+            {
+                reset.WaitOne();
+                return ResponsePackage;
+            });
         }
 
         /// <summary>
